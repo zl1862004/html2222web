@@ -1,10 +1,1300 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head><meta name="AIGC" content='{"AIGC":{"Label":"1","ContentProducer":"001191340000711771143J00000","ProduceID":"im-wechat-7eb828f6dc34-efdfcd10","ReservedCode1":"","ContentPropagator":"001191340000711771143J00000","PropagateID":"im-wechat-7eb828f6dc34-efdfcd10","ReservedCode2":""}}'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>元素周期表前20号元素消消乐（进阶版）- 初中化学课堂互动</title>
+<html lang="zh-CN"><div id="__caoliao-browser-ext-root"></div><head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style></head><body><div id="__caoliao-browser-ext-root"></div><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML2WEB · 把 HTML 变成网址</title>
 <style>
+  :root{
+    --bg:#f6f6f3;
+    --panel:#ffffff;
+    --line:#e7e7e2;
+    --line-strong:#d5d5cd;
+    --text:#1b1b18;
+    --muted:#7c7c74;
+    --faint:#b9b9b0;
+    --ink:#14140f;
+    --soft:#f1f0eb;
+    --ok:#0f7a4d;
+    --ok-soft:#e7f5ee;
+    --warn:#a8541a;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:14px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    display:flex;flex-direction:column;overflow:hidden;
+  }
+  button{font-family:inherit}
+  a{color:inherit}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    height:56px;flex:0 0 56px;display:flex;align-items:center;gap:14px;
+    padding:0 16px;background:var(--panel);border-bottom:1px solid var(--line);
+    position:relative;z-index:5;
+  }
+  .brand{display:flex;align-items:center;gap:9px;font-weight:650;font-size:14.5px;letter-spacing:-.01em}
+  .mark{
+    width:27px;height:27px;border-radius:7px;background:var(--ink);color:#fff;
+    display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:600;
+    letter-spacing:-.06em;padding-right:1px;
+  }
+  .brand small{color:var(--faint);font-weight:500;font-size:12px;letter-spacing:0;margin-left:2px}
+
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;
+    border-radius:999px;background:var(--soft);color:var(--muted);
+    font-size:12px;font-weight:520;border:1px solid transparent;
+    max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.55;flex:0 0 auto}
+  .pill.live{background:var(--ok-soft);color:var(--ok);border-color:#cfe9dc;cursor:pointer}
+  .pill.live .dot{background:var(--ok);opacity:1}
+  .pill:hover.live{background:#dcf1e6}
+
+  .spacer{flex:1}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    height:32px;padding:0 13px;border-radius:8px;border:1px solid var(--line-strong);
+    background:#fff;color:var(--text);font-size:13px;font-weight:520;
+    cursor:pointer;transition:background .15s,border-color .15s,transform .05s;
+    white-space:nowrap;
+  }
+  .btn:hover{background:#f7f7f3;border-color:#c6c6bd}
+  .btn:active{transform:translateY(.5px)}
+  .btn-primary{background:var(--ink);border-color:var(--ink);color:#fff}
+  .btn-primary:hover{background:#2c2c25;border-color:#2c2c25}
+  .btn-ghost{border-color:transparent;background:transparent;color:var(--muted)}
+  .btn-ghost:hover{background:var(--soft);color:var(--text);border-color:transparent}
+  .btn-sm{height:27px;padding:0 10px;font-size:12px;border-radius:7px}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+  /* ---------- workspace ---------- */
+  .workspace{
+    flex:1;min-height:0;display:grid;
+    grid-template-columns:var(--left,50%) 1px minmax(0,1fr);
+  }
+  .pane{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--panel)}
+  .pane-head{
+    flex:0 0 38px;height:38px;display:flex;align-items:center;gap:8px;
+    padding:0 10px 0 14px;border-bottom:1px solid var(--line);background:#fcfcfa;
+  }
+  .pane-title{
+    font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint);
+  }
+  .tab{
+    display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;
+    border-radius:6px;background:var(--soft);font-family:var(--mono);font-size:11.5px;
+    color:#57574f;font-weight:500;
+  }
+  .tab i{width:5px;height:5px;border-radius:50%;background:#c9a227;display:block}
+
+  .splitter{
+    background:var(--line);cursor:col-resize;position:relative;
+  }
+  .splitter::after{
+    content:"";position:absolute;inset:0 -4px;z-index:2;
+  }
+  .splitter:hover,.splitter.dragging{background:#9a9a90}
+
+  /* ---------- editor ---------- */
+  .code-wrap{display:flex;flex:1;min-height:0;position:relative;background:#fff}
+  .gutter{
+    flex:0 0 auto;overflow:hidden;padding:14px 9px 14px 12px;
+    background:#fbfbf8;border-right:1px solid var(--line);min-width:46px;
+  }
+  #gutterInner{
+    font-family:var(--mono);font-size:13px;line-height:21px;
+    color:#c5c5bc;text-align:right;user-select:none;white-space:pre;
+  }
+  #code{
+    flex:1;min-width:0;padding:14px 16px;border:0;outline:0;resize:none;
+    font-family:var(--mono);font-size:13px;line-height:21px;
+    white-space:pre;overflow:auto;background:#fff;color:#1f1f1a;
+    tab-size:2;-moz-tab-size:2;
+  }
+  #code::selection{background:#dbe6ff}
+  .drop-hint{
+    position:absolute;inset:10px;border:1.5px dashed #b9c6e8;border-radius:10px;
+    background:rgba(240,244,255,.9);display:none;place-items:center;
+    font-size:13px;color:#3b5aa8;font-weight:520;z-index:3;pointer-events:none;
+    backdrop-filter:blur(1px);
+  }
+  .drop-hint.on{display:grid}
+
+  /* ---------- preview ---------- */
+  .seg{
+    display:inline-flex;background:var(--soft);border-radius:7px;padding:2.5px;gap:1px;
+  }
+  .seg button{
+    border:0;background:transparent;padding:4px 10px;border-radius:5px;
+    font-size:11.5px;color:var(--muted);cursor:pointer;font-weight:520;transition:.12s;
+  }
+  .seg button.on{background:#fff;color:var(--text);box-shadow:0 1px 2px rgba(20,20,15,.1)}
+  .seg button:not(.on):hover{color:var(--text)}
+
+  .stage{
+    flex:1;min-height:0;display:flex;padding:12px;background:#efefea;overflow:hidden;
+  }
+  #preview{
+    flex:1;min-width:0;border:0;background:#fff;border-radius:8px;
+    box-shadow:0 1px 2px rgba(20,20,15,.06),0 12px 32px -20px rgba(20,20,15,.4);
+    transition:flex-basis .18s ease, width .18s ease;
+  }
+  .stage.device #preview{flex:0 0 auto;width:390px;margin:0 auto}
+  .stage.tablet #preview{flex:0 0 auto;width:768px;margin:0 auto}
+
+  /* ---------- status bar ---------- */
+  .statusbar{
+    flex:0 0 28px;height:28px;display:flex;align-items:center;gap:14px;
+    padding:0 14px;background:var(--panel);border-top:1px solid var(--line);
+    font-size:11.5px;color:var(--faint);font-family:var(--mono);
+  }
+  .statusbar .sep{width:1px;height:11px;background:var(--line-strong)}
+  .statusbar b{font-weight:520;color:var(--muted)}
+  .status-ok{color:var(--ok)}
+
+  /* ---------- overlay / modal ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(20,20,15,.4);
+    backdrop-filter:blur(4px);z-index:60;
+    display:flex;align-items:center;justify-content:center;padding:20px;
+  }
+  .overlay[hidden]{display:none}
+  .modal{
+    width:min(552px,100%);max-height:88vh;overflow:auto;
+    background:#fff;border-radius:16px;padding:28px 28px 24px;
+    box-shadow:0 40px 90px -32px rgba(20,20,15,.5),0 0 0 1px rgba(20,20,15,.05);
+    position:relative;
+    animation:pop .2s cubic-bezier(.2,.9,.3,1);
+  }
+  @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
+  .modal-close{
+    position:absolute;top:16px;right:16px;width:28px;height:28px;border-radius:7px;
+    border:0;background:transparent;color:var(--faint);font-size:19px;line-height:1;
+    cursor:pointer;display:grid;place-items:center;
+  }
+  .modal-close:hover{background:var(--soft);color:var(--text)}
+  .modal-title{margin:0 0 6px;font-size:19px;font-weight:650;letter-spacing:-.02em}
+  .modal-sub{margin:0 0 22px;font-size:13px;color:var(--muted);line-height:1.65}
+  .field-label{
+    display:block;font-size:12px;font-weight:600;color:#57574f;
+    margin-bottom:7px;letter-spacing:.01em;
+  }
+  .token-row{display:flex;gap:6px}
+  .token-row input{
+    flex:1;min-width:0;height:36px;padding:0 11px;border-radius:8px;
+    border:1px solid var(--line-strong);font-family:var(--mono);font-size:12.5px;
+    outline:0;transition:border-color .15s,box-shadow .15s;background:#fff;color:var(--text);
+  }
+  .token-row input:focus{border-color:#8a8a80;box-shadow:0 0 0 3px rgba(20,20,15,.07)}
+  .text-input{
+    width:100%;height:36px;padding:0 11px;border-radius:8px;
+    border:1px solid var(--line-strong);font-family:var(--mono);font-size:13px;
+    outline:0;background:#fff;color:var(--text);transition:border-color .15s,box-shadow .15s;
+  }
+  .text-input:focus{border-color:#8a8a80;box-shadow:0 0 0 3px rgba(20,20,15,.07)}
+  .hint code{
+    font-family:var(--mono);font-size:11.5px;background:var(--soft);
+    padding:1px 5px;border-radius:4px;
+  }
+  #buildStatus.built{color:var(--ok);font-weight:600}
+  #buildStatus.building{color:var(--warn)}
+  #buildStatus.errored{color:#c0392b;font-weight:600}
+  .help-link{
+    display:inline-block;margin-top:9px;font-size:12px;color:#3b5aa8;
+    text-decoration:none;font-weight:520;
+  }
+  .help-link:hover{text-decoration:underline}
+  .hint{margin:10px 0 0;font-size:12px;color:var(--muted);line-height:1.6}
+  .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:24px}
+
+  .steps{list-style:none;margin:6px 0 4px;padding:0;display:flex;flex-direction:column;gap:14px}
+  .steps li{display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--muted)}
+  .steps .tick{
+    width:17px;height:17px;border-radius:50%;border:1.5px solid #d8d8d0;
+    flex:0 0 auto;display:grid;place-items:center;transition:.2s;
+  }
+  .steps li.run{color:var(--text)}
+  .steps li.run .tick{border-color:#8a8a80;border-top-color:transparent;animation:spin .7s linear infinite}
+  .steps li.done{color:var(--text)}
+  .steps li.done .tick{border-color:var(--ok);background:var(--ok)}
+  .steps li.done .tick::after{content:"";width:8px;height:4.5px;border-left:1.6px solid #fff;border-bottom:1.6px solid #fff;transform:rotate(-45deg) translate(.5px,-1px)}
+  .steps li.err .tick{border-color:#c0392b;background:#c0392b}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .link-box{
+    display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;
+    border:1px solid #cfe9dc;background:#f4fbf7;border-radius:10px;
+  }
+  .link-box a{
+    flex:1;min-width:0;font-family:var(--mono);font-size:12.5px;color:#0d6b43;
+    text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    font-weight:520;
+  }
+  .link-box a:hover{text-decoration:underline}
+  .alt-links{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .alt-row{display:flex;gap:10px;align-items:baseline;font-size:12px}
+  .alt-row span{flex:0 0 68px;color:var(--faint);font-weight:520}
+  .alt-row a{
+    flex:1;min-width:0;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .alt-row a:hover{color:var(--text);text-decoration:underline}
+
+  .history{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}
+  .history h3{margin:0 0 10px;font-size:11.5px;font-weight:600;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+  .hitem{
+    display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:7px;font-size:12px;
+  }
+  .hitem:hover{background:#faf9f6}
+  .hitem time{flex:0 0 auto;color:var(--faint);font-family:var(--mono);font-size:11px}
+  .hitem a{
+    flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:11.5px;
+  }
+  .hitem a:hover{color:var(--text)}
+
+  .err-box{
+    padding:12px 14px;border-radius:9px;background:#fdf3f2;border:1px solid #f2d6d2;
+    color:#9c2f22;font-size:12.5px;line-height:1.65;margin-bottom:16px;
+  }
+  .err-box code{font-family:var(--mono);font-size:11.5px}
+
+  /* ---------- toast ---------- */
+  .toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,14px);
+    background:var(--ink);color:#fff;padding:10px 17px;border-radius:10px;
+    font-size:13px;font-weight:500;opacity:0;pointer-events:none;
+    transition:opacity .22s,transform .22s;z-index:99;
+    box-shadow:0 16px 40px -16px rgba(0,0,0,.5);max-width:80vw;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  .kbd{
+    display:inline-block;padding:1px 5px;border-radius:4px;border:1px solid var(--line-strong);
+    background:#fbfbf8;font-family:var(--mono);font-size:10.5px;color:var(--muted);
+    line-height:1.6;
+  }
+  @media (max-width:820px){
+    .workspace{grid-template-columns:1fr;grid-template-rows:1fr 1px 1fr}
+    .splitter{cursor:row-resize}
+    .brand small{display:none}
+  }
+</style>
+<script id="cyxy-subtitles-inject" src="chrome-extension://abbgboelhkajgikdbjclaecchkneaoma/dist/video-subtitle.js"></script>
+
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark">&lt;/&gt;</span>
+    HTML2WEB <small>把 HTML 变成网址</small>
+  </div>
+  <div class="pill live" id="statusPill" title="https://zl1862004.github.io/HTML22WEB/"><span class="dot"></span>已发布 · 11/03 09:05</div>
+  <div class="spacer"></div>
+  <button class="btn btn-ghost btn-sm" id="btnOpen">打开文件</button>
+  <button class="btn btn-ghost btn-sm" id="btnDownload">下载</button>
+  <button class="btn btn-ghost btn-sm" id="btnSelf" title="把 HTML2WEB 本身发布成一个网址，以后任何设备打开即可使用">发布本工具</button>
+  <button class="btn btn-ghost btn-sm" id="btnSettings">设置</button>
+  <button class="btn btn-primary" id="btnPublish">发布上线</button>
+</header>
+
+<main class="workspace" id="workspace">
+  <section class="pane">
+    <div class="pane-head">
+      <span class="pane-title">源码</span>
+      <span class="tab"><i></i>index.html</span>
+      <div class="spacer"></div>
+      <span style="font-size:11.5px;color:var(--faint)">拖入 .html 文件即可导入</span>
+    </div>
+    <div class="code-wrap" id="codeWrap">
+      <div class="gutter" id="gutter"><div id="gutterInner">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950</div></div>
+      <textarea id="code" spellcheck="false" autocapitalize="off" autocorrect="off" wrap="off" aria-label="HTML 源码"></textarea>
+      <div class="drop-hint" id="dropHint">松开即可导入 HTML 文件</div>
+    </div>
+  </section>
+
+  <div class="splitter" id="splitter" role="separator" aria-orientation="vertical"></div>
+
+  <section class="pane">
+    <div class="pane-head">
+      <span class="pane-title">预览</span>
+      <div class="spacer"></div>
+      <div class="seg" id="deviceSeg">
+        <button data-dev="desktop" class="on">桌面</button>
+        <button data-dev="tablet" class="">平板</button>
+        <button data-dev="phone" class="">手机</button>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="btnRefresh" title="重新渲染 (Ctrl+Enter)">刷新</button>
+      <button class="btn btn-ghost btn-sm" id="btnNewTab" title="在新标签页打开">新窗口</button>
+    </div>
+    <div class="stage" id="stage">
+      <iframe id="preview" sandbox="allow-scripts allow-forms allow-modals allow-popups allow-pointer-lock" title="预览" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;&lt;meta name=&quot;AIGC&quot; content='{&quot;AIGC&quot;:{&quot;Label&quot;:&quot;1&quot;,&quot;ContentProducer&quot;:&quot;001191340000711771143J00000&quot;,&quot;ProduceID&quot;:&quot;im-wechat-7eb828f6dc34-efdfcd10&quot;,&quot;ReservedCode1&quot;:&quot;&quot;,&quot;ContentPropagator&quot;:&quot;001191340000711771143J00000&quot;,&quot;PropagateID&quot;:&quot;im-wechat-7eb828f6dc34-efdfcd10&quot;,&quot;ReservedCode2&quot;:&quot;&quot;}}'&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;
+&lt;title&gt;元素周期表前20号元素消消乐（进阶版）- 初中化学课堂互动&lt;/title&gt;
+&lt;style&gt;
   :root {
     --card-bg: rgba(30, 41, 59, 0.85);
     --card-border: rgba(255, 255, 255, 0.15);
@@ -23,7 +1313,7 @@
     padding: 0;
     user-select: none;
     -webkit-user-select: none;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, sans-serif;
   }
 
   body {
@@ -421,92 +1711,92 @@
     .grid-board { gap: 5px; }
     .mode-btn { font-size: 0.68rem; padding: 4px 7px; }
   }
-</style>
-</head>
-<body>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-<header>
-  <div class="title-bar">
-    <h1>🔥 前20号元素消消乐 · 进阶版</h1>
-    <button class="btn btn-restart" onclick="game.initLevel()">🔄 重新开始</button>
-  </div>
-  <div class="stats-bar">
-    <div class="stat-card">
-      <span class="stat-label">当前关卡</span>
-      <span class="stat-val" id="valLevel">第1关</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-label">得分</span>
-      <span class="stat-val" id="valScore">0</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-label">连击</span>
-      <span class="stat-val" id="valCombo">0</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-label">剩余时间</span>
-      <span class="stat-val" id="valTimer">01:10</span>
-    </div>
-  </div>
-</header>
+&lt;header&gt;
+  &lt;div class=&quot;title-bar&quot;&gt;
+    &lt;h1&gt;🔥 前20号元素消消乐 · 进阶版&lt;/h1&gt;
+    &lt;button class=&quot;btn btn-restart&quot; onclick=&quot;game.initLevel()&quot;&gt;🔄 重新开始&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;stats-bar&quot;&gt;
+    &lt;div class=&quot;stat-card&quot;&gt;
+      &lt;span class=&quot;stat-label&quot;&gt;当前关卡&lt;/span&gt;
+      &lt;span class=&quot;stat-val&quot; id=&quot;valLevel&quot;&gt;第1关&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;stat-card&quot;&gt;
+      &lt;span class=&quot;stat-label&quot;&gt;得分&lt;/span&gt;
+      &lt;span class=&quot;stat-val&quot; id=&quot;valScore&quot;&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;stat-card&quot;&gt;
+      &lt;span class=&quot;stat-label&quot;&gt;连击&lt;/span&gt;
+      &lt;span class=&quot;stat-val&quot; id=&quot;valCombo&quot;&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;stat-card&quot;&gt;
+      &lt;span class=&quot;stat-label&quot;&gt;剩余时间&lt;/span&gt;
+      &lt;span class=&quot;stat-val&quot; id=&quot;valTimer&quot;&gt;01:10&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
 
-<div class="control-panel">
-  <div class="mode-selector">
-    <button class="mode-btn active" data-level="1" onclick="game.switchLevel(1)">① 1-10号</button>
-    <button class="mode-btn" data-level="2" onclick="game.switchLevel(2)">② 11-20号</button>
-    <button class="mode-btn" data-level="3" onclick="game.switchLevel(3)">③ 混合表征</button>
-    <button class="mode-btn" data-level="4" onclick="game.switchLevel(4)">④ 记忆翻牌</button>
-  </div>
-  <div class="legend-bar">
-    <div class="legend-item"><span class="legend-dot" style="background:var(--nonmetal)"></span>非金属</div>
-    <div class="legend-item"><span class="legend-dot" style="background:var(--metal)"></span>金属</div>
-    <div class="legend-item"><span class="legend-dot" style="background:var(--noble)"></span>稀有气体</div>
-  </div>
-</div>
+&lt;div class=&quot;control-panel&quot;&gt;
+  &lt;div class=&quot;mode-selector&quot;&gt;
+    &lt;button class=&quot;mode-btn active&quot; data-level=&quot;1&quot; onclick=&quot;game.switchLevel(1)&quot;&gt;① 1-10号&lt;/button&gt;
+    &lt;button class=&quot;mode-btn&quot; data-level=&quot;2&quot; onclick=&quot;game.switchLevel(2)&quot;&gt;② 11-20号&lt;/button&gt;
+    &lt;button class=&quot;mode-btn&quot; data-level=&quot;3&quot; onclick=&quot;game.switchLevel(3)&quot;&gt;③ 混合表征&lt;/button&gt;
+    &lt;button class=&quot;mode-btn&quot; data-level=&quot;4&quot; onclick=&quot;game.switchLevel(4)&quot;&gt;④ 记忆翻牌&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;legend-bar&quot;&gt;
+    &lt;div class=&quot;legend-item&quot;&gt;&lt;span class=&quot;legend-dot&quot; style=&quot;background:var(--nonmetal)&quot;&gt;&lt;/span&gt;非金属&lt;/div&gt;
+    &lt;div class=&quot;legend-item&quot;&gt;&lt;span class=&quot;legend-dot&quot; style=&quot;background:var(--metal)&quot;&gt;&lt;/span&gt;金属&lt;/div&gt;
+    &lt;div class=&quot;legend-item&quot;&gt;&lt;span class=&quot;legend-dot&quot; style=&quot;background:var(--noble)&quot;&gt;&lt;/span&gt;稀有气体&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-<main class="game-container">
-  <div class="timer-wrap"><div class="timer-bar" id="timerBar"></div></div>
-  <div id="comboPopup" class="combo-popup">COMBO x2!</div>
-  <div id="penaltyPopup" class="penalty-popup">-20分 / -3秒</div>
-  <div id="gridBoard" class="grid-board grid-4x5"></div>
-</main>
+&lt;main class=&quot;game-container&quot;&gt;
+  &lt;div class=&quot;timer-wrap&quot;&gt;&lt;div class=&quot;timer-bar&quot; id=&quot;timerBar&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div id=&quot;comboPopup&quot; class=&quot;combo-popup&quot;&gt;COMBO x2!&lt;/div&gt;
+  &lt;div id=&quot;penaltyPopup&quot; class=&quot;penalty-popup&quot;&gt;-20分 / -3秒&lt;/div&gt;
+  &lt;div id=&quot;gridBoard&quot; class=&quot;grid-board grid-4x5&quot;&gt;&lt;/div&gt;
+&lt;/main&gt;
 
-<div class="knowledge-card">
-  <div class="know-title">💡 化学速记:</div>
-  <div class="know-content" id="knowContent">限时挑战！点击两张相互匹配的卡片即可消除，配错扣分并扣除 3 秒。</div>
-</div>
+&lt;div class=&quot;knowledge-card&quot;&gt;
+  &lt;div class=&quot;know-title&quot;&gt;💡 化学速记:&lt;/div&gt;
+  &lt;div class=&quot;know-content&quot; id=&quot;knowContent&quot;&gt;限时挑战！点击两张相互匹配的卡片即可消除，配错扣分并扣除 3 秒。&lt;/div&gt;
+&lt;/div&gt;
 
-<div class="modal-overlay" id="resultModal">
-  <div class="win-modal" id="resultCard">
-    <div class="win-icon" id="resIcon">🎉</div>
-    <div class="win-title" id="resTitle">挑战成功！</div>
-    <p style="color: var(--text-sub); font-size: 0.88rem; margin-bottom: 12px;" id="resDesc">你已完全掌握前 10 号元素！</p>
-    <div class="win-stats">
-      <div class="win-stat-item">
-        <span class="win-stat-label">最终得分</span>
-        <span class="win-stat-val" id="resScore">0</span>
-      </div>
-      <div class="win-stat-item">
-        <span class="win-stat-label">用时</span>
-        <span class="win-stat-val" id="resTime">00:00</span>
-      </div>
-      <div class="win-stat-item">
-        <span class="win-stat-label">最高连击</span>
-        <span class="win-stat-val" id="resCombo">0 连击</span>
-      </div>
-      <div class="win-stat-item">
-        <span class="win-stat-label">评价</span>
-        <span class="win-stat-val" id="resRank">化学新星 ✨</span>
-      </div>
-    </div>
-    <div class="modal-btns">
-      <button class="btn" id="resPrimaryBtn" onclick="game.modalPrimary()">下一关</button>
-      <button class="btn btn-restart" onclick="game.closeModal()">返回查看</button>
-    </div>
-  </div>
-</div>
+&lt;div class=&quot;modal-overlay&quot; id=&quot;resultModal&quot;&gt;
+  &lt;div class=&quot;win-modal&quot; id=&quot;resultCard&quot;&gt;
+    &lt;div class=&quot;win-icon&quot; id=&quot;resIcon&quot;&gt;🎉&lt;/div&gt;
+    &lt;div class=&quot;win-title&quot; id=&quot;resTitle&quot;&gt;挑战成功！&lt;/div&gt;
+    &lt;p style=&quot;color: var(--text-sub); font-size: 0.88rem; margin-bottom: 12px;&quot; id=&quot;resDesc&quot;&gt;你已完全掌握前 10 号元素！&lt;/p&gt;
+    &lt;div class=&quot;win-stats&quot;&gt;
+      &lt;div class=&quot;win-stat-item&quot;&gt;
+        &lt;span class=&quot;win-stat-label&quot;&gt;最终得分&lt;/span&gt;
+        &lt;span class=&quot;win-stat-val&quot; id=&quot;resScore&quot;&gt;0&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;win-stat-item&quot;&gt;
+        &lt;span class=&quot;win-stat-label&quot;&gt;用时&lt;/span&gt;
+        &lt;span class=&quot;win-stat-val&quot; id=&quot;resTime&quot;&gt;00:00&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;win-stat-item&quot;&gt;
+        &lt;span class=&quot;win-stat-label&quot;&gt;最高连击&lt;/span&gt;
+        &lt;span class=&quot;win-stat-val&quot; id=&quot;resCombo&quot;&gt;0 连击&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;win-stat-item&quot;&gt;
+        &lt;span class=&quot;win-stat-label&quot;&gt;评价&lt;/span&gt;
+        &lt;span class=&quot;win-stat-val&quot; id=&quot;resRank&quot;&gt;化学新星 ✨&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-btns&quot;&gt;
+      &lt;button class=&quot;btn&quot; id=&quot;resPrimaryBtn&quot; onclick=&quot;game.modalPrimary()&quot;&gt;下一关&lt;/button&gt;
+      &lt;button class=&quot;btn btn-restart&quot; onclick=&quot;game.closeModal()&quot;&gt;返回查看&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-<script>
+&lt;script&gt;
 /* ============ 元素数据库（前20号元素） ============ */
 const ELEMENTS_DB = [
   { z: 1, symbol: 'H', name: '氢', mass: 1.008, type: 'nonmetal', desc: '最轻的气体，常见化合价+1' },
@@ -569,20 +1859,20 @@ class SoundFx {
   match(combo) {
     const step = Math.min(combo, 8);
     this.play(523.25 * Math.pow(1.12, step), 'triangle', 0.24, 0.18);
-    setTimeout(() => this.play(523.25 * Math.pow(1.12, step + 2), 'sine', 0.22, 0.13), 60);
+    setTimeout(() =&gt; this.play(523.25 * Math.pow(1.12, step + 2), 'sine', 0.22, 0.13), 60);
   }
   wrong() {
     this.play(180, 'sawtooth', 0.22, 0.16);
-    setTimeout(() => this.play(140, 'sawtooth', 0.2, 0.16), 80);
+    setTimeout(() =&gt; this.play(140, 'sawtooth', 0.2, 0.16), 80);
   }
   win() {
-    [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
-      setTimeout(() => this.play(f, 'triangle', 0.32, 0.18), i * 100);
+    [523.25, 659.25, 783.99, 1046.50].forEach((f, i) =&gt; {
+      setTimeout(() =&gt; this.play(f, 'triangle', 0.32, 0.18), i * 100);
     });
   }
   lose() {
-    [392, 330, 262, 196].forEach((f, i) => {
-      setTimeout(() => this.play(f, 'sawtooth', 0.32, 0.16), i * 130);
+    [392, 330, 262, 196].forEach((f, i) =&gt; {
+      setTimeout(() =&gt; this.play(f, 'sawtooth', 0.32, 0.16), i * 130);
     });
   }
 }
@@ -647,7 +1937,7 @@ class ElementGame {
 
     // 生成卡片
     const cardsData = [];
-    pool.forEach((elem) => {
+    pool.forEach((elem) =&gt; {
       let types;
       if (cfg.reprMode === 'mixed') {
         const all = ['symbol', 'name', 'number'];
@@ -656,7 +1946,7 @@ class ElementGame {
       } else {
         types = ['symbol', 'name'];
       }
-      types.forEach((t) => cardsData.push(this.buildCard(elem, t)));
+      types.forEach((t) =&gt; cardsData.push(this.buildCard(elem, t)));
     });
 
     this.totalPairs = pool.length;
@@ -700,20 +1990,20 @@ class ElementGame {
     const board = document.getElementById('gridBoard');
     board.innerHTML = '';
     const n = this.cards.length;
-    board.className = 'grid-board ' + (n <= 20 ? 'grid-4x5' : 'grid-6x4');
+    board.className = 'grid-board ' + (n &lt;= 20 ? 'grid-4x5' : 'grid-6x4');
 
-    this.cards.forEach((item, index) => {
+    this.cards.forEach((item, index) =&gt; {
       const cardEl = document.createElement('div');
       cardEl.className = 'chem-card type-' + item.elemData.type + (this.memoryMode ? ' face-down' : '');
       cardEl.dataset.index = index;
 
       cardEl.innerHTML =
-        '<span class="card-type-tag">' + item.tagName + '</span>' +
-        '<span class="card-category-dot dot-' + item.elemData.type + '"></span>' +
-        '<div class="card-main-val">' + item.displayMain + '</div>' +
-        '<div class="card-sub-info">' + item.displaySub + '</div>';
+        '&lt;span class=&quot;card-type-tag&quot;&gt;' + item.tagName + '&lt;/span&gt;' +
+        '&lt;span class=&quot;card-category-dot dot-' + item.elemData.type + '&quot;&gt;&lt;/span&gt;' +
+        '&lt;div class=&quot;card-main-val&quot;&gt;' + item.displayMain + '&lt;/div&gt;' +
+        '&lt;div class=&quot;card-sub-info&quot;&gt;' + item.displaySub + '&lt;/div&gt;';
 
-      cardEl.addEventListener('click', () => this.handleCardClick(index, cardEl));
+      cardEl.addEventListener('click', () =&gt; this.handleCardClick(index, cardEl));
       board.appendChild(cardEl);
     });
   }
@@ -739,7 +2029,7 @@ class ElementGame {
     const elem = cardData.elemData;
     const typeCn = elem.type === 'nonmetal' ? '非金属元素' : (elem.type === 'metal' ? '金属元素' : '稀有气体');
     document.getElementById('knowContent').innerHTML =
-      '<strong>' + elem.z + '号 ' + elem.name + '（' + elem.symbol + '）</strong>：' + typeCn + '，' + elem.desc;
+      '&lt;strong&gt;' + elem.z + '号 ' + elem.name + '（' + elem.symbol + '）&lt;/strong&gt;：' + typeCn + '，' + elem.desc;
 
     if (this.selectedCards.length === 2) this.checkMatch();
   }
@@ -750,19 +2040,19 @@ class ElementGame {
     const c1 = this.selectedCards[0];
     const c2 = this.selectedCards[1];
 
-    if (c1.data.elemZ === c2.data.elemZ && c1.index !== c2.index) {
+    if (c1.data.elemZ === c2.data.elemZ &amp;&amp; c1.index !== c2.index) {
       /* --- 匹配成功 --- */
       this.combo++;
-      if (this.combo > this.maxCombo) this.maxCombo = this.combo;
+      if (this.combo &gt; this.maxCombo) this.maxCombo = this.combo;
 
-      const bonus = this.currentLevel >= 4 ? 1.5 : (this.currentLevel === 3 ? 1.2 : 1);
+      const bonus = this.currentLevel &gt;= 4 ? 1.5 : (this.currentLevel === 3 ? 1.2 : 1);
       this.score += Math.round((100 + (this.combo - 1) * 30) * bonus);
       this.matchedPairs++;
 
       sfx.match(this.combo);
-      if (this.combo >= 2) this.showPopup('comboPopup', 'COMBO x' + this.combo + '!');
+      if (this.combo &gt;= 2) this.showPopup('comboPopup', 'COMBO x' + this.combo + '!');
 
-      setTimeout(() => {
+      setTimeout(() =&gt; {
         c1.el.classList.remove('selected');
         c2.el.classList.remove('selected');
         c1.el.classList.add('matched');
@@ -772,7 +2062,7 @@ class ElementGame {
         this.isLocked = false;
         this.updateStats();
 
-        if (this.matchedPairs >= this.totalPairs) this.handleWin();
+        if (this.matchedPairs &gt;= this.totalPairs) this.handleWin();
       }, 320);
 
     } else {
@@ -787,9 +2077,9 @@ class ElementGame {
       this.updateStats();
       this.updateTimerUI();
 
-      const timeOut = this.remaining <= 0;
+      const timeOut = this.remaining &lt;= 0;
 
-      setTimeout(() => {
+      setTimeout(() =&gt; {
         c1.el.classList.remove('selected', 'wrong');
         c2.el.classList.remove('selected', 'wrong');
         if (this.memoryMode) {
@@ -808,7 +2098,7 @@ class ElementGame {
     const el = document.getElementById(id);
     el.textContent = text;
     el.classList.add('show');
-    setTimeout(() => el.classList.remove('show'), 600);
+    setTimeout(() =&gt; el.classList.remove('show'), 600);
   }
 
   /* ---------- 计分板 ---------- */
@@ -820,12 +2110,12 @@ class ElementGame {
   /* ---------- 倒计时 ---------- */
   startTimer() {
     this.clearTimer();
-    this.timerInterval = setInterval(() => {
+    this.timerInterval = setInterval(() =&gt; {
       if (this.gameOver) return;
       this.remaining--;
       this.elapsed++;
       this.updateTimerUI();
-      if (this.remaining <= 0) this.handleLose();
+      if (this.remaining &lt;= 0) this.handleLose();
     }, 1000);
   }
 
@@ -842,14 +2132,14 @@ class ElementGame {
     const s = String(r % 60).padStart(2, '0');
     const timerEl = document.getElementById('valTimer');
     timerEl.textContent = m + ':' + s;
-    timerEl.classList.toggle('time-warning', r <= 20 && r > 10);
-    timerEl.classList.toggle('time-danger', r <= 10);
+    timerEl.classList.toggle('time-warning', r &lt;= 20 &amp;&amp; r &gt; 10);
+    timerEl.classList.toggle('time-danger', r &lt;= 10);
 
     const bar = document.getElementById('timerBar');
-    const pct = this.timeLimit > 0 ? Math.max(0, (r / this.timeLimit) * 100) : 0;
+    const pct = this.timeLimit &gt; 0 ? Math.max(0, (r / this.timeLimit) * 100) : 0;
     bar.style.width = pct + '%';
-    bar.classList.toggle('warning', pct <= 35 && pct > 15);
-    bar.classList.toggle('danger', pct <= 15);
+    bar.classList.toggle('warning', pct &lt;= 35 &amp;&amp; pct &gt; 15);
+    bar.classList.toggle('danger', pct &lt;= 15);
   }
 
   /* ---------- 结算 ---------- */
@@ -868,14 +2158,14 @@ class ElementGame {
       '你已通过「' + cfg.title + '」，剩余 ' + this.remaining + ' 秒。';
 
     let rank = '化学新星 ✨';
-    if (this.score >= 2000) rank = '元素大师 👑';
-    else if (this.score >= 1400) rank = '化学学霸 🌟';
-    else if (this.score >= 900) rank = '化学能手 💪';
+    if (this.score &gt;= 2000) rank = '元素大师 👑';
+    else if (this.score &gt;= 1400) rank = '化学学霸 🌟';
+    else if (this.score &gt;= 900) rank = '化学能手 💪';
     document.getElementById('resRank').textContent = rank;
 
-    this.modalNextLevel = this.currentLevel >= 4 ? 1 : this.currentLevel + 1;
+    this.modalNextLevel = this.currentLevel &gt;= 4 ? 1 : this.currentLevel + 1;
     document.getElementById('resPrimaryBtn').textContent =
-      this.currentLevel >= 4 ? '从头再来' : '下一关（更难）';
+      this.currentLevel &gt;= 4 ? '从头再来' : '下一关（更难）';
 
     this.fillResultStats();
     document.getElementById('resultModal').classList.add('active');
@@ -921,7 +2211,7 @@ class ElementGame {
 
   /* ---------- 关卡切换 ---------- */
   switchLevel(lvl) {
-    document.querySelectorAll('.mode-btn').forEach((btn) => {
+    document.querySelectorAll('.mode-btn').forEach((btn) =&gt; {
       btn.classList.toggle('active', parseInt(btn.dataset.level, 10) === lvl);
     });
     this.initLevel(lvl);
@@ -929,7 +2219,7 @@ class ElementGame {
 
   /* ---------- 洗牌 ---------- */
   shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+    for (let i = array.length - 1; i &gt; 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       const tmp = array[i];
       array[i] = array[j];
@@ -940,10 +2230,1085 @@ class ElementGame {
 }
 
 const game = new ElementGame();
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () =&gt; {
   game.initLevel(1);
 });
-</script>
-<!--aigc-badge--><div data-aigc="notice" style="position:fixed;left:0;right:0;bottom:8px;z-index:2147483647;pointer-events:none;text-align:center;font:12px/1.5 'PingFang SC','Microsoft YaHei',sans-serif"><span style="display:inline-block;padding:3px 10px;border-radius:10px;background:rgba(255,255,255,.88);color:#555;border:1px solid rgba(0,0,0,.14)">内容由 AI生成，请仔细甄别</span></div>
-</body>
-</html>
+&lt;/script&gt;
+&lt;!--aigc-badge--&gt;&lt;div data-aigc=&quot;notice&quot; style=&quot;position:fixed;left:0;right:0;bottom:8px;z-index:2147483647;pointer-events:none;text-align:center;font:12px/1.5 'PingFang SC','Microsoft YaHei',sans-serif&quot;&gt;&lt;span style=&quot;display:inline-block;padding:3px 10px;border-radius:10px;background:rgba(255,255,255,.88);color:#555;border:1px solid rgba(0,0,0,.14)&quot;&gt;内容由 AI生成，请仔细甄别&lt;/span&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span><b id="stChars">29,414</b> 字符</span>
+  <span class="sep"></span>
+  <span><b id="stLines">950</b> 行</span>
+  <span class="sep"></span>
+  <span id="stSaved">已自动保存 · 11/03 09:41</span>
+  <div class="spacer" style="flex:1"></div>
+  <span id="stToken" class="status-ok">令牌已配置 · 可发布</span>
+</footer>
+
+<!-- ======================= 发布面板 ======================= -->
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+
+    <!-- 步骤 1：配置 -->
+    <section id="stepConfig">
+      <h2 class="modal-title" id="modalTitle">HTML2WEB 已上线</h2>
+      <p class="modal-sub">全部免费、无服务器。两种方式按需选择，令牌只存在你本机浏览器。</p>
+
+      <label class="field-label">发布方式</label>
+      <div class="seg" id="modeSeg" style="padding:3px">
+        <button data-mode="gist" class="">快速上线</button>
+        <button data-mode="pages" class="on">正式网站</button>
+      </div>
+      <p class="hint" id="modeHint">GitHub Pages 正式网站：网址固定不变，内容随发布更新，无第三方渲染层。需 repo 权限令牌，全部免费。</p>
+
+      <div id="repoRow" style="margin-top:16px">
+        <label class="field-label" for="repoInput">仓库名（正式网址的一部分）</label>
+        <input id="repoInput" class="text-input" placeholder="html2web" autocomplete="off" spellcheck="false">
+        <p class="hint">网址形如 <code>你的用户名.github.io/仓库名/</code>，<b>固定不变</b>，内容随每次发布自动更新。首次发布后 GitHub 需 1–2 分钟构建。</p>
+      </div>
+
+      <label class="field-label" for="tokenInput" style="margin-top:20px">GitHub 访问令牌 · Personal Access Token</label>
+      <div class="token-row">
+        <input id="tokenInput" type="text" placeholder="ghp_xxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+        <button class="btn btn-sm" id="toggleToken" type="button" style="height:36px;padding:0 12px">隐藏</button>
+      </div>
+      <a class="help-link" id="tokenHelp" href="https://github.com/settings/tokens/new?scopes=repo,gist&amp;description=HTML2WEB" target="_blank" rel="noopener">去创建一个勾选 repo 权限的令牌（fine-grained 需 Contents + Administration）→</a>
+
+      <div id="visBlock" style="margin-top:20px" hidden="">
+        <label class="field-label">可见性</label>
+        <div class="seg" id="visSeg" style="padding:3px">
+          <button data-vis="public" class="on">公开</button>
+          <button data-vis="secret">私密</button>
+        </div>
+        <p class="hint" id="visHint">公开 Gist 会出现在你的 Gist 主页，任何人拿到链接都能访问。</p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="cancelBtn">取消</button>
+        <button class="btn btn-primary" id="doPublish">保存并发布</button>
+      </div>
+    </section>
+
+    <!-- 步骤 2：进行中 -->
+    <section id="stepLoading" hidden="">
+      <h2 class="modal-title">正在发布</h2>
+      <p class="modal-sub" id="loadingSub">首次发布需等 GitHub 构建 1–2 分钟，之后每次更新约 1 分钟内生效。</p>
+      <ul class="steps" id="stepsList"><li class=""><span class="tick"></span>验证 GitHub 身份</li><li class=""><span class="tick"></span>准备仓库 HTML22WEB</li><li class=""><span class="tick"></span>上传 index.html</li><li class=""><span class="tick"></span>启用 Pages 并生成网址</li></ul>
+      <div id="loadingErr"></div>
+    </section>
+
+    <!-- 步骤 3：结果 -->
+    <section id="stepResult" hidden="">
+      <h2 class="modal-title">已上线</h2>
+      <p class="modal-sub" id="resultSub">网址固定不变，以后每次发布都更新这个页面。首次发布 GitHub 需 1–2 分钟构建，稍等片刻再打开。</p>
+
+      <div class="link-box">
+        <a id="mainLink" href="https://zl1862004.github.io/HTML22WEB/" target="_blank" rel="noopener" title="https://zl1862004.github.io/HTML22WEB/">https://zl1862004.github.io/HTML22WEB/</a>
+        <button class="btn btn-sm" id="copyMain">复制</button>
+      </div>
+
+      <div class="alt-links">
+        <div class="alt-row"><span id="altLabel">构建记录</span><a id="altLink" target="_blank" rel="noopener" href="https://github.com/zl1862004/HTML22WEB/commits/main" title="https://github.com/zl1862004/HTML22WEB/commits/main">https://github.com/zl1862004/HTML22WEB/commits/main</a></div>
+        <div class="alt-row"><span>管理页面</span><a id="gistLink" target="_blank" rel="noopener" href="https://github.com/zl1862004/HTML22WEB/settings/pages" title="https://github.com/zl1862004/HTML22WEB/settings/pages">https://github.com/zl1862004/HTML22WEB/settings/pages</a></div>
+        <div class="alt-row" id="buildRow">
+          <span>部署状态</span>
+          <span id="buildStatus" style="font-size:12px;color:var(--muted)" class="">—</span>
+          <button class="btn btn-sm" id="btnBuild" style="margin-left:auto">刷新</button>
+        </div>
+      </div>
+      <p class="hint" id="resultHint">链接永久固定。首次发布后 GitHub 需 1–2 分钟构建，期间打开可能显示 404，稍等再用上方按钮查看部署状态。</p>
+
+      <div class="modal-actions">
+        <button class="btn" id="closeResult">完成</button>
+        <button class="btn btn-primary" id="openMain">打开页面</button>
+      </div>
+
+      <div class="history" id="historyWrap">
+        <h3>最近发布</h3>
+        <div id="historyList"><div class="hitem"><time>11/03 08:57</time><a href="https://zl1862004.github.io/HTML222WEB/" target="_blank" rel="noopener" title="https://zl1862004.github.io/HTML222WEB/">zl1862004.github.io/HTML222WEB/</a><button class="btn btn-sm btn-ghost">复制</button></div><div class="hitem"><time>11/03 08:53</time><a href="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/db6015d1c91168d6ddc5bce6511354dc/raw/3e24f530e998af288bb342ed68675c7153242d02/index.html" target="_blank" rel="noopener" title="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/db6015d1c91168d6ddc5bce6511354dc/raw/3e24f530e998af288bb342ed68675c7153242d02/index.html">htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/db6015d1c91168d6ddc5bce6511354dc/raw/3e24f530e998af288bb342ed68675c7153242d02/index.html</a><button class="btn btn-sm btn-ghost">复制</button></div><div class="hitem"><time>11/03 08:50</time><a href="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/8431f27b0b39c01f633e28c2ac68f860/raw/bc1f42cf5e0df813c502044c27400b940923e329/index.html" target="_blank" rel="noopener" title="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/8431f27b0b39c01f633e28c2ac68f860/raw/bc1f42cf5e0df813c502044c27400b940923e329/index.html">htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/8431f27b0b39c01f633e28c2ac68f860/raw/bc1f42cf5e0df813c502044c27400b940923e329/index.html</a><button class="btn btn-sm btn-ghost">复制</button></div><div class="hitem"><time>11/03 08:49</time><a href="https://zl1862004.github.io/html222web/" target="_blank" rel="noopener" title="https://zl1862004.github.io/html222web/">zl1862004.github.io/html222web/</a><button class="btn btn-sm btn-ghost">复制</button></div><div class="hitem"><time>11/03 08:48</time><a href="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/c9a1d75370973f2a41239e50aa3c7e3c/raw/fe852b21d6637bdc6ff2cebf49c7cbe1b3c00363/index.html" target="_blank" rel="noopener" title="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/c9a1d75370973f2a41239e50aa3c7e3c/raw/fe852b21d6637bdc6ff2cebf49c7cbe1b3c00363/index.html">htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/c9a1d75370973f2a41239e50aa3c7e3c/raw/fe852b21d6637bdc6ff2cebf49c7cbe1b3c00363/index.html</a><button class="btn btn-sm btn-ghost">复制</button></div><div class="hitem"><time>11/03 08:19</time><a href="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/92db31ace26c161bc4f45d94c55a3f01/raw/c6658e95a67bbd7badfe0048e205b896ddb5c5fe/index.html" target="_blank" rel="noopener" title="https://htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/92db31ace26c161bc4f45d94c55a3f01/raw/c6658e95a67bbd7badfe0048e205b896ddb5c5fe/index.html">htmlpreview.github.io/?https://gist.githubusercontent.com/zl1862004/92db31ace26c161bc4f45d94c55a3f01/raw/c6658e95a67bbd7badfe0048e205b896ddb5c5fe/index.html</a><button class="btn btn-sm btn-ghost">复制</button></div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast">请先填入 GitHub 令牌</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ------------------------------------------------------------------ *
+   *  常量与状态
+   * ------------------------------------------------------------------ */
+  var LS = {
+    code: "h2w.code",
+    token: "h2w.token",
+    vis: "h2w.visibility",
+    mode: "h2w.mode",
+    repo: "h2w.repo",
+    history: "h2w.history",
+    left: "h2w.left"
+  };
+
+  var SAMPLE = [
+    '<!doctype html>',
+    '<html lang="zh-CN">',
+    '<head>',
+    '<meta charset="utf-8">',
+    '<meta name="viewport" content="width=device-width,initial-scale=1">',
+    '<title>Hello, Web</title>',
+    '<style>',
+    '  *{box-sizing:border-box}',
+    '  body{',
+    '    margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;',
+    '    font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;',
+    '    background:radial-gradient(circle at 25% 15%,#eef2ff,#fafaf7 62%);',
+    '    color:#14140f;',
+    '  }',
+    '  .card{',
+    '    max-width:440px;padding:48px 44px;border-radius:20px;background:#fff;',
+    '    border:1px solid #e8e8e2;text-align:center;',
+    '    box-shadow:0 24px 70px -34px rgba(20,20,15,.4);',
+    '  }',
+    '  h1{margin:0 0 14px;font-size:28px;letter-spacing:-.025em;font-weight:650}',
+    '  p{margin:0 0 6px;color:#7c7c74;font-size:14.5px;line-height:1.75}',
+    '  .tag{',
+    '    display:inline-flex;align-items:center;gap:7px;margin-bottom:22px;',
+    '    padding:5px 12px;border-radius:999px;background:#e7f5ee;color:#0f7a4d;',
+    '    font-size:12px;font-weight:600;letter-spacing:.02em;',
+    '  }',
+    '  .tag i{width:6px;height:6px;border-radius:50%;background:currentColor}',
+    '</style>',
+    '</head>',
+    '<body>',
+    '  <div class="card">',
+    '    <div class="tag"><i></i>READY TO SHIP</div>',
+    '    <h1>Hello, Web</h1>',
+    '    <p>左边改代码，右边即时预览。</p>',
+    '    <p>点右上角「发布上线」，它就会变成一个真实的网址。</p>',
+    '  </div>',
+    '</body>',
+    '</html>'
+  ].join("\n");
+
+  var el = {
+    code: document.getElementById("code"),
+    gutter: document.getElementById("gutter"),
+    gutterInner: document.getElementById("gutterInner"),
+    preview: document.getElementById("preview"),
+    stage: document.getElementById("stage"),
+    workspace: document.getElementById("workspace"),
+    codeWrap: document.getElementById("codeWrap"),
+    splitter: document.getElementById("splitter"),
+    statusPill: document.getElementById("statusPill"),
+    stChars: document.getElementById("stChars"),
+    stLines: document.getElementById("stLines"),
+    stSaved: document.getElementById("stSaved"),
+    stToken: document.getElementById("stToken"),
+    overlay: document.getElementById("overlay"),
+    modal: document.querySelector(".modal"),
+    stepConfig: document.getElementById("stepConfig"),
+    stepLoading: document.getElementById("stepLoading"),
+    stepResult: document.getElementById("stepResult"),
+    tokenInput: document.getElementById("tokenInput"),
+    visSeg: document.getElementById("visSeg"),
+    visHint: document.getElementById("visHint"),
+    doPublish: document.getElementById("doPublish"),
+    mainLink: document.getElementById("mainLink"),
+    altLink: document.getElementById("altLink"),
+    gistLink: document.getElementById("gistLink"),
+    historyWrap: document.getElementById("historyWrap"),
+    historyList: document.getElementById("historyList"),
+    loadingErr: document.getElementById("loadingErr"),
+    loadingSub: document.getElementById("loadingSub"),
+    stepsList: document.getElementById("stepsList"),
+    modeSeg: document.getElementById("modeSeg"),
+    modeHint: document.getElementById("modeHint"),
+    repoRow: document.getElementById("repoRow"),
+    repoInput: document.getElementById("repoInput"),
+    tokenHelp: document.getElementById("tokenHelp"),
+    visBlock: document.getElementById("visBlock"),
+    resultSub: document.getElementById("resultSub"),
+    resultHint: document.getElementById("resultHint"),
+    altLabel: document.getElementById("altLabel"),
+    buildRow: document.getElementById("buildRow"),
+    buildStatus: document.getElementById("buildStatus"),
+    dropHint: document.getElementById("dropHint"),
+    toast: document.getElementById("toast")
+  };
+
+  var state = {
+    token: localStorage.getItem(LS.token) || "",
+    visibility: localStorage.getItem(LS.vis) || "public",
+    mode: localStorage.getItem(LS.mode) || "gist",
+    repoName: localStorage.getItem(LS.repo) || "html2web",
+    published: null,
+    busy: false,
+    pendingSelf: false
+  };
+
+  /* ------------------------------------------------------------------ *
+   *  工具函数
+   * ------------------------------------------------------------------ */
+  function toast(msg, ms) {
+    el.toast.textContent = msg;
+    el.toast.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () {
+      el.toast.classList.remove("show");
+    }, ms || 2200);
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () {
+        return legacyCopy(text);
+      });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+
+  function legacyCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  function shorten(url, max) {
+    max = max || 46;
+    return url.length <= max ? url : url.slice(0, max - 1) + "…";
+  }
+
+  function stamp() {
+    var d = new Date();
+    function p(n) { return n < 10 ? "0" + n : "" + n; }
+    return p(d.getMonth() + 1) + "/" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  编辑器
+   * ------------------------------------------------------------------ */
+  function updateGutter() {
+    var lines = el.code.value.split("\n").length;
+    var out = [];
+    for (var i = 1; i <= lines; i++) out.push(i);
+    el.gutterInner.textContent = out.join("\n");
+  }
+
+  function updateStats() {
+    var v = el.code.value;
+    var lines = v.split("\n").length;
+    el.stChars.textContent = v.length.toLocaleString("en-US");
+    el.stLines.textContent = lines;
+    updateGutter();
+  }
+
+  var saveTimer = null;
+  function scheduleSave() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      try {
+        localStorage.setItem(LS.code, el.code.value);
+        el.stSaved.textContent = "已自动保存 · " + stamp();
+      } catch (e) {
+        el.stSaved.textContent = "保存失败（存储空间不足）";
+      }
+    }, 700);
+  }
+
+  var renderTimer = null;
+  function scheduleRender() {
+    clearTimeout(renderTimer);
+    renderTimer = setTimeout(render, 520);
+  }
+
+  function render() {
+    el.preview.srcdoc = el.code.value;
+  }
+
+  el.code.addEventListener("input", function () {
+    updateStats();
+    scheduleSave();
+    scheduleRender();
+  });
+
+  el.code.addEventListener("scroll", function () {
+    el.gutter.scrollTop = el.code.scrollTop;
+  });
+
+  el.code.addEventListener("keydown", function (e) {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      var s = el.code.selectionStart;
+      var en = el.code.selectionEnd;
+      el.code.setRangeText("  ", s, en, "end");
+      updateStats();
+      scheduleSave();
+      scheduleRender();
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+      e.preventDefault();
+      render();
+      toast("已重新渲染");
+    }
+    if ((e.ctrlKey || e.metaKey) && (e.key === "s" || e.key === "S")) {
+      e.preventDefault();
+      try { localStorage.setItem(LS.code, el.code.value); } catch (err) {}
+      toast("已保存到本机");
+    }
+    if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+      e.preventDefault();
+      openPublish();
+    }
+  });
+
+  /* 代码折叠区滚动同步 */
+  el.code.addEventListener("wheel", function () {
+    requestAnimationFrame(function () {
+      el.gutter.scrollTop = el.code.scrollTop;
+    });
+  }, { passive: true });
+
+  /* ------------------------------------------------------------------ *
+   *  文件导入 / 下载
+   * ------------------------------------------------------------------ */
+  function importFile(file) {
+    if (!file) return;
+    if (!/\.(html?|htm)$/i.test(file.name)) {
+      toast("请选择 .html 文件");
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function () {
+      el.code.value = String(reader.result || "");
+      updateStats();
+      scheduleSave();
+      render();
+      toast("已导入 " + file.name);
+    };
+    reader.readAsText(file, "utf-8");
+  }
+
+  var fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = ".html,.htm,text/html";
+  fileInput.style.display = "none";
+  document.body.appendChild(fileInput);
+  fileInput.addEventListener("change", function () {
+    importFile(fileInput.files && fileInput.files[0]);
+    fileInput.value = "";
+  });
+
+  document.getElementById("btnOpen").addEventListener("click", function () {
+    fileInput.click();
+  });
+
+  document.getElementById("btnDownload").addEventListener("click", function () {
+    var blob = new Blob([el.code.value], { type: "text/html;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "index.html";
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
+    toast("已下载 index.html");
+  });
+
+  /* 拖拽 */
+  var dragDepth = 0;
+  el.codeWrap.addEventListener("dragover", function (e) {
+    e.preventDefault();
+    el.dropHint.classList.add("on");
+  });
+  el.codeWrap.addEventListener("dragleave", function () {
+    el.dropHint.classList.remove("on");
+  });
+  el.codeWrap.addEventListener("drop", function (e) {
+    e.preventDefault();
+    el.dropHint.classList.remove("on");
+    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) {
+      importFile(e.dataTransfer.files[0]);
+    }
+  });
+  window.addEventListener("dragover", function (e) { e.preventDefault(); });
+  window.addEventListener("drop", function (e) { e.preventDefault(); });
+
+  /* ------------------------------------------------------------------ *
+   *  预览工具栏
+   * ------------------------------------------------------------------ */
+  document.getElementById("btnRefresh").addEventListener("click", function () {
+    render();
+    toast("已重新渲染");
+  });
+
+  document.getElementById("btnNewTab").addEventListener("click", function () {
+    var blob = new Blob([el.code.value], { type: "text/html;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    window.open(url, "_blank");
+    setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+  });
+
+  document.getElementById("deviceSeg").addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-dev]");
+    if (!btn) return;
+    this.querySelectorAll("button").forEach(function (b) { b.classList.remove("on"); });
+    btn.classList.add("on");
+    el.stage.classList.remove("device", "tablet");
+    if (btn.dataset.dev === "phone") el.stage.classList.add("device");
+    if (btn.dataset.dev === "tablet") el.stage.classList.add("tablet");
+  });
+
+  /* ------------------------------------------------------------------ *
+   *  分隔条拖动
+   * ------------------------------------------------------------------ */
+  (function () {
+    var dragging = false;
+    var saved = localStorage.getItem(LS.left);
+    if (saved) el.workspace.style.setProperty("--left", saved);
+
+    el.splitter.addEventListener("pointerdown", function (e) {
+      if (window.innerWidth <= 820) return;
+      dragging = true;
+      el.splitter.classList.add("dragging");
+      el.splitter.setPointerCapture(e.pointerId);
+      document.body.style.userSelect = "none";
+    });
+    el.splitter.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var rect = el.workspace.getBoundingClientRect();
+      var w = ((e.clientX - rect.left) / rect.width) * 100;
+      w = Math.min(78, Math.max(22, w));
+      el.workspace.style.setProperty("--left", w.toFixed(2) + "%");
+    });
+    el.splitter.addEventListener("pointerup", function (e) {
+      if (!dragging) return;
+      dragging = false;
+      el.splitter.classList.remove("dragging");
+      document.body.style.userSelect = "";
+      var cur = el.workspace.style.getPropertyValue("--left");
+      if (cur) localStorage.setItem(LS.left, cur);
+    });
+  })();
+
+  /* ------------------------------------------------------------------ *
+   *  发布面板：开关与切换
+   * ------------------------------------------------------------------ */
+  function showStep(name) {
+    el.stepConfig.hidden = name !== "config";
+    el.stepLoading.hidden = name !== "loading";
+    el.stepResult.hidden = name !== "result";
+  }
+
+  function openPublish() {
+    el.overlay.hidden = false;
+    el.loadingErr.innerHTML = "";
+    resetSteps();
+    if (state.token) {
+      // 已配置过令牌，直接进发布
+      startPublish(el.code.value, false);
+    } else {
+      el.tokenInput.value = "";
+      syncVisUI();
+      showStep("config");
+      setTimeout(function () { el.tokenInput.focus(); }, 60);
+    }
+  }
+
+  /* 把本工具自己发布上线（自举） */
+  function publishSelf() {
+    var code = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+    startPublish(code, true);
+  }
+
+  document.getElementById("btnSelf").addEventListener("click", function () {
+    if (state.busy) return;
+    if (state.token) {
+      el.overlay.hidden = false;
+      el.loadingErr.innerHTML = "";
+      resetSteps();
+      publishSelf();
+    } else {
+      state.pendingSelf = true;
+      toast("先配置 GitHub 令牌，保存后将自动发布本工具", 3000);
+      el.overlay.hidden = false;
+      el.loadingErr.innerHTML = "";
+      resetSteps();
+      el.tokenInput.value = "";
+      syncVisUI();
+      showStep("config");
+      setTimeout(function () { el.tokenInput.focus(); }, 60);
+    }
+  });
+
+  function openSettings() {
+    el.overlay.hidden = false;
+    el.tokenInput.value = state.token;
+    syncVisUI();
+    showStep("config");
+    setTimeout(function () { el.tokenInput.focus(); }, 60);
+  }
+
+  function closeOverlay() {
+    el.overlay.hidden = true;
+    el.busy = false;
+  }
+
+  document.getElementById("modalClose").addEventListener("click", closeOverlay);
+  document.getElementById("cancelBtn").addEventListener("click", closeOverlay);
+  document.getElementById("closeResult").addEventListener("click", closeOverlay);
+  el.overlay.addEventListener("mousedown", function (e) {
+    if (e.target === el.overlay && !state.busy) closeOverlay();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !el.overlay.hidden && !state.busy) closeOverlay();
+  });
+
+  document.getElementById("toggleToken").addEventListener("click", function () {
+    var on = el.tokenInput.type === "password";
+    el.tokenInput.type = on ? "text" : "password";
+    this.textContent = on ? "隐藏" : "显示";
+  });
+
+  function syncVisUI() {
+    el.visSeg.querySelectorAll("button").forEach(function (b) {
+      b.classList.toggle("on", b.dataset.vis === state.visibility);
+    });
+    el.visHint.textContent = state.visibility === "public"
+      ? "公开 Gist 会出现在你的 Gist 主页，任何人拿到链接都能访问。"
+      : "私密 Gist 不会公开列出，但知道链接的人依然可以打开。";
+  }
+
+  el.visSeg.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-vis]");
+    if (!btn) return;
+    state.visibility = btn.dataset.vis;
+    localStorage.setItem(LS.vis, state.visibility);
+    syncVisUI();
+  });
+
+  function syncModeUI() {
+    var pages = state.mode === "pages";
+    el.modeSeg.querySelectorAll("button").forEach(function (b) {
+      b.classList.toggle("on", b.dataset.mode === state.mode);
+    });
+    el.repoRow.hidden = !pages;
+    el.visBlock.hidden = pages;
+    el.modeHint.textContent = pages
+      ? "GitHub Pages 正式网站：网址固定不变，内容随发布更新，无第三方渲染层。需 repo 权限令牌，全部免费。"
+      : "用 Gist 承载 + CDN 渲染，约 3 秒上线；每次发布生成新链接。";
+    el.tokenHelp.href = pages
+      ? "https://github.com/settings/tokens/new?scopes=repo,gist&description=HTML2WEB"
+      : "https://github.com/settings/tokens/new?scopes=gist&description=HTML2WEB";
+    el.tokenHelp.textContent = pages
+      ? "去创建一个勾选 repo 权限的令牌（fine-grained 需 Contents + Administration）→"
+      : "去创建一个只勾选 gist 权限的令牌 →";
+  }
+
+  el.modeSeg.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-mode]");
+    if (!btn) return;
+    state.mode = btn.dataset.mode;
+    localStorage.setItem(LS.mode, state.mode);
+    syncModeUI();
+  });
+
+  el.repoInput.addEventListener("input", function () {
+    var v = this.value.trim();
+    state.repoName = v || "html2web";
+    localStorage.setItem(LS.repo, state.repoName);
+  });
+
+  el.doPublish.addEventListener("click", function () {
+    var t = el.tokenInput.value.trim();
+    if (!t) {
+      el.tokenInput.focus();
+      toast("请先填入 GitHub 令牌");
+      return;
+    }
+    if (!/^(ghp_|github_pat_|gho_)/.test(t) && t.length < 20) {
+      toast("令牌格式看起来不对");
+      return;
+    }
+    if (state.mode === "pages") {
+      var repo = el.repoInput.value.trim() || "html2web";
+      if (!/^[a-zA-Z0-9_.-]{1,80}$/.test(repo)) {
+        el.repoInput.focus();
+        toast("仓库名只能包含字母、数字、- _ .");
+        return;
+      }
+      state.repoName = repo;
+      localStorage.setItem(LS.repo, repo);
+    }
+    state.token = t;
+    localStorage.setItem(LS.token, t);
+    updateTokenStatus();
+    if (state.pendingSelf) {
+      state.pendingSelf = false;
+      publishSelf();
+    } else {
+      startPublish(el.code.value, false);
+    }
+  });
+
+  document.getElementById("btnPublish").addEventListener("click", openPublish);
+  document.getElementById("btnSettings").addEventListener("click", openSettings);
+
+  /* ------------------------------------------------------------------ *
+   *  发布流程
+   * ------------------------------------------------------------------ */
+  function resetSteps() {
+    el.stepsList.querySelectorAll("li").forEach(function (li) { li.className = ""; });
+  }
+
+  function setSteps(arr, sub) {
+    el.stepsList.innerHTML = "";
+    arr.forEach(function (txt) {
+      var li = document.createElement("li");
+      var tick = document.createElement("span");
+      tick.className = "tick";
+      li.appendChild(tick);
+      li.appendChild(document.createTextNode(txt));
+      el.stepsList.appendChild(li);
+    });
+    el.loadingSub.textContent = sub || "通常 1–3 秒完成。";
+  }
+
+  function markStep(idx, cls) {
+    var li = el.stepsList.children[idx];
+    if (li) li.className = cls;
+  }
+
+  function updateTokenStatus() {
+    if (state.token) {
+      el.stToken.textContent = "令牌已配置 · 可发布";
+      el.stToken.classList.add("status-ok");
+    } else {
+      el.stToken.textContent = "未配置发布令牌";
+      el.stToken.classList.remove("status-ok");
+    }
+  }
+
+  function friendlyError(res, data) {
+    if (res.status === 401) return "令牌无效或已过期。请重新生成一个对应权限的令牌。";
+    if (res.status === 403) return "被 GitHub 拒绝：令牌权限不足（Pages 模式需 repo 权限；fine-grained 令牌需 Contents + Administration），或触发频率限制。";
+    if (res.status === 404) return "接口返回 404，请检查令牌权限与仓库名。";
+    if (res.status === 422) return "提交内容被拒绝：" + ((data && data.message) || "内容为空或过大");
+    return "GitHub 返回错误 " + res.status + "：" + ((data && data.message) || "未知原因");
+  }
+
+  async function ghFetch(url, options) {
+    var res = await fetch(url, options);
+    var data = null;
+    try { data = await res.json(); } catch (e) {}
+    if (!res.ok) {
+      var err = new Error(friendlyError(res, data));
+      err.status = res.status;
+      err.data = data;
+      throw err;
+    }
+    return data;
+  }
+
+  function ghHeaders(json) {
+    var h = {
+      Authorization: "Bearer " + state.token,
+      Accept: "application/vnd.github+json"
+    };
+    if (json) h["Content-Type"] = "application/json";
+    return h;
+  }
+
+  function utf8ToBase64(str) {
+    var bytes = new TextEncoder().encode(str);
+    var bin = "";
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin);
+  }
+
+  /* ---------- 链路一：Gist 快速上线 ---------- */
+  async function publishGist(code) {
+    setSteps(["验证 GitHub 身份", "上传 index.html 到 Gist", "生成可访问链接"]);
+    resetSteps();
+
+    markStep(0, "run");
+    var me = await ghFetch("https://api.github.com/user", { headers: ghHeaders(false) });
+    markStep(0, "done");
+
+    markStep(1, "run");
+    var payload = {
+      description: "HTML2WEB · " + new Date().toISOString().slice(0, 16).replace("T", " "),
+      public: state.visibility === "public",
+      files: { "index.html": { content: code } }
+    };
+    var gist = await ghFetch("https://api.github.com/gists", {
+      method: "POST",
+      headers: ghHeaders(true),
+      body: JSON.stringify(payload)
+    });
+    markStep(1, "done");
+
+    markStep(2, "run");
+    var rawUrl = gist.files && gist.files["index.html"] && gist.files["index.html"].raw_url;
+    if (!rawUrl) rawUrl = gist.html_url;
+
+    /* 主链接：htmlpreview 直接渲染，无需确认页。
+       gist.githack 已废弃——其反钓鱼确认页 POST 返回 403，浏览器导航不可用 */
+    var primary = "https://htmlpreview.github.io/?" + rawUrl;
+    var alt = rawUrl;
+    markStep(2, "done");
+
+    return {
+      mode: "gist",
+      main: primary,
+      alt: alt,
+      admin: gist.html_url,
+      owner: me.login
+    };
+  }
+
+  /* ---------- 链路二：GitHub Pages 正式网站 ---------- */
+  async function publishPages(code) {
+    var repo = (state.repoName || "html2web").trim();
+    setSteps([
+      "验证 GitHub 身份",
+      "准备仓库 " + repo,
+      "上传 index.html",
+      "启用 Pages 并生成网址"
+    ], "首次发布需等 GitHub 构建 1–2 分钟，之后每次更新约 1 分钟内生效。");
+    resetSteps();
+
+    markStep(0, "run");
+    var me = await ghFetch("https://api.github.com/user", { headers: ghHeaders(false) });
+    markStep(0, "done");
+
+    markStep(1, "run");
+    var repoInfo = null;
+    try {
+      repoInfo = await ghFetch("https://api.github.com/repos/" + me.login + "/" + repo, { headers: ghHeaders(false) });
+    } catch (e) {
+      if (e.status !== 404) throw e;
+      repoInfo = await ghFetch("https://api.github.com/user/repos", {
+        method: "POST",
+        headers: ghHeaders(true),
+        body: JSON.stringify({
+          name: repo,
+          description: "Published by HTML2WEB",
+          private: false,
+          auto_init: false
+        })
+      });
+    }
+    var branch = (repoInfo && repoInfo.default_branch) || "main";
+    markStep(1, "done");
+
+    markStep(2, "run");
+    var sha = null;
+    try {
+      var f = await ghFetch(
+        "https://api.github.com/repos/" + me.login + "/" + repo + "/contents/index.html?ref=" + encodeURIComponent(branch),
+        { headers: ghHeaders(false) }
+      );
+      sha = f.sha;
+    } catch (e) {
+      if (e.status !== 404) throw e;
+    }
+    var putBody = {
+      message: "Publish via HTML2WEB · " + new Date().toISOString().slice(0, 16).replace("T", " "),
+      content: utf8ToBase64(code)
+    };
+    if (sha) putBody.sha = sha;
+    await ghFetch("https://api.github.com/repos/" + me.login + "/" + repo + "/contents/index.html", {
+      method: "PUT",
+      headers: ghHeaders(true),
+      body: JSON.stringify(putBody)
+    });
+    markStep(2, "done");
+
+    markStep(3, "run");
+    try {
+      await ghFetch("https://api.github.com/repos/" + me.login + "/" + repo + "/pages", {
+        method: "POST",
+        headers: ghHeaders(true),
+        body: JSON.stringify({ source: { branch: branch, path: "/" } })
+      });
+    } catch (e) {
+      if (e.status !== 409) throw e; /* 409 = Pages 已启用 */
+    }
+    markStep(3, "done");
+
+    return {
+      mode: "pages",
+      main: "https://" + me.login + ".github.io/" + repo + "/",
+      alt: "https://github.com/" + me.login + "/" + repo + "/commits/" + branch,
+      admin: "https://github.com/" + me.login + "/" + repo + "/settings/pages",
+      owner: me.login,
+      repo: repo
+    };
+  }
+
+  async function startPublish(code, isSelf) {
+    if (state.busy) return;
+    if (!code.trim()) {
+      toast("源码是空的，没什么可发布的");
+      return;
+    }
+    state.lastCode = code;
+    state.lastIsSelf = !!isSelf;
+
+    state.busy = true;
+    showStep("loading");
+    el.loadingErr.innerHTML = "";
+    var t0 = Date.now();
+
+    try {
+      var result = state.mode === "pages"
+        ? await publishPages(code)
+        : await publishGist(code);
+      result.at = Date.now();
+      state.published = result;
+
+      await new Promise(function (r) { setTimeout(r, 260); });
+      showResult();
+      pushHistory(result);
+      updatePublishedPill();
+      el.stToken.textContent = "已连接 · @" + result.owner;
+      el.stToken.classList.add("status-ok");
+      if (isSelf) {
+        toast("工具已上线！收藏这个网址，任何设备打开即可使用", 3600);
+        document.getElementById("modalTitle").textContent = "HTML2WEB 已上线";
+        el.resultSub.textContent =
+          "把下面这个网址收藏起来。以后手机、任何电脑打开它，就是完整的 HTML2WEB 工具。";
+      } else {
+        el.resultSub.textContent = state.mode === "pages"
+          ? "网址固定不变，以后每次发布都更新这个页面。首次发布 GitHub 需 1–2 分钟构建，稍等片刻再打开。"
+          : "把下面这个链接发给任何人，手机、电脑都能直接打开。";
+        toast("发布成功 · 耗时 " + ((Date.now() - t0) / 1000).toFixed(1) + "s");
+      }
+    } catch (err) {
+      var running = el.stepLoading.querySelector("li.run");
+      if (running) markStep(Array.prototype.indexOf.call(el.stepsList.children, running), "err");
+      el.loadingErr.innerHTML =
+        '<div class="err-box" style="margin-top:20px">' +
+        err.message +
+        '<br><span style="opacity:.7">如果一直失败，可以点「设置」重新填写令牌。</span></div>' +
+        '<div class="modal-actions"><button class="btn" id="backConfig">改令牌</button>' +
+        '<button class="btn btn-primary" id="retry">重试</button></div>';
+
+      var backBtn = document.getElementById("backConfig");
+      if (backBtn) backBtn.addEventListener("click", function () {
+        state.token = "";
+        localStorage.removeItem(LS.token);
+        updateTokenStatus();
+        el.tokenInput.value = "";
+        syncVisUI();
+        syncModeUI();
+        showStep("config");
+      });
+      var retryBtn = document.getElementById("retry");
+      if (retryBtn) retryBtn.addEventListener("click", function () {
+        el.loadingErr.innerHTML = "";
+        resetSteps();
+        state.busy = false;
+        startPublish(state.lastCode || el.code.value, state.lastIsSelf);
+      });
+    } finally {
+      state.busy = false;
+    }
+  }
+
+  function showResult() {
+    var p = state.published;
+    if (!p) return;
+    el.mainLink.textContent = shorten(p.main, 60);
+    el.mainLink.href = p.main;
+    el.mainLink.title = p.main;
+
+    el.altLink.textContent = shorten(p.alt, 56);
+    el.altLink.href = p.alt;
+    el.altLink.title = p.alt;
+
+    el.gistLink.textContent = shorten(p.admin, 56);
+    el.gistLink.href = p.admin;
+    el.gistLink.title = p.admin;
+
+    el.altLabel.textContent = p.mode === "pages" ? "构建记录" : "原始文件";
+
+    var isPages = p.mode === "pages";
+    el.buildRow.hidden = !isPages;
+    el.buildStatus.textContent = "—";
+    el.buildStatus.className = "";
+    el.resultHint.textContent = isPages
+      ? "链接永久固定。首次发布后 GitHub 需 1–2 分钟构建，期间打开可能显示 404，稍等再用上方按钮查看部署状态。"
+      : "主链接由 htmlpreview.github.io 渲染，打开即显示页面。若页面里用了相对路径的图片 / CSS，请改成绝对地址或内联，否则会加载失败。";
+
+    renderHistory();
+    showStep("result");
+  }
+
+  document.getElementById("copyMain").addEventListener("click", function () {
+    if (!state.published) return;
+    copyText(state.published.main);
+    var btn = this;
+    var old = btn.textContent;
+    btn.textContent = "已复制";
+    setTimeout(function () { btn.textContent = old; }, 1400);
+  });
+
+  document.getElementById("openMain").addEventListener("click", function () {
+    if (state.published) window.open(state.published.main, "_blank");
+  });
+
+  /* Pages 部署状态查询 */
+  document.getElementById("btnBuild").addEventListener("click", async function () {
+    var p = state.published;
+    if (!p || p.mode !== "pages") return;
+    var btn = this;
+    btn.disabled = true;
+    el.buildStatus.className = "building";
+    el.buildStatus.textContent = "查询中…";
+    try {
+      var info = await ghFetch(
+        "https://api.github.com/repos/" + p.owner + "/" + p.repo + "/pages/builds/latest",
+        { headers: ghHeaders(false) }
+      );
+      var st = info.status;
+      el.buildStatus.className = st;
+      el.buildStatus.textContent =
+        st === "built" ? "已上线，现在可以打开了" :
+        st === "building" ? "构建中，约 1 分钟后再点刷新" :
+        st === "errored" ? "构建失败（检查 HTML 是否有严重错误）" : st;
+    } catch (e) {
+      el.buildStatus.className = "errored";
+      el.buildStatus.textContent = e.message;
+    } finally {
+      btn.disabled = false;
+    }
+  });
+
+  function updatePublishedPill() {
+    if (!state.published) return;
+    el.statusPill.className = "pill live";
+    el.statusPill.innerHTML = '<span class="dot"></span>已发布 · ' + stamp();
+    el.statusPill.title = state.published.main;
+  }
+
+  el.statusPill.addEventListener("click", function () {
+    if (!state.published) return;
+    copyText(state.published.main);
+    toast("链接已复制");
+  });
+
+  /* ------------------------------------------------------------------ *
+   *  发布历史
+   * ------------------------------------------------------------------ */
+  function readHistory() {
+    try {
+      return JSON.parse(localStorage.getItem(LS.history) || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function pushHistory(item) {
+    var list = readHistory();
+    list.unshift({ main: item.main, gist: item.gist, at: item.at });
+    list = list.slice(0, 6);
+    try {
+      localStorage.setItem(LS.history, JSON.stringify(list));
+    } catch (e) {}
+  }
+
+  function renderHistory() {
+    var list = readHistory();
+    if (!list.length) {
+      el.historyWrap.hidden = true;
+      return;
+    }
+    el.historyWrap.hidden = false;
+    el.historyList.innerHTML = "";
+    list.forEach(function (it) {
+      var row = document.createElement("div");
+      row.className = "hitem";
+
+      var time = document.createElement("time");
+      var d = new Date(it.at);
+      function p(n) { return n < 10 ? "0" + n : "" + n; }
+      time.textContent = (d.getMonth() + 1) + "/" + p(d.getDate()) + " " + p(d.getHours()) + ":" + p(d.getMinutes());
+
+      var a = document.createElement("a");
+      a.href = it.main;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = it.main.replace(/^https?:\/\//, "");
+      a.title = it.main;
+
+      var cp = document.createElement("button");
+      cp.className = "btn btn-sm btn-ghost";
+      cp.textContent = "复制";
+      cp.addEventListener("click", function () {
+        copyText(it.main);
+        toast("链接已复制");
+      });
+
+      row.appendChild(time);
+      row.appendChild(a);
+      row.appendChild(cp);
+      el.historyList.appendChild(row);
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  启动
+   * ------------------------------------------------------------------ */
+  function boot() {
+    var saved = localStorage.getItem(LS.code);
+    el.code.value = saved && saved.trim() ? saved : SAMPLE;
+    el.repoInput.value = state.repoName;
+    updateStats();
+    updateTokenStatus();
+    syncVisUI();
+    syncModeUI();
+    resetSteps();
+    render();
+    setTimeout(function () { render(); }, 40);
+  }
+
+  boot();
+})();
+</script><input type="file" accept=".html,.htm,text/html" style="display: none;"><input type="file" accept=".html,.htm,text/html" style="display: none;"><input type="file" accept=".html,.htm,text/html" style="display: none;">
+
+
+<style>
+    @font-face {
+        font-family: "baidu-cos-icon";
+        font-weight: 400;
+        font-style: normal;
+        src: url(chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.woff) format('woff'),
+        url(chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.woff2)format('woff2'),
+        url('chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.ttf) format('truetype'),
+        url('chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.svg) format('svg')
+    }
+    </style><div id="cyxy-img-trs-button-container" class="cyxy-ignore-trs"></div><div id="cyxy-img-loading-overlay-container" class="cyxy-ignore-trs"></div><div id="chat-extension-root-container"></div><yd-mg-icon id="yd-mg-icon-host" style="position: fixed; z-index: 2147483647;"></yd-mg-icon><yd-mg-block-icon id="yd-mg-block-icon-host" class="notranslate" translate="no"></yd-mg-block-icon><yd-image-ocr id="yd-image-ocr-host" style="z-index: 2147483647;"></yd-image-ocr><yd-mg-huaci id="yd-mg-huaci-host" class="notranslate" translate="no" style="position: fixed; z-index: 2147483647;"></yd-mg-huaci><style>
+    @font-face {
+        font-family: "baidu-cos-icon";
+        font-weight: 400;
+        font-style: normal;
+        src: url(chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.woff) format('woff'),
+        url(chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.woff2)format('woff2'),
+        url('chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.ttf) format('truetype'),
+        url('chrome-extension://elgjjjejoajmgnljkhfjilkjnkgfkkba/pc-icon/cos-icon/iconfont.svg) format('svg')
+    }
+    </style><div id="cyxy-img-loading-overlay-container" class="cyxy-ignore-trs"></div><div id="chat-extension-root-container"></div><yd-floating-ball id="yd-floating-ball-host" class="notranslate" translate="no" style="border: 0px !important; display: block !important; height: 0px !important; inset: auto !important; margin: 0px !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; pointer-events: auto !important; position: fixed !important; transform: none !important; visibility: visible !important; width: 0px !important; z-index: 2147483647 !important;"></yd-floating-ball></body><chatgpt-sidebar data-rendered="true" data-gpts-theme="light"></chatgpt-sidebar><div id="__caoliao-browser-ext" data-context="{}"></div></html>
