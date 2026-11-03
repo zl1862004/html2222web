@@ -1,463 +1,949 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>硬件出海实战指南 - 知识卡片</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .header .subtitle {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-        
-        .header .meta {
-            margin-top: 20px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-        
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        
-        .card h2 {
-            font-size: 24px;
-            color: #2d3748;
-            margin-bottom: 15px;
-        }
-        
-        .card-content {
-            color: #4a5568;
-            line-height: 1.8;
-        }
-        
-        .card-content ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .card-content li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .card-content li:last-child {
-            border-bottom: none;
-        }
-        
-        .card-content li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        }
-        
-        .highlight-box h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        
-        .highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-        
-        .highlight-item {
-            background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .highlight-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .highlight-item p {
-            font-size: 14px;
-            line-height: 1.6;
-            opacity: 0.95;
-        }
-        
-        .expert-section {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            margin-bottom: 30px;
-        }
-        
-        .expert-section h2 {
-            font-size: 28px;
-            color: #2d3748;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .expert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .expert-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .expert-card h3 {
-            font-size: 20px;
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-        
-        .expert-card .role {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .expert-card p {
-            color: #4a5568;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .footer {
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-            padding: 20px;
-            opacity: 0.9;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 32px;
-            }
-            
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .highlight-grid,
-            .expert-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<head><meta name="AIGC" content='{"AIGC":{"Label":"1","ContentProducer":"001191340000711771143J00000","ProduceID":"im-wechat-7eb828f6dc34-efdfcd10","ReservedCode1":"","ContentPropagator":"001191340000711771143J00000","PropagateID":"im-wechat-7eb828f6dc34-efdfcd10","ReservedCode2":""}}'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>元素周期表前20号元素消消乐（进阶版）- 初中化学课堂互动</title>
+<style>
+  :root {
+    --card-bg: rgba(30, 41, 59, 0.85);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --accent-blue: #38bdf8;
+    --accent-yellow: #facc15;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --nonmetal: #38bdf8;
+    --metal: #fb923c;
+    --noble: #c084fc;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
+
+  body {
+    background: radial-gradient(circle at 50% 20%, #1e293b 0%, #0f172a 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+
+  header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fb923c, #f43f5e, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .stat-label { font-size: 0.7rem; color: var(--text-sub); white-space: nowrap; }
+  .stat-val { font-size: 1.1rem; font-weight: 700; color: var(--accent-blue); }
+  .stat-val.time-warning { color: #f59e0b; }
+  .stat-val.time-danger { color: #ef4444; animation: blink 0.7s infinite; }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .control-panel {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mode-selector {
+    display: flex;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+
+  .mode-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .mode-btn.active {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.45);
+  }
+
+  .btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+    transition: transform 0.1s;
+    white-space: nowrap;
+  }
+
+  .btn:active { transform: scale(0.96); }
+
+  .btn-restart {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+  }
+
+  .game-container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timer-wrap {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #22c55e, #38bdf8);
+    transition: width 0.9s linear, background 0.4s;
+  }
+
+  .timer-bar.warning { background: linear-gradient(90deg, #f59e0b, #fb923c); }
+  .timer-bar.danger { background: linear-gradient(90deg, #ef4444, #b91c1c); }
+
+  .grid-board {
+    display: grid;
+    gap: 7px;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .grid-4x5 { grid-template-columns: repeat(5, 1fr); }
+  .grid-6x4 { grid-template-columns: repeat(6, 1fr); }
+
+  .chem-card {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .chem-card:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.3); }
+
+  .chem-card.selected {
+    border-color: var(--accent-yellow);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.6);
+    background: linear-gradient(145deg, #334155, #1e293b);
+  }
+
+  .chem-card.matched {
+    animation: matchDisappear 0.45s forwards;
+    pointer-events: none;
+  }
+
+  .chem-card.wrong {
+    animation: shake 0.4s ease-in-out;
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.2) !important;
+  }
+
+  .chem-card.face-down {
+    background: linear-gradient(145deg, #1e3a5f, #0b1220);
+    border-color: rgba(56, 189, 248, 0.35);
+  }
+
+  .chem-card.face-down .card-type-tag,
+  .chem-card.face-down .card-category-dot,
+  .chem-card.face-down .card-main-val,
+  .chem-card.face-down .card-sub-info { visibility: hidden; }
+
+  .chem-card.face-down::after {
+    content: '⚛';
+    position: absolute;
+    font-size: 1.7rem;
+    color: rgba(56, 189, 248, 0.55);
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+
+  @keyframes matchDisappear {
+    0% { transform: scale(1.08); filter: brightness(1.6); opacity: 1; }
+    50% { transform: scale(1.15) rotate(5deg); opacity: 0.8; }
+    100% { transform: scale(0); opacity: 0; }
+  }
+
+  .card-type-tag {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    font-size: 0.6rem;
+    color: var(--text-sub);
+    font-weight: bold;
+  }
+
+  .card-category-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .card-main-val { font-size: 1.4rem; font-weight: 800; line-height: 1.1; }
+
+  .card-sub-info {
+    font-size: 0.62rem;
+    color: var(--text-sub);
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  .type-nonmetal .card-main-val { color: var(--nonmetal); }
+  .type-metal .card-main-val { color: var(--metal); }
+  .type-noble .card-main-val { color: var(--noble); }
+
+  .dot-nonmetal { background-color: var(--nonmetal); }
+  .dot-metal { background-color: var(--metal); }
+  .dot-noble { background-color: var(--noble); }
+
+  .combo-popup {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #facc15;
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.8);
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.3s;
+    z-index: 50;
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  .combo-popup.show { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+
+  .penalty-popup {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ef4444;
+    text-shadow: 0 0 12px rgba(239, 68, 68, 0.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 50;
+    white-space: nowrap;
+  }
+
+  .penalty-popup.show { opacity: 1; transform: translate(-50%, -75%); }
+
+  .knowledge-card {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 10px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .know-title { color: var(--accent-yellow); font-weight: 700; white-space: nowrap; }
+
+  .know-content { color: var(--text-main); flex: 1; margin-left: 10px; }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+  .win-modal {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 2px solid var(--accent-blue);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 440px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.3);
+    transform: scale(0.85);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .win-modal.lose {
+    border-color: #ef4444;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 68, 68, 0.3);
+  }
+
+  .modal-overlay.active .win-modal { transform: scale(1); }
+
+  .win-icon { font-size: 2.8rem; margin-bottom: 6px; }
+
+  .win-title { font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin-bottom: 10px; }
+
+  .win-modal.lose .win-title { color: #ef4444; }
+
+  .win-stats {
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: left;
+  }
+
+  .win-stat-item { display: flex; flex-direction: column; }
+
+  .win-stat-label { font-size: 0.72rem; color: var(--text-sub); }
+
+  .win-stat-val { font-size: 1.05rem; font-weight: 700; color: var(--accent-yellow); }
+
+  .modal-btns { display: flex; gap: 10px; justify-content: center; }
+
+  .legend-bar { display: flex; gap: 10px; font-size: 0.7rem; color: var(--text-sub); }
+
+  .legend-item { display: flex; align-items: center; gap: 4px; }
+
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  @media (max-width: 500px) {
+    .card-main-val { font-size: 1.1rem; }
+    .card-sub-info { font-size: 0.56rem; }
+    .stat-val { font-size: 0.95rem; }
+    h1 { font-size: 1rem; }
+    .grid-board { gap: 5px; }
+    .mode-btn { font-size: 0.68rem; padding: 4px 7px; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚀 硬件出海实战指南</h1>
-            <div class="subtitle">从0到1的完整方法论 · 头部案例深度解析</div>
-            <div class="meta">📅 2025年10月29日 | 主办:分子分母社区 × HIVA</div>
-        </div>
 
-        <div class="highlight-box">
-            <h2>💡 核心洞察:Plaud AI成功案例</h2>
-            <div class="highlight-grid">
-                <div class="highlight-item">
-                    <h3>🎯 市场机会识别</h3>
-                    <p>瞄准高频使用人群(记者、商务人士),从软件转硬件,结合AI技术创造新形态产品</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>📈 众筹时机</h3>
-                    <p>2023年6月上线,恰逢ChatGPT 3.5发布,及时嵌入API,抓住大模型浪潮</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>🎪 PR策略</h3>
-                    <p>针对媒体编辑痛点,获得Forbes、TechCrunch等头部媒体深度报道</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>🔄 迭代路径</h3>
-                    <p>先做两年亚马逊积累经验,再推众筹新品,最后发力独立站</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h2>PMF验证三要素</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>细分市场</strong>:找到明确且可放大的痛点人群</li>
-                        <li><strong>支付能力</strong>:用户群体必须有足够购买力</li>
-                        <li><strong>闭环验证</strong>:通过众筹/社群获得3000+真实用户反馈</li>
-                        <li><strong>定性调研</strong>:深度访谈比问卷调查更准确</li>
-                        <li><strong>快速测试</strong>:3D打印、渲染图、小额定金测试需求</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">💰</div>
-                <h2>早期资金分配建议</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>天使轮(100-300万)</strong>:完成产品模型、小批量试产、众筹准备</li>
-                        <li><strong>A轮(1000万+)</strong>:开模量产、独立站搭建、团队扩充</li>
-                        <li><strong>控制风险</strong>:开模前用低成本方式验证(3D打印、广告测试)</li>
-                        <li><strong>物流重视</strong>:海外物流细节(重量、包装)容易被忽视</li>
-                        <li><strong>质保预算</strong>:预留一年质保期的维修成本</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🎪</div>
-                <h2>众筹平台策略</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>北美首选</strong>:Kickstarter + Indiegogo(要求全球独家)</li>
-                        <li><strong>日本市场</strong>:Makuake等平台(允许同时上线)</li>
-                        <li><strong>国内平台</strong>:小米众筹为主</li>
-                        <li><strong>定价策略</strong>:不同市场可差异化定价,日本通常比美国贵</li>
-                        <li><strong>用户心态</strong>:众筹用户愿意共建,接受延期和改进</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">💎</div>
-                <h2>定价方法论</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>成本倍率</strong>:生产成本×3-5倍(涵盖营销30%、物流8-10%等)</li>
-                        <li><strong>竞品对标</strong>:价格不能比竞品贵2倍以上</li>
-                        <li><strong>订阅模式</strong>:适合医疗健康、AI分析等有持续数据价值的产品</li>
-                        <li><strong>KA渠道</strong>:Best Buy等大零售商要求40%毛利</li>
-                        <li><strong>高端产品</strong>:300美金以上需考虑支付能力和人群规模</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h2>渠道布局顺序</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>第一阶段</strong>:Kickstarter众筹(验证PMF + 冷启动)</li>
-                        <li><strong>第二阶段</strong>:独立站(月销2-3千美金后)</li>
-                        <li><strong>第三阶段</strong>:亚马逊等第三方平台</li>
-                        <li><strong>第四阶段</strong>:线下经销商和KA渠道</li>
-                        <li><strong>特殊情况</strong>:炫酷产品可提前进KA(如汽车配件360摄像头)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🎨</div>
-                <h2>内容营销要点</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>产品页面</strong>:通过动图快速传达痛点和价值</li>
-                        <li><strong>品牌故事</strong>:创始人故事可选(国际化团队加分)</li>
-                        <li><strong>KOL寄送</strong>:把产品寄给媒体编辑(杠杆很高)</li>
-                        <li><strong>社群运营</strong>:Reddit、论坛标签营销(how to prove)</li>
-                        <li><strong>用户UGC</strong>:鼓励用户分享使用场景和解决方案</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="expert-section">
-            <h2>👥 分享嘉宾</h2>
-            <div class="expert-grid">
-                <div class="expert-card">
-                    <h3>韩飞</h3>
-                    <div class="role">硬件出海专家</div>
-                    <p>多年硬件出海0到1 Go to Market经验,服务过咖啡机、AI宠物、户外硬件等众多品牌,帮助企业达成百万美元级营收</p>
-                </div>
-                <div class="expert-card">
-                    <h3>杨刚 Patrick</h3>
-                    <div class="role">投资人 · 社区负责人</div>
-                    <p>分子分母社区创始人,专注软硬件结合与出海创业,深圳base,关注2025-2026创业机会</p>
-                </div>
-                <div class="expert-card">
-                    <h3>Monica</h3>
-                    <div class="role">主持人 · HIVA</div>
-                    <p>出海创业社区组织者,专注硬件产品出海交流与资源对接</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="highlight-box">
-            <h2>⚠️ 创业者常见的坑</h2>
-            <div class="highlight-grid">
-                <div class="highlight-item">
-                    <h3>🔧 大规模交付</h3>
-                    <p>良品率不如预期,质保期内维保成本超预算。建议:第一批控制出货量,验证一年后再放量</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>💸 定价失误</h3>
-                    <p>定价过高或过低,未考虑后续渠道成本。建议:提前规划KA渠道(40%毛利)空间</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>📦 物流细节</h3>
-                    <p>忽视海外物流暴力分拣问题。建议:测试包装抗摔性,重量适配搬运习惯</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>🏭 供应链黑箱</h3>
-                    <p>缺乏供应链经验,成本差距几十倍。建议:找靠谱合伙人或顾问,建立长期关系</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>⏰ 开模失败</h3>
-                    <p>多次开模耗尽资金。建议:用3D打印等低成本方式提前验证</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>🎯 团队配置</h3>
-                    <p>过早招高薪CMO,磨合期长。建议:找热爱产品的人从内部培养</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon">🔍</div>
-                <h2>投资人视角</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>早期阶段(2018-2020)</strong>:PPT+demo即可融资</li>
-                        <li><strong>当前阶段(2022-2025)</strong>:需要众筹成绩验证</li>
-                        <li><strong>2025趋势</strong>:头部团队可拿到数亿融资,市场回暖</li>
-                        <li><strong>偏好团队</strong>:产品经理背景+快速学习能力</li>
-                        <li><strong>关键要素</strong>:尊重软硬件规则,融合创新</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🌟</div>
-                <h2>成功案例学习</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>追觅</strong>:线下手绘图验证卖点</li>
-                        <li><strong>拓竹</strong>:Maker Word社群运营标杆(用户共建+分佣)</li>
-                        <li><strong>Plaud AI</strong>:媒体痛点营销+AI时机把握</li>
-                        <li><strong>机械键盘案例</strong>:针对Mac用户寄送媒体</li>
-                        <li><strong>汽车配件</strong>:半年进入80%线下渠道</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🛠️</div>
-                <h2>团队搭建建议</h2>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>创始人必备</strong>:产品sense+市场嗅觉</li>
-                        <li><strong>技术背景</strong>:软件转硬件需找硬件合伙人</li>
-                        <li><strong>优先级</strong>:品牌经理→市场人员→独立站运营团队</li>
-                        <li><strong>外部支持</strong>:早期用顾问替代高薪全职</li>
-                        <li><strong>特殊配置</strong>:高单价产品(5000美金)需市场+线下团队</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">✅</div>
-                <h2>关键检查清单</h2>
-                <div class="card-content">
-                    <ul>
-                        <li>✓ 痛点是否足够痛?(定性访谈验证)</li>
-                        <li>✓ 人群规模是否够大?(全球可放大)</li>
-                        <li>✓ 支付能力是否匹配?(价格合理性)</li>
-                        <li>✓ 众筹前是否小批量验证?</li>
-                        <li>✓ 供应链关系是否可靠?</li>
-                        <li>✓ 物流包装是否充分测试?</li>
-                        <li>✓ 质保成本是否预留?</li>
-                        <li>✓ 渠道成本是否考虑?(KA 40%)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>💬 更多硬件出海交流,欢迎加入社群</p>
-            <p style="margin-top: 10px; font-size: 14px;">主办方:分子分母社区 × HIVA | 深圳 · 上海</p>
-            <p style="margin-top: 15px; font-size: 12px; opacity: 0.7;">
-                本知识卡片根据2025年10月29日直播内容整理<br>
-                分享嘉宾:韩飞、杨刚 | 主持:Monica
-            </p>
-        </div>
+<header>
+  <div class="title-bar">
+    <h1>🔥 前20号元素消消乐 · 进阶版</h1>
+    <button class="btn btn-restart" onclick="game.initLevel()">🔄 重新开始</button>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-label">当前关卡</span>
+      <span class="stat-val" id="valLevel">第1关</span>
     </div>
+    <div class="stat-card">
+      <span class="stat-label">得分</span>
+      <span class="stat-val" id="valScore">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">连击</span>
+      <span class="stat-val" id="valCombo">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">剩余时间</span>
+      <span class="stat-val" id="valTimer">01:10</span>
+    </div>
+  </div>
+</header>
+
+<div class="control-panel">
+  <div class="mode-selector">
+    <button class="mode-btn active" data-level="1" onclick="game.switchLevel(1)">① 1-10号</button>
+    <button class="mode-btn" data-level="2" onclick="game.switchLevel(2)">② 11-20号</button>
+    <button class="mode-btn" data-level="3" onclick="game.switchLevel(3)">③ 混合表征</button>
+    <button class="mode-btn" data-level="4" onclick="game.switchLevel(4)">④ 记忆翻牌</button>
+  </div>
+  <div class="legend-bar">
+    <div class="legend-item"><span class="legend-dot" style="background:var(--nonmetal)"></span>非金属</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--metal)"></span>金属</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--noble)"></span>稀有气体</div>
+  </div>
+</div>
+
+<main class="game-container">
+  <div class="timer-wrap"><div class="timer-bar" id="timerBar"></div></div>
+  <div id="comboPopup" class="combo-popup">COMBO x2!</div>
+  <div id="penaltyPopup" class="penalty-popup">-20分 / -3秒</div>
+  <div id="gridBoard" class="grid-board grid-4x5"></div>
+</main>
+
+<div class="knowledge-card">
+  <div class="know-title">💡 化学速记:</div>
+  <div class="know-content" id="knowContent">限时挑战！点击两张相互匹配的卡片即可消除，配错扣分并扣除 3 秒。</div>
+</div>
+
+<div class="modal-overlay" id="resultModal">
+  <div class="win-modal" id="resultCard">
+    <div class="win-icon" id="resIcon">🎉</div>
+    <div class="win-title" id="resTitle">挑战成功！</div>
+    <p style="color: var(--text-sub); font-size: 0.88rem; margin-bottom: 12px;" id="resDesc">你已完全掌握前 10 号元素！</p>
+    <div class="win-stats">
+      <div class="win-stat-item">
+        <span class="win-stat-label">最终得分</span>
+        <span class="win-stat-val" id="resScore">0</span>
+      </div>
+      <div class="win-stat-item">
+        <span class="win-stat-label">用时</span>
+        <span class="win-stat-val" id="resTime">00:00</span>
+      </div>
+      <div class="win-stat-item">
+        <span class="win-stat-label">最高连击</span>
+        <span class="win-stat-val" id="resCombo">0 连击</span>
+      </div>
+      <div class="win-stat-item">
+        <span class="win-stat-label">评价</span>
+        <span class="win-stat-val" id="resRank">化学新星 ✨</span>
+      </div>
+    </div>
+    <div class="modal-btns">
+      <button class="btn" id="resPrimaryBtn" onclick="game.modalPrimary()">下一关</button>
+      <button class="btn btn-restart" onclick="game.closeModal()">返回查看</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ 元素数据库（前20号元素） ============ */
+const ELEMENTS_DB = [
+  { z: 1, symbol: 'H', name: '氢', mass: 1.008, type: 'nonmetal', desc: '最轻的气体，常见化合价+1' },
+  { z: 2, symbol: 'He', name: '氦', mass: 4.003, type: 'noble', desc: '稀有气体，最外层2个电子稳定结构' },
+  { z: 3, symbol: 'Li', name: '锂', mass: 6.941, type: 'metal', desc: '密度最小的金属元素，很活泼' },
+  { z: 4, symbol: 'Be', name: '铍', mass: 9.012, type: 'metal', desc: '第二周期碱土金属' },
+  { z: 5, symbol: 'B', name: '硼', mass: 10.81, type: 'nonmetal', desc: '黑色或银灰色固体，可作半导体材料' },
+  { z: 6, symbol: 'C', name: '碳', mass: 12.01, type: 'nonmetal', desc: '构成有机物骨架，常见+2、+4价' },
+  { z: 7, symbol: 'N', name: '氮', mass: 14.01, type: 'nonmetal', desc: '空气中含量最高的气体（约78%）' },
+  { z: 8, symbol: 'O', name: '氧', mass: 16.00, type: 'nonmetal', desc: '地壳中含量最多的元素，支持呼吸' },
+  { z: 9, symbol: 'F', name: '氟', mass: 19.00, type: 'nonmetal', desc: '非金属性最强的元素' },
+  { z: 10, symbol: 'Ne', name: '氖', mass: 20.18, type: 'noble', desc: '通电发出红光，常做霓虹灯' },
+  { z: 11, symbol: 'Na', name: '钠', mass: 22.99, type: 'metal', desc: '金属活动性强，常保存在煤油中' },
+  { z: 12, symbol: 'Mg', name: '镁', mass: 24.31, type: 'metal', desc: '在空气中燃烧发出耀眼白光' },
+  { z: 13, symbol: 'Al', name: '铝', mass: 26.98, type: 'metal', desc: '地壳中含量最多的金属元素' },
+  { z: 14, symbol: 'Si', name: '硅', mass: 28.09, type: 'nonmetal', desc: '芯片关键材料，地壳含量居第二' },
+  { z: 15, symbol: 'P', name: '磷', mass: 30.97, type: 'nonmetal', desc: '有白磷、红磷等同素异形体' },
+  { z: 16, symbol: 'S', name: '硫', mass: 32.06, type: 'nonmetal', desc: '淡黄色固体，燃烧生成有刺激性气味的二氧化硫' },
+  { z: 17, symbol: 'Cl', name: '氯', mass: 35.45, type: 'nonmetal', desc: '黄绿色有毒气体，氧化性强' },
+  { z: 18, symbol: 'Ar', name: '氩', mass: 39.95, type: 'noble', desc: '空气中含量最多的稀有气体（约0.93%）' },
+  { z: 19, symbol: 'K', name: '钾', mass: 39.10, type: 'metal', desc: '极活泼的碱金属元素' },
+  { z: 20, symbol: 'Ca', name: '钙', mass: 40.08, type: 'metal', desc: '人体骨骼和牙齿的主要无机成分' }
+];
+
+/* ============ 关卡配置 ============ */
+const LEVEL_CONFIG = {
+  1: { name: '第1关', title: '1-10号元素',      limit: 70,  pool: 'first10',  reprMode: 'simple', memory: false },
+  2: { name: '第2关', title: '11-20号元素',     limit: 70,  pool: 'second10', reprMode: 'simple', memory: false },
+  3: { name: '第3关', title: '1-20号 混合表征', limit: 90,  pool: 'random12', reprMode: 'mixed',  memory: false },
+  4: { name: '第4关', title: '1-20号 记忆翻牌', limit: 120, pool: 'random12', reprMode: 'simple', memory: true }
+};
+
+/* ============ 音效（原生合成，零外链） ============ */
+class SoundFx {
+  constructor() { this.ctx = null; }
+  init() {
+    if (!this.ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) this.ctx = new AC();
+    }
+  }
+  play(freq, type, duration, gainVal) {
+    try {
+      this.init();
+      if (!this.ctx) return;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+      gain.gain.setValueAtTime(gainVal || 0.15, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start();
+      osc.stop(this.ctx.currentTime + duration);
+    } catch (e) { /* 音效异常不影响主流程 */ }
+  }
+  click() { this.play(440, 'sine', 0.07, 0.08); }
+  flip()  { this.play(620, 'sine', 0.06, 0.07); }
+  match(combo) {
+    const step = Math.min(combo, 8);
+    this.play(523.25 * Math.pow(1.12, step), 'triangle', 0.24, 0.18);
+    setTimeout(() => this.play(523.25 * Math.pow(1.12, step + 2), 'sine', 0.22, 0.13), 60);
+  }
+  wrong() {
+    this.play(180, 'sawtooth', 0.22, 0.16);
+    setTimeout(() => this.play(140, 'sawtooth', 0.2, 0.16), 80);
+  }
+  win() {
+    [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
+      setTimeout(() => this.play(f, 'triangle', 0.32, 0.18), i * 100);
+    });
+  }
+  lose() {
+    [392, 330, 262, 196].forEach((f, i) => {
+      setTimeout(() => this.play(f, 'sawtooth', 0.32, 0.16), i * 130);
+    });
+  }
+}
+
+const sfx = new SoundFx();
+
+/* ============ 游戏主控 ============ */
+class ElementGame {
+  constructor() {
+    this.currentLevel = 1;
+    this.cards = [];
+    this.selectedCards = [];
+    this.score = 0;
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.matchedPairs = 0;
+    this.totalPairs = 0;
+    this.elapsed = 0;
+    this.remaining = 70;
+    this.timeLimit = 70;
+    this.timerInterval = null;
+    this.isLocked = false;
+    this.gameOver = false;
+    this.memoryMode = false;
+    this.modalNextLevel = 1;
+  }
+
+  /* ---------- 初始化关卡 ---------- */
+  initLevel(level) {
+    if (typeof level === 'number') this.currentLevel = level;
+    const cfg = LEVEL_CONFIG[this.currentLevel];
+
+    this.clearTimer();
+    this.gameOver = false;
+    this.isLocked = false;
+    this.selectedCards = [];
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.matchedPairs = 0;
+    this.score = 0;
+    this.elapsed = 0;
+    this.memoryMode = cfg.memory;
+    this.timeLimit = cfg.limit;
+    this.remaining = cfg.limit;
+
+    document.getElementById('valLevel').textContent = cfg.name;
+    document.getElementById('knowContent').textContent = cfg.memory
+      ? '记忆翻牌：卡片背面朝上，翻开两张同一元素的卡片才能消除！'
+      : '限时挑战！点击两张相互匹配的卡片即可消除，配错扣 20 分并扣 3 秒。';
+
+    // 选取元素池
+    let pool;
+    if (cfg.pool === 'first10') {
+      pool = ELEMENTS_DB.slice(0, 10);
+    } else if (cfg.pool === 'second10') {
+      pool = ELEMENTS_DB.slice(10, 20);
+    } else {
+      pool = [...ELEMENTS_DB];
+      this.shuffle(pool);
+      pool = pool.slice(0, 12);
+    }
+
+    // 生成卡片
+    const cardsData = [];
+    pool.forEach((elem) => {
+      let types;
+      if (cfg.reprMode === 'mixed') {
+        const all = ['symbol', 'name', 'number'];
+        this.shuffle(all);
+        types = all.slice(0, 2);
+      } else {
+        types = ['symbol', 'name'];
+      }
+      types.forEach((t) => cardsData.push(this.buildCard(elem, t)));
+    });
+
+    this.totalPairs = pool.length;
+    this.shuffle(cardsData);
+    this.cards = cardsData;
+
+    this.renderBoard();
+    this.updateStats();
+    this.updateTimerUI();
+    this.startTimer();
+  }
+
+  /* ---------- 构造单张卡片 ---------- */
+  buildCard(elem, cardType) {
+    let displayMain = '', displaySub = '', tagName = '';
+    if (cardType === 'symbol') {
+      displayMain = elem.symbol;
+      displaySub = '元素符号';
+      tagName = '符号';
+    } else if (cardType === 'name') {
+      displayMain = elem.name;
+      displaySub = '元素名称';
+      tagName = '中文';
+    } else {
+      displayMain = String(elem.z);
+      displaySub = '原子序数';
+      tagName = '序数';
+    }
+    return {
+      elemZ: elem.z,
+      cardType: cardType,
+      displayMain: displayMain,
+      displaySub: displaySub,
+      tagName: tagName,
+      elemData: elem
+    };
+  }
+
+  /* ---------- 渲染棋盘 ---------- */
+  renderBoard() {
+    const board = document.getElementById('gridBoard');
+    board.innerHTML = '';
+    const n = this.cards.length;
+    board.className = 'grid-board ' + (n <= 20 ? 'grid-4x5' : 'grid-6x4');
+
+    this.cards.forEach((item, index) => {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'chem-card type-' + item.elemData.type + (this.memoryMode ? ' face-down' : '');
+      cardEl.dataset.index = index;
+
+      cardEl.innerHTML =
+        '<span class="card-type-tag">' + item.tagName + '</span>' +
+        '<span class="card-category-dot dot-' + item.elemData.type + '"></span>' +
+        '<div class="card-main-val">' + item.displayMain + '</div>' +
+        '<div class="card-sub-info">' + item.displaySub + '</div>';
+
+      cardEl.addEventListener('click', () => this.handleCardClick(index, cardEl));
+      board.appendChild(cardEl);
+    });
+  }
+
+  /* ---------- 点击卡片 ---------- */
+  handleCardClick(index, cardEl) {
+    if (this.isLocked || this.gameOver) return;
+    if (cardEl.classList.contains('matched')) return;
+    if (cardEl.classList.contains('selected')) return;
+
+    if (cardEl.classList.contains('face-down')) {
+      cardEl.classList.remove('face-down');
+      sfx.flip();
+    } else {
+      sfx.click();
+    }
+
+    cardEl.classList.add('selected');
+    const cardData = this.cards[index];
+    this.selectedCards.push({ index: index, el: cardEl, data: cardData });
+
+    // 知识点提示
+    const elem = cardData.elemData;
+    const typeCn = elem.type === 'nonmetal' ? '非金属元素' : (elem.type === 'metal' ? '金属元素' : '稀有气体');
+    document.getElementById('knowContent').innerHTML =
+      '<strong>' + elem.z + '号 ' + elem.name + '（' + elem.symbol + '）</strong>：' + typeCn + '，' + elem.desc;
+
+    if (this.selectedCards.length === 2) this.checkMatch();
+  }
+
+  /* ---------- 判定匹配 ---------- */
+  checkMatch() {
+    this.isLocked = true;
+    const c1 = this.selectedCards[0];
+    const c2 = this.selectedCards[1];
+
+    if (c1.data.elemZ === c2.data.elemZ && c1.index !== c2.index) {
+      /* --- 匹配成功 --- */
+      this.combo++;
+      if (this.combo > this.maxCombo) this.maxCombo = this.combo;
+
+      const bonus = this.currentLevel >= 4 ? 1.5 : (this.currentLevel === 3 ? 1.2 : 1);
+      this.score += Math.round((100 + (this.combo - 1) * 30) * bonus);
+      this.matchedPairs++;
+
+      sfx.match(this.combo);
+      if (this.combo >= 2) this.showPopup('comboPopup', 'COMBO x' + this.combo + '!');
+
+      setTimeout(() => {
+        c1.el.classList.remove('selected');
+        c2.el.classList.remove('selected');
+        c1.el.classList.add('matched');
+        c2.el.classList.add('matched');
+
+        this.selectedCards = [];
+        this.isLocked = false;
+        this.updateStats();
+
+        if (this.matchedPairs >= this.totalPairs) this.handleWin();
+      }, 320);
+
+    } else {
+      /* --- 匹配失败：扣分 + 扣时 --- */
+      this.combo = 0;
+      this.score = Math.max(0, this.score - 20);
+      this.remaining = Math.max(0, this.remaining - 3);
+      sfx.wrong();
+      this.showPopup('penaltyPopup', '-20分 / -3秒');
+      c1.el.classList.add('wrong');
+      c2.el.classList.add('wrong');
+      this.updateStats();
+      this.updateTimerUI();
+
+      const timeOut = this.remaining <= 0;
+
+      setTimeout(() => {
+        c1.el.classList.remove('selected', 'wrong');
+        c2.el.classList.remove('selected', 'wrong');
+        if (this.memoryMode) {
+          c1.el.classList.add('face-down');
+          c2.el.classList.add('face-down');
+        }
+        this.selectedCards = [];
+        this.isLocked = false;
+
+        if (timeOut) this.handleLose();
+      }, 700);
+    }
+  }
+
+  showPopup(id, text) {
+    const el = document.getElementById(id);
+    el.textContent = text;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 600);
+  }
+
+  /* ---------- 计分板 ---------- */
+  updateStats() {
+    document.getElementById('valScore').textContent = this.score;
+    document.getElementById('valCombo').textContent = this.combo;
+  }
+
+  /* ---------- 倒计时 ---------- */
+  startTimer() {
+    this.clearTimer();
+    this.timerInterval = setInterval(() => {
+      if (this.gameOver) return;
+      this.remaining--;
+      this.elapsed++;
+      this.updateTimerUI();
+      if (this.remaining <= 0) this.handleLose();
+    }, 1000);
+  }
+
+  clearTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+      this.timerInterval = null;
+    }
+  }
+
+  updateTimerUI() {
+    const r = Math.max(0, this.remaining);
+    const m = String(Math.floor(r / 60)).padStart(2, '0');
+    const s = String(r % 60).padStart(2, '0');
+    const timerEl = document.getElementById('valTimer');
+    timerEl.textContent = m + ':' + s;
+    timerEl.classList.toggle('time-warning', r <= 20 && r > 10);
+    timerEl.classList.toggle('time-danger', r <= 10);
+
+    const bar = document.getElementById('timerBar');
+    const pct = this.timeLimit > 0 ? Math.max(0, (r / this.timeLimit) * 100) : 0;
+    bar.style.width = pct + '%';
+    bar.classList.toggle('warning', pct <= 35 && pct > 15);
+    bar.classList.toggle('danger', pct <= 15);
+  }
+
+  /* ---------- 结算 ---------- */
+  handleWin() {
+    if (this.gameOver) return;
+    this.gameOver = true;
+    this.isLocked = true;
+    this.clearTimer();
+    sfx.win();
+
+    const cfg = LEVEL_CONFIG[this.currentLevel];
+    document.getElementById('resultCard').classList.remove('lose');
+    document.getElementById('resIcon').textContent = '🎉';
+    document.getElementById('resTitle').textContent = '挑战成功！';
+    document.getElementById('resDesc').textContent =
+      '你已通过「' + cfg.title + '」，剩余 ' + this.remaining + ' 秒。';
+
+    let rank = '化学新星 ✨';
+    if (this.score >= 2000) rank = '元素大师 👑';
+    else if (this.score >= 1400) rank = '化学学霸 🌟';
+    else if (this.score >= 900) rank = '化学能手 💪';
+    document.getElementById('resRank').textContent = rank;
+
+    this.modalNextLevel = this.currentLevel >= 4 ? 1 : this.currentLevel + 1;
+    document.getElementById('resPrimaryBtn').textContent =
+      this.currentLevel >= 4 ? '从头再来' : '下一关（更难）';
+
+    this.fillResultStats();
+    document.getElementById('resultModal').classList.add('active');
+  }
+
+  handleLose() {
+    if (this.gameOver) return;
+    this.gameOver = true;
+    this.isLocked = true;
+    this.clearTimer();
+    sfx.lose();
+
+    document.getElementById('resultCard').classList.add('lose');
+    document.getElementById('resIcon').textContent = '⏰';
+    document.getElementById('resTitle').textContent = '时间耗尽！';
+    document.getElementById('resDesc').textContent =
+      '还差 ' + (this.totalPairs - this.matchedPairs) + ' 对没消完，再挑战一次吧！';
+    document.getElementById('resRank').textContent = '再接再厉 🔥';
+
+    this.modalNextLevel = this.currentLevel;
+    document.getElementById('resPrimaryBtn').textContent = '再试一次';
+
+    this.fillResultStats();
+    document.getElementById('resultModal').classList.add('active');
+  }
+
+  fillResultStats() {
+    const m = String(Math.floor(this.elapsed / 60)).padStart(2, '0');
+    const s = String(this.elapsed % 60).padStart(2, '0');
+    document.getElementById('resScore').textContent = this.score;
+    document.getElementById('resTime').textContent = m + ':' + s;
+    document.getElementById('resCombo').textContent = this.maxCombo + ' 连击';
+  }
+
+  modalPrimary() {
+    this.closeModal();
+    this.switchLevel(this.modalNextLevel);
+  }
+
+  closeModal() {
+    document.getElementById('resultModal').classList.remove('active');
+  }
+
+  /* ---------- 关卡切换 ---------- */
+  switchLevel(lvl) {
+    document.querySelectorAll('.mode-btn').forEach((btn) => {
+      btn.classList.toggle('active', parseInt(btn.dataset.level, 10) === lvl);
+    });
+    this.initLevel(lvl);
+  }
+
+  /* ---------- 洗牌 ---------- */
+  shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = array[i];
+      array[i] = array[j];
+      array[j] = tmp;
+    }
+    return array;
+  }
+}
+
+const game = new ElementGame();
+window.addEventListener('DOMContentLoaded', () => {
+  game.initLevel(1);
+});
+</script>
+<!--aigc-badge--><div data-aigc="notice" style="position:fixed;left:0;right:0;bottom:8px;z-index:2147483647;pointer-events:none;text-align:center;font:12px/1.5 'PingFang SC','Microsoft YaHei',sans-serif"><span style="display:inline-block;padding:3px 10px;border-radius:10px;background:rgba(255,255,255,.88);color:#555;border:1px solid rgba(0,0,0,.14)">内容由 AI生成，请仔细甄别</span></div>
 </body>
 </html>
