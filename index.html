@@ -1,877 +1,949 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
+<head><meta name="AIGC" content='{"AIGC":{"Label":"1","ContentProducer":"001191340000711771143J00000","ProduceID":"im-wechat-7eb828f6dc34-efdfcd10","ReservedCode1":"","ContentPropagator":"001191340000711771143J00000","PropagateID":"im-wechat-7eb828f6dc34-efdfcd10","ReservedCode2":""}}'>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="docx-page-size" content="A4">
-<title>354班第一次月考学情分析与临界生提质方案</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>元素周期表前20号元素消消乐（进阶版）- 初中化学课堂互动</title>
 <style>
-  @page {
-    @bottom-center { content: counter(page); }
-  }
-  @page cover {
-    @bottom-center { content: none; }
-  }
-  section[role="cover"] { page: cover; }
-
   :root {
-    --color-primary: #16365c;
-    --color-accent: #2e6bb8;
-    --color-text: #1a1a1a;
-    --color-muted: #5f6b7a;
-    --color-border: #d7dee8;
-    --color-border-strong: #c3cedd;
-    --color-bg: #ffffff;
-    --color-highlight: #f4f6fa;
-    --color-highlight-2: #e9eff7;
-    --color-highlight-3: #f2f6fb;
-    --color-warn: #b3261e;
-    --color-warn-bg: #fbf1f0;
-    --color-row-hl: #f0f4fa;
-
-    --ff-heading: "Microsoft YaHei", "微软雅黑", sans-serif;
-    --ff-body: "SimSun", "宋体", serif;
-
-    --fs-cover-top: 10.5pt;
-    --fs-cover-title: 26pt;
-    --fs-cover-title2: 20pt;
-    --fs-cover-sub: 11.5pt;
-    --fs-h1: 16pt;
-    --fs-h2: 13pt;
-    --fs-h3: 12pt;
-    --fs-body: 12pt;
-    --fs-lead: 12pt;
-    --fs-key: 12pt;
-    --fs-warn: 11pt;
-    --fs-table: 10.5pt;
-    --fs-caption: 9.5pt;
-    --fs-note: 10pt;
-    --fs-card: 11pt;
-
-    --sp-0: 0;
-    --sp-xs: 2px;
-    --sp-s: 5px;
-    --sp-m: 6px;
-    --sp-l: 8px;
-    --sp-xl: 10px;
-    --sp-2xl: 12px;
-    --sp-3xl: 14px;
-    --sp-4xl: 16px;
-    --sp-cover-top: 5.2cm;
-    --sp-cover-gap: 0.4cm;
-    --sp-cover-sub: 1.6cm;
-
-    --sp-p: 0.5em;
-    --sp-h1-top: 1.4em;
-    --sp-h1-bottom: 0.5em;
-    --sp-h1-pad: 0.25em;
-    --sp-h2-top: 0.9em;
-    --sp-h2-bottom: 0.35em;
-    --sp-h3-top: 0.7em;
-    --sp-h3-bottom: 0.3em;
-    --sp-key: 0.7em;
-    --sp-cap-top: 0.2em;
-    --sp-cap-bottom: 0.9em;
-    --sp-card: 0.4em;
-    --sp-list: 0.35em;
-    --sp-cover-tb: 7px;
-
-    --bw-hair: 0.75pt;
-    --bw-h1: 1.5pt;
-    --bw-key: 3pt;
-    --indent: 2em;
-    --indent-list: 1.6em;
+    --card-bg: rgba(30, 41, 59, 0.85);
+    --card-border: rgba(255, 255, 255, 0.15);
+    --accent-blue: #38bdf8;
+    --accent-yellow: #facc15;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --nonmetal: #38bdf8;
+    --metal: #fb923c;
+    --noble: #c084fc;
   }
 
-  * { box-sizing: border-box; margin: var(--sp-0); padding: var(--sp-0); }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
 
   body {
-    font-family: var(--ff-body);
-    font-size: var(--fs-body);
-    line-height: 1.75;
-    color: var(--color-text);
-    max-width: 15.6cm;
-    margin-left: auto;
-    margin-right: auto;
+    background: radial-gradient(circle at 50% 20%, #1e293b 0%, #0f172a 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    overflow-x: hidden;
   }
 
-  p {
-    font-family: var(--ff-body);
-    font-size: var(--fs-body);
-    line-height: 1.75;
-    color: var(--color-text);
-    text-indent: var(--indent);
-    margin-bottom: var(--sp-p);
-    text-align: justify;
+  header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+    gap: 8px;
   }
 
   h1 {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-h1);
-    font-weight: 700;
-    color: var(--color-primary);
-    text-indent: var(--sp-0);
-    margin-top: var(--sp-h1-top);
-    margin-bottom: var(--sp-h1-bottom);
-    padding-bottom: var(--sp-h1-pad);
-    border-bottom: var(--bw-h1) solid var(--color-primary);
-    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fb923c, #f43f5e, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  h2 {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-h2);
-    font-weight: 700;
-    color: var(--color-accent);
-    text-indent: var(--sp-0);
-    margin-top: var(--sp-h2-top);
-    margin-bottom: var(--sp-h2-bottom);
-    line-height: 1.5;
-  }
-
-  h3 {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-h3);
-    font-weight: 700;
-    color: var(--color-primary);
-    text-indent: var(--sp-0);
-    margin-top: var(--sp-h3-top);
-    margin-bottom: var(--sp-h3-bottom);
-    line-height: 1.5;
-  }
-
-  table {
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
     width: 100%;
-    border-collapse: collapse;
-    margin: var(--sp-p) var(--sp-0) var(--sp-key) var(--sp-0);
-    font-family: var(--ff-body);
-    font-size: var(--fs-table);
   }
 
-  th {
-    background: var(--color-highlight-2);
-    color: var(--color-primary);
-    font-weight: 700;
-    text-align: center;
-    padding: var(--sp-s) var(--sp-m);
-    border: var(--bw-hair) solid var(--color-border-strong);
-    line-height: 1.4;
-    text-indent: var(--sp-0);
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(8px);
   }
 
-  td {
-    padding: var(--sp-s) var(--sp-m);
-    border: var(--bw-hair) solid var(--color-border);
-    line-height: 1.5;
-    text-indent: var(--sp-0);
-    color: var(--color-text);
+  .stat-label { font-size: 0.7rem; color: var(--text-sub); white-space: nowrap; }
+  .stat-val { font-size: 1.1rem; font-weight: 700; color: var(--accent-blue); }
+  .stat-val.time-warning { color: #f59e0b; }
+  .stat-val.time-danger { color: #ef4444; animation: blink 0.7s infinite; }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+  .control-panel {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 
-  td.c, th.c { text-align: center; }
-
-  tr.hl td {
-    background: var(--color-row-hl);
-    font-weight: 700;
+  .mode-selector {
+    display: flex;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 3px;
+    flex-wrap: wrap;
   }
 
-  .caption {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-caption);
-    color: var(--color-muted);
-    text-indent: var(--sp-0);
-    margin-top: var(--sp-cap-top);
-    margin-bottom: var(--sp-cap-bottom);
-    line-height: 1.5;
-  }
-
-  .note {
-    font-family: var(--ff-body);
-    font-size: var(--fs-note);
-    color: var(--color-muted);
-    text-indent: var(--indent);
-    line-height: 1.7;
-    margin-bottom: var(--sp-p);
-  }
-
-  .lead {
-    font-family: var(--ff-body);
-    font-size: var(--fs-lead);
-    line-height: 1.8;
-    text-indent: var(--indent);
-    margin-bottom: var(--sp-p);
-    text-align: justify;
-  }
-
-  .keyline {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-key);
-    font-weight: 700;
-    color: var(--color-primary);
-    text-indent: var(--sp-0);
-    border-left: var(--bw-key) solid var(--color-accent);
-    background: var(--color-highlight-3);
-    padding: var(--sp-l) var(--sp-2xl) var(--sp-l) var(--sp-4xl);
-    margin: var(--sp-key) var(--sp-0);
-    line-height: 1.7;
-  }
-
-  .warnline {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-warn);
-    color: var(--color-warn);
-    text-indent: var(--sp-0);
-    border-left: var(--bw-key) solid var(--color-warn);
-    background: var(--color-warn-bg);
-    padding: var(--sp-l) var(--sp-2xl) var(--sp-l) var(--sp-4xl);
-    margin: var(--sp-key) var(--sp-0);
-    line-height: 1.7;
-  }
-
-  .cover-top {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-cover-top);
-    color: var(--color-accent);
-    letter-spacing: 0.18em;
-    text-indent: var(--sp-0);
-    margin-top: var(--sp-cover-top);
-    margin-bottom: var(--sp-cover-gap);
-    text-align: left;
-  }
-
-  .cover-title {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-cover-title);
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1.45;
-    text-indent: var(--sp-0);
-    margin-bottom: var(--sp-cover-gap);
-    text-align: left;
-  }
-
-  .cover-title2 {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-cover-title2);
-    font-weight: 700;
-    color: var(--color-accent);
-    line-height: 1.45;
-    text-indent: var(--sp-0);
-    margin-bottom: var(--sp-cover-gap);
-    text-align: left;
-  }
-
-  .cover-sub {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-cover-sub);
-    color: var(--color-muted);
-    text-indent: var(--sp-0);
-    line-height: 1.8;
-    margin-bottom: var(--sp-cover-sub);
-    text-align: left;
-  }
-
-  .cover-meta {
-    font-family: var(--ff-body);
-    font-size: var(--fs-cover-top);
-    color: var(--color-muted);
-    text-indent: var(--sp-0);
-    line-height: 1.9;
-    text-align: left;
-  }
-
-  .cover-table { width: 100%; border: none; margin-top: var(--sp-cover-gap); }
-  .cover-table td {
+  .mode-btn {
+    background: transparent;
     border: none;
-    border-top: var(--bw-hair) solid var(--color-border-strong);
-    padding: var(--sp-cover-tb) var(--sp-0);
-    font-size: var(--fs-cover-top);
-    color: var(--color-text);
-  }
-  .cover-table td.k {
-    color: var(--color-muted);
-    text-indent: var(--sp-0);
-    width: 3.2cm;
+    color: var(--text-sub);
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
   }
 
-  .summary-card {
+  .mode-btn.active {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.45);
+  }
+
+  .btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+    transition: transform 0.1s;
+    white-space: nowrap;
+  }
+
+  .btn:active { transform: scale(0.96); }
+
+  .btn-restart {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+  }
+
+  .game-container {
     width: 100%;
-    border-collapse: collapse;
-    margin: var(--sp-card) var(--sp-0) var(--sp-key) var(--sp-0);
+    max-width: 800px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .summary-card td {
-    background: var(--color-highlight-3);
-    border: var(--bw-hair) solid var(--color-border-strong);
-    border-left: var(--bw-key) solid var(--color-primary);
-    padding: var(--sp-xl) var(--sp-3xl);
-  }
-  .summary-card p {
-    text-indent: var(--sp-0);
-    font-size: var(--fs-card);
-    line-height: 1.8;
-    margin-bottom: var(--sp-card);
-  }
-  .summary-card p.last { margin-bottom: var(--sp-0); }
 
-  .listnum {
-    font-family: var(--ff-body);
-    font-size: var(--fs-card);
-    line-height: 1.85;
-    text-indent: var(--sp-0);
-    margin-bottom: var(--sp-list);
-    padding-left: var(--indent-list);
+  .timer-wrap {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #22c55e, #38bdf8);
+    transition: width 0.9s linear, background 0.4s;
+  }
+
+  .timer-bar.warning { background: linear-gradient(90deg, #f59e0b, #fb923c); }
+  .timer-bar.danger { background: linear-gradient(90deg, #ef4444, #b91c1c); }
+
+  .grid-board {
+    display: grid;
+    gap: 7px;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .grid-4x5 { grid-template-columns: repeat(5, 1fr); }
+  .grid-6x4 { grid-template-columns: repeat(6, 1fr); }
+
+  .chem-card {
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .chem-card:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.3); }
+
+  .chem-card.selected {
+    border-color: var(--accent-yellow);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.6);
+    background: linear-gradient(145deg, #334155, #1e293b);
+  }
+
+  .chem-card.matched {
+    animation: matchDisappear 0.45s forwards;
+    pointer-events: none;
+  }
+
+  .chem-card.wrong {
+    animation: shake 0.4s ease-in-out;
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.2) !important;
+  }
+
+  .chem-card.face-down {
+    background: linear-gradient(145deg, #1e3a5f, #0b1220);
+    border-color: rgba(56, 189, 248, 0.35);
+  }
+
+  .chem-card.face-down .card-type-tag,
+  .chem-card.face-down .card-category-dot,
+  .chem-card.face-down .card-main-val,
+  .chem-card.face-down .card-sub-info { visibility: hidden; }
+
+  .chem-card.face-down::after {
+    content: '⚛';
+    position: absolute;
+    font-size: 1.7rem;
+    color: rgba(56, 189, 248, 0.55);
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+
+  @keyframes matchDisappear {
+    0% { transform: scale(1.08); filter: brightness(1.6); opacity: 1; }
+    50% { transform: scale(1.15) rotate(5deg); opacity: 0.8; }
+    100% { transform: scale(0); opacity: 0; }
+  }
+
+  .card-type-tag {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    font-size: 0.6rem;
+    color: var(--text-sub);
+    font-weight: bold;
+  }
+
+  .card-category-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .card-main-val { font-size: 1.4rem; font-weight: 800; line-height: 1.1; }
+
+  .card-sub-info {
+    font-size: 0.62rem;
+    color: var(--text-sub);
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  .type-nonmetal .card-main-val { color: var(--nonmetal); }
+  .type-metal .card-main-val { color: var(--metal); }
+  .type-noble .card-main-val { color: var(--noble); }
+
+  .dot-nonmetal { background-color: var(--nonmetal); }
+  .dot-metal { background-color: var(--metal); }
+  .dot-noble { background-color: var(--noble); }
+
+  .combo-popup {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #facc15;
+    text-shadow: 0 0 15px rgba(250, 204, 21, 0.8);
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.3s;
+    z-index: 50;
+    opacity: 0;
+    white-space: nowrap;
+  }
+
+  .combo-popup.show { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+
+  .penalty-popup {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ef4444;
+    text-shadow: 0 0 12px rgba(239, 68, 68, 0.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 50;
+    white-space: nowrap;
+  }
+
+  .penalty-popup.show { opacity: 1; transform: translate(-50%, -75%); }
+
+  .knowledge-card {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 10px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .know-title { color: var(--accent-yellow); font-weight: 700; white-space: nowrap; }
+
+  .know-content { color: var(--text-main); flex: 1; margin-left: 10px; }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+  .win-modal {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 2px solid var(--accent-blue);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 440px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.3);
+    transform: scale(0.85);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .win-modal.lose {
+    border-color: #ef4444;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 68, 68, 0.3);
+  }
+
+  .modal-overlay.active .win-modal { transform: scale(1); }
+
+  .win-icon { font-size: 2.8rem; margin-bottom: 6px; }
+
+  .win-title { font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin-bottom: 10px; }
+
+  .win-modal.lose .win-title { color: #ef4444; }
+
+  .win-stats {
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: left;
+  }
+
+  .win-stat-item { display: flex; flex-direction: column; }
+
+  .win-stat-label { font-size: 0.72rem; color: var(--text-sub); }
+
+  .win-stat-val { font-size: 1.05rem; font-weight: 700; color: var(--accent-yellow); }
+
+  .modal-btns { display: flex; gap: 10px; justify-content: center; }
+
+  .legend-bar { display: flex; gap: 10px; font-size: 0.7rem; color: var(--text-sub); }
+
+  .legend-item { display: flex; align-items: center; gap: 4px; }
+
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  @media (max-width: 500px) {
+    .card-main-val { font-size: 1.1rem; }
+    .card-sub-info { font-size: 0.56rem; }
+    .stat-val { font-size: 0.95rem; }
+    h1 { font-size: 1rem; }
+    .grid-board { gap: 5px; }
+    .mode-btn { font-size: 0.68rem; padding: 4px 7px; }
   }
 </style>
 </head>
 <body>
 
-<section role="cover">
-  <p class="cover-top">2026—2027 学年 · 九年级第一学期 · 第一次月考</p>
-  <p class="cover-title">354 班的账，要分开算</p>
-  <p class="cover-title2">班级总体学情 · 化学学科诊断 · 临界生培养与提质措施</p>
-  <p class="cover-sub">44 份有效样本 · 七科结构诊断 · 六层分池与一生一档</p>
-  <p class="cover-meta">354 班　2026 年 10 月 21 日</p>
-
-  <p class="cover-meta">分析范围：354 班在籍 46 人，有效样本 44 份（缺考 2 人已剔除，不按 0 分计入）；横向参照年级 6 个班共 267 份有效样本</p>
-  <p class="cover-meta">满分口径：语文 / 数学 / 英语 各 120 分，物理 / 化学 / 历史 / 政治 各 60 分，总分 600 分</p>
-  <p class="cover-meta">及格线＝满分 ×60%（语数英 72 分，政史理化 36 分）；优秀线＝满分 ×80%（语数英 96 分，政史理化 48 分）</p>
-  <p class="cover-meta">数据来源：《九上第一次月考成绩.xls》</p>
-  <p class="cover-meta">用途：班级质量分析 · 临界生培养部署 · 下一阶段教学目标与措施</p>
-</section>
-
-<section role="body" data-page-restart="1">
-
-<h1>开场：五条判断</h1>
-
-<p>这份分析不按"总分—各科—问题—措施"的顺序平铺，先给结论，再用数据支撑，最后讲怎么做。五条判断里，前两条讲班级，后三条讲化学。</p>
-
-<table class="summary-card executive-summary">
-  <thead>
-    <tr><th>核心判断摘要</th></tr>
-  </thead>
-  <tbody>
-  <tr><td>
-    <p><strong>判断一：354 班不是弱班，是"断成两截"的班。</strong>总分均分 280.7 分排六班第 4，但中位数 272.5 分并列第 2，标准差 132.4 分是六班最高。年级前 50 名里 354 班占 9 人（并列第 2），同时年级后 100 名里占 19 人。一个班里装着两支队伍，用一把尺子量，量谁都不准。</p>
-    <p><strong>判断二：与前三班的 11.7 分差距，七成压在英语一科。</strong>英语差 8.3 分，占缺口的 70.8%；政治差 3.6 分，占 30.6%。数学 +2.4 分、物理 +1.2 分是唯二的正贡献。想追上去，把力气平均分配到七科是最差的选择。</p>
-    <p><strong>判断三：化学是"沙漏型"分布，不是整体差。</strong>48 分以上占 20.5%，与年级 20.2% 基本持平；但 17 分以下占 31.8%，年级只有 18.4%，是六班最高。把 ≤17 分的 14 人拿掉，剩下 30 人化学均分 40.7 分，是六班第一。</p>
-    <p><strong>判断四：同一批学生，物理年级第 1，化学年级第 6。</strong>物理得分率 54.8%（六班第 1），化学 52.4%（六班第 6），"化学减物理"为 −2.4 个百分点，是六个班中唯一明显为负的。同一批学生的理科能力不会在两科之间差这么多，差的不是能力，是落实。</p>
-    <p class="last"><strong>判断五：化学尾部 14 人不是化学问题。</strong>这 14 人总分全部低于 240 分，数学得分率只有 7.8%，语文 37.1%。化学单科补课对他们的边际收益接近零——他们缺的不是化学知识，是坐满考场、把会做的题写完的能力。</p>
-  </td></tr>
-  </tbody>
-</table>
-
-<p class="keyline">一句话概括：354 班的问题不在"平均数"，在"两端"——头部要拉高峰，尾部要恢复功能，中间要靠英语补断层。化学这一科尤其如此：上部不弱，下部太沉，中间被英语和数学拖住。</p>
-
-<h1>一、班级总体：位置、结构与学科缺口</h1>
-
-<h2>1.1 六班坐标：均分第 4，中位第 2，离散度最高</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>班级</th><th class="c">有效人数</th><th class="c">总分均分</th><th class="c">中位数</th><th class="c">标准差</th><th class="c">最高分</th><th class="c">最低分</th><th class="c">均分位次</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>359 班</td><td class="c">48</td><td class="c">293.1</td><td class="c">272.5</td><td class="c">121.6</td><td class="c">546</td><td class="c">108</td><td class="c">1</td></tr>
-    <tr><td>358 班</td><td class="c">42</td><td class="c">292.3</td><td class="c">268.0</td><td class="c">119.0</td><td class="c">511</td><td class="c">113</td><td class="c">2</td></tr>
-    <tr><td>357 班</td><td class="c">46</td><td class="c">291.9</td><td class="c">264.5</td><td class="c">119.4</td><td class="c">540</td><td class="c">70</td><td class="c">3</td></tr>
-    <tr class="hl"><td>354 班</td><td class="c">44</td><td class="c">280.7</td><td class="c">272.5</td><td class="c">132.4</td><td class="c">543</td><td class="c">86</td><td class="c">4</td></tr>
-    <tr><td>356 班</td><td class="c">49</td><td class="c">279.9</td><td class="c">240.0</td><td class="c">119.1</td><td class="c">546</td><td class="c">48</td><td class="c">5</td></tr>
-    <tr><td>355 班</td><td class="c">38</td><td class="c">275.0</td><td class="c">275.0</td><td class="c">120.8</td><td class="c">503</td><td class="c">49</td><td class="c">6</td></tr>
-    <tr class="hl"><td>年级</td><td class="c">267</td><td class="c">285.7</td><td class="c">265</td><td class="c">121.2</td><td class="c">546</td><td class="c">48</td><td class="c">—</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：有效样本＝在籍人数减去全科 0 分缺考者（354 班 2 人、355 班 3 人、357 班 1 人，合计 6 人）。标准差为样本标准差（ddof＝1），反映两极分化程度，数值越大说明"断得越厉害"。</p>
-
-<p>这张表要连着看两个数：<strong>354 班的均分排第 4，中位数却并列第 2</strong>。中位数代表"排在正中间的那个学生"，它比均分高说明班里有少数极低分把均往下拉。再看标准差 132.4，六个班最高，比最低的 356 班（119.1）高出 13.3 分——354 班内部的差距，比班与班之间的差距还大。</p>
-
-<h2>1.2 总分分段：底部过厚，中腰偏薄</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>分数段</th><th class="c">354 班人数</th><th class="c">354 班占比</th><th class="c">年级占比</th><th class="c">差值</th><th class="c">判读</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>480 分以上</td><td class="c">4</td><td class="c">9.1%</td><td class="c">9.4%</td><td class="c">−0.3</td><td class="c">持平</td></tr>
-    <tr><td>420—479 分</td><td class="c">4</td><td class="c">9.1%</td><td class="c">6.7%</td><td class="c">+2.4</td><td class="c">略优</td></tr>
-    <tr><td>360—419 分</td><td class="c">5</td><td class="c">11.4%</td><td class="c">11.2%</td><td class="c">+0.2</td><td class="c">持平</td></tr>
-    <tr><td>300—359 分</td><td class="c">6</td><td class="c">13.6%</td><td class="c">14.2%</td><td class="c">−0.6</td><td class="c">持平</td></tr>
-    <tr><td>240—299 分</td><td class="c">5</td><td class="c">11.4%</td><td class="c">14.6%</td><td class="c">−3.2</td><td class="c">偏薄</td></tr>
-    <tr><td>200—239 分</td><td class="c">4</td><td class="c">9.1%</td><td class="c">17.2%</td><td class="c">−8.1</td><td class="c">明显偏薄</td></tr>
-    <tr class="hl"><td>200 分以下</td><td class="c">16</td><td class="c">36.4%</td><td class="c">26.6%</td><td class="c">+9.8</td><td class="c">显著过厚</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：分段阈值取 240 分（七科得分率 40%，底线）、360 分（及格线）、480 分（优秀线）；另以 200 分、300 分、420 分作细分观察点。</p>
-
-<p>354 班的结构是"<strong>两头厚、中间薄</strong>"：200 分以下 16 人，占 36.4%，比年级高出 9.8 个百分点；而 200—239 分这个本该承接底部向上流动的区间只有 4 人（9.1%），比年级低 8.1 个百分点。换句话说，底部这 16 人不是"差一点就上来"，而是与中间层之间隔着一堵墙。</p>
-
-<p>再看一个更有说服力的算法：把这 16 人拿掉，剩下的 28 人总分均分 358.0 分，比年级其余班级同口径的 331.7 分高出 26.3 分；若拿掉 240 分以下的 20 人，剩下 24 人均分 380.9 分，仍高出 12.1 分。<strong>去掉底部之后，354 班是六班最强的班。</strong>这再次说明：班级均分被底部拖住，而不是全班水平不行。</p>
-
-<h2>1.3 七科得分率：数学物理是优势，英语政治是窟窿</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>科目</th><th class="c">满分</th><th class="c">354 均分</th><th class="c">年级均分</th><th class="c">得分率</th><th class="c">六班位次</th><th class="c">与年级差</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>物理</td><td class="c">60</td><td class="c">32.9</td><td class="c">31.1</td><td class="c">54.8%</td><td class="c">1</td><td class="c">+1.8</td></tr>
-    <tr><td>数学</td><td class="c">120</td><td class="c">42.3</td><td class="c">39.2</td><td class="c">35.2%</td><td class="c">1</td><td class="c">+3.1</td></tr>
-    <tr><td>语文</td><td class="c">120</td><td class="c">66.2</td><td class="c">66.5</td><td class="c">55.2%</td><td class="c">3</td><td class="c">−0.3</td></tr>
-    <tr><td>历史</td><td class="c">60</td><td class="c">27.4</td><td class="c">28.4</td><td class="c">45.7%</td><td class="c">6</td><td class="c">−1.0</td></tr>
-    <tr><td>政治</td><td class="c">60</td><td class="c">30.5</td><td class="c">32.4</td><td class="c">50.8%</td><td class="c">5</td><td class="c">−1.9</td></tr>
-    <tr class="hl"><td>化学</td><td class="c">60</td><td class="c">31.5</td><td class="c">32.6</td><td class="c">52.4%</td><td class="c">6</td><td class="c">−1.1</td></tr>
-    <tr class="hl"><td>英语</td><td class="c">120</td><td class="c">50.0</td><td class="c">55.6</td><td class="c">41.6%</td><td class="c">6</td><td class="c">−5.6</td></tr>
-  </tbody>
-</table>
-<p class="caption">注："与年级差"＝354 班均分减去全年级 267 人该科均分。六班位次按本科均分从高到低排。</p>
-
-<p>七科里 354 班有两科拿到年级第一：数学（42.3 分，年级 39.2）、物理（32.9 分，年级 31.1）。这两科是班级的资产，说明这批学生的逻辑与理科思维并不差——这一点对后面分析化学很关键。</p>
-
-<p>问题集中在两科：<strong>英语 50.0 分，六班最低，比年级低 5.6 分，及格率只有 22.7%（10/44），28 人英语不足 50 分</strong>；<strong>化学 31.5 分排第 6，比年级低 1.1 分</strong>。英语是班级的第一窟窿，化学是第二窟窿，但两者的性质完全不同（见第二章）。</p>
-
-<h2>1.4 缺口分解：11.7 分里，英语占 8.3 分</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>科目</th><th class="c">354 班</th><th class="c">前三班均值</th><th class="c">差值</th><th class="c">占缺口比重</th><th class="c">性质</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="hl"><td>英语</td><td class="c">50.0</td><td class="c">58.3</td><td class="c">−8.3</td><td class="c">70.8%</td><td class="c">主攻</td></tr>
-    <tr><td>政治</td><td class="c">30.5</td><td class="c">34.1</td><td class="c">−3.6</td><td class="c">30.6%</td><td class="c">兼补</td></tr>
-    <tr><td>语文</td><td class="c">66.2</td><td class="c">67.6</td><td class="c">−1.3</td><td class="c">11.5%</td><td class="c">微调</td></tr>
-    <tr><td>历史</td><td class="c">27.4</td><td class="c">28.8</td><td class="c">−1.3</td><td class="c">11.2%</td><td class="c">微调</td></tr>
-    <tr><td>化学</td><td class="c">31.5</td><td class="c">32.2</td><td class="c">−0.8</td><td class="c">6.8%</td><td class="c">微调</td></tr>
-    <tr><td>物理</td><td class="c">32.9</td><td class="c">31.7</td><td class="c">+1.2</td><td class="c">−10.6%</td><td class="c">保持</td></tr>
-    <tr><td>数学</td><td class="c">42.3</td><td class="c">39.9</td><td class="c">+2.4</td><td class="c">−20.3%</td><td class="c">保持</td></tr>
-    <tr class="hl"><td>合计</td><td class="c">—</td><td class="c">—</td><td class="c">−11.7</td><td class="c">100%</td><td class="c">—</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：前三班指 359、358、357 班（总分均分前三名）。"占缺口比重"＝该科差值 ÷ 总差值 11.7 分；数学、物理为正贡献，故比重为负。</p>
-
-<p class="warnline">这张表是本次分析最重要的一张。如果下一阶段只能集中资源打一科，那就打英语——英语一科贡献了七成缺口，而且它的提升空间是"全员性的"（28 人不足 50 分），不像政治、历史那样受限于知识点覆盖面。</p>
-
-<h2>1.5 头部与尾部：有高原，缺高峰</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>群体</th><th class="c">354 班</th><th class="c">年级前 15 名</th><th class="c">差值</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>语文</td><td class="c">85.6</td><td class="c">97.5</td><td class="c">−11.9</td></tr>
-    <tr><td>数学</td><td class="c">86.7</td><td class="c">107.9</td><td class="c">−21.2</td></tr>
-    <tr class="hl"><td>英语</td><td class="c">80.2</td><td class="c">109.7</td><td class="c">−29.5</td></tr>
-    <tr><td>历史</td><td class="c">39.7</td><td class="c">48.0</td><td class="c">−8.3</td></tr>
-    <tr><td>政治</td><td class="c">42.5</td><td class="c">50.1</td><td class="c">−7.6</td></tr>
-    <tr><td>物理</td><td class="c">50.3</td><td class="c">56.7</td><td class="c">−6.4</td></tr>
-    <tr><td>化学</td><td class="c">50.2</td><td class="c">56.4</td><td class="c">−6.2</td></tr>
-    <tr class="hl"><td>总分</td><td class="c">435.1</td><td class="c">526.4</td><td class="c">−91.3</td></tr>
-  </tbody>
-</table>
-<p class="caption">注："354 班"列为该班总分前 15 名学生的各科均分；"年级前 15 名"为全年级总分最高 15 人（其中 354 班占 1 人）。</p>
-
-<p>354 班年级前 50 名有 9 人，与 356、358 班并列第 2，头部规模不弱。但把班级前 15 名与年级前 15 名放在一起比，差距高达 91.3 分，其中英语独占 29.5 分、数学 21.2 分。<strong>354 班是"有高原、缺高峰"</strong>——能出一批 400 分以上的学生，但出不了 500 分以上的尖子（全班最高 543 分，年级第一也是 543 分，说明尖子层其实到了位；真正缺的是 460—520 这一层被英语拽住的学生）。</p>
-
-<p>典型如张欣羽（总分 445，英语 76）、郝泽承（总分 405，英语 95）、董堰楠（总分 399，英语 74）、李晴语（总分 379，英语 57）、艾佳欣（总分 377，英语 55）——这几人数学、物理、化学都不弱，卡在英语上。他们既是化学的冲优对象，也是英语攻坚的第一批受益者。</p>
-
-<h1>二、化学学科专项学情</h1>
-
-<h2>2.1 六班化学指标：均分第 6，及格率第 3，低分率第 1</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>班级</th><th class="c">人数</th><th class="c">均分</th><th class="c">中位数</th><th class="c">标准差</th><th class="c">及格率</th><th class="c">优秀率</th><th class="c">≤17 分占比</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>356 班</td><td class="c">49</td><td class="c">35.2</td><td class="c">33.0</td><td class="c">12.2</td><td class="c">42.9%</td><td class="c">16.3%</td><td class="c">4.1%</td></tr>
-    <tr><td>359 班</td><td class="c">48</td><td class="c">32.9</td><td class="c">31.0</td><td class="c">15.0</td><td class="c">39.6%</td><td class="c">22.9%</td><td class="c">14.6%</td></tr>
-    <tr><td>358 班</td><td class="c">42</td><td class="c">32.3</td><td class="c">33.5</td><td class="c">15.3</td><td class="c">42.9%</td><td class="c">19.0%</td><td class="c">21.4%</td></tr>
-    <tr><td>355 班</td><td class="c">38</td><td class="c">31.7</td><td class="c">36.5</td><td class="c">16.9</td><td class="c">52.6%</td><td class="c">23.7%</td><td class="c">28.9%</td></tr>
-    <tr><td>357 班</td><td class="c">46</td><td class="c">31.6</td><td class="c">29.0</td><td class="c">13.6</td><td class="c">34.8%</td><td class="c">19.6%</td><td class="c">13.0%</td></tr>
-    <tr class="hl"><td>354 班</td><td class="c">44</td><td class="c">31.5</td><td class="c">31.0</td><td class="c">17.3</td><td class="c">45.5%</td><td class="c">20.5%</td><td class="c">31.8%</td></tr>
-    <tr class="hl"><td>年级</td><td class="c">267</td><td class="c">32.6</td><td class="c">32</td><td class="c">15.0</td><td class="c">42.7%</td><td class="c">20.2%</td><td class="c">18.4%</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：化学满分 60 分，及格线 36 分，优秀线 48 分。标准差 17.3 为六班最高，说明 354 班化学内部离散程度最大。</p>
-
-<p>三个指标指向三个方向：<strong>优秀率 20.5% 与年级持平（20.2%），说明上部不弱；及格率 45.5% 反而高于年级 42.7% 排第 3，说明中部也不弱；但 ≤17 分占比 31.8% 是六班最高（年级 18.4%），是唯一塌陷的指标。</strong>均分被拖到第 6，全部由这 14 个极低分造成。</p>
-
-<h2>2.2 分布形态：典型的"沙漏"</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>化学分数段</th><th class="c">354 班人数</th><th class="c">354 班占比</th><th class="c">年级占比</th><th class="c">差值</th><th class="c">位置</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>48—60 分（优秀）</td><td class="c">9</td><td class="c">20.5%</td><td class="c">20.2%</td><td class="c">+0.3</td><td class="c">上部</td></tr>
-    <tr><td>42—47 分（准优秀）</td><td class="c">7</td><td class="c">15.9%</td><td class="c">10.1%</td><td class="c">+5.8</td><td class="c">上部</td></tr>
-    <tr><td>36—41 分（刚及格）</td><td class="c">4</td><td class="c">9.1%</td><td class="c">12.4%</td><td class="c">−3.3</td><td class="c">中部</td></tr>
-    <tr><td>30—35 分（临界及格）</td><td class="c">3</td><td class="c">6.8%</td><td class="c">13.9%</td><td class="c">−7.1</td><td class="c">中部</td></tr>
-    <tr><td>24—29 分</td><td class="c">3</td><td class="c">6.8%</td><td class="c">13.5%</td><td class="c">−6.7</td><td class="c">中部</td></tr>
-    <tr><td>18—23 分</td><td class="c">4</td><td class="c">9.1%</td><td class="c">11.6%</td><td class="c">−2.5</td><td class="c">下部</td></tr>
-    <tr class="hl"><td>0—17 分</td><td class="c">14</td><td class="c">31.8%</td><td class="c">18.4%</td><td class="c">+13.4</td><td class="c">底部</td></tr>
-  </tbody>
-</table>
-
-<p>把这张表画成图，形状是沙漏：上头 48 分以上 9 人，中间 18—47 分只有 18 人，下头 0—17 分 14 人。年级的对应比例是 20.2%、61.4%、18.4%，中间层厚得多。<strong>354 班的化学不是"整体偏低"，是"中间层被抽空"——该在中间的人落到了底下。</strong></p>
-
-<h2>2.3 一个关键对照：同一批学生，物理第 1、化学第 6</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>班级</th><th class="c">物理得分率</th><th class="c">化学得分率</th><th class="c">化学 − 物理</th><th class="c">物理位次</th><th class="c">化学位次</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>356 班</td><td class="c">48.1%</td><td class="c">58.7%</td><td class="c">+10.6</td><td class="c">6</td><td class="c">1</td></tr>
-    <tr><td>355 班</td><td class="c">49.8%</td><td class="c">52.8%</td><td class="c">+2.9</td><td class="c">5</td><td class="c">4</td></tr>
-    <tr><td>358 班</td><td class="c">51.3%</td><td class="c">53.8%</td><td class="c">+2.4</td><td class="c">4</td><td class="c">3</td></tr>
-    <tr><td>359 班</td><td class="c">53.0%</td><td class="c">54.8%</td><td class="c">+1.8</td><td class="c">2</td><td class="c">2</td></tr>
-    <tr><td>357 班</td><td class="c">53.9%</td><td class="c">52.6%</td><td class="c">−1.2</td><td class="c">3</td><td class="c">5</td></tr>
-    <tr class="hl"><td>354 班</td><td class="c">54.8%</td><td class="c">52.4%</td><td class="c">−2.4</td><td class="c">1</td><td class="c">6</td></tr>
-  </tbody>
-</table>
-
-<p class="keyline">354 班的物理是六班第一（54.8%），化学是六班第六（52.4%），两科相差 5 个位次、"化学减物理"−2.4 个百分点，是六班中负值最大的一个。同一批学生、同一学期、同为理科，物理能考第一，化学掉到第六——这不能用"学生理科底子差"来解释，只能从化学这一科的教学落实上找原因。</p>
-
-<p>具体到人头更明显：徐博焱化学 17 分、物理 22 分；李辰晞化学 16 分、物理 21 分；王梓龙化学 17 分、物理 27 分。这批学生物理能拿到 20 多分，化学却只有十几分，差距不是能力，是化学的<strong>记忆性内容（化学方程式、物质性质、实验现象）没过关</strong>——物理靠理解可以蒙到分，化学没有记忆就一分没有。</p>
-
-<h2>2.4 去尾诊断：拿掉 14 人后，化学是六班第一</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>统计口径</th><th class="c">354 班</th><th class="c">355</th><th class="c">356</th><th class="c">357</th><th class="c">358</th><th class="c">359</th><th class="c">354 位次</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>全体化学均分</td><td class="c">31.5</td><td class="c">31.7</td><td class="c">35.2</td><td class="c">31.6</td><td class="c">32.3</td><td class="c">32.9</td><td class="c">6</td></tr>
-    <tr class="hl"><td>化学 ≥18 分者均分</td><td class="c">40.7</td><td class="c">40.5</td><td class="c">36.2</td><td class="c">34.7</td><td class="c">38.1</td><td class="c">36.8</td><td class="c">1</td></tr>
-    <tr><td>化学 ≥24 分者均分</td><td class="c">43.9</td><td class="c">43.7</td><td class="c">38.4</td><td class="c">37.1</td><td class="c">40.6</td><td class="c">39.9</td><td class="c">1</td></tr>
-    <tr><td>≤17 分人数</td><td class="c">14</td><td class="c">11</td><td class="c">2</td><td class="c">6</td><td class="c">9</td><td class="c">7</td><td class="c">6（最多）</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：≥24 分者均分一行，355—359 列为同口径数值，用于验证结论稳健性。</p>
-
-<p>这是本次化学诊断的核心证据：<strong>"考化学的这 30 个人（≥18 分），354 班是六个班最强的"</strong>。问题不是教不会，是有一批人根本没进入学习状态。因此化学这一科的干预必须分成两套完全不同的打法——上中部按"提能力"打，底部按"恢复功能"打，混在一起做必然两头落空。</p>
-
-<h2>2.5 尾部 14 人画像：不是化学问题，是全科失守</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>科目</th><th class="c">尾部 14 人得分率</th><th class="c">化学 ≥18 的 30 人</th><th class="c">全班 44 人</th><th class="c">与全班差</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="hl"><td>数学</td><td class="c">7.8%</td><td class="c">48.0%</td><td class="c">35.2%</td><td class="c">−27.4</td></tr>
-    <tr><td>历史</td><td class="c">22.5%</td><td class="c">56.6%</td><td class="c">45.7%</td><td class="c">−23.2</td></tr>
-    <tr><td>英语</td><td class="c">24.9%</td><td class="c">49.4%</td><td class="c">41.6%</td><td class="c">−16.7</td></tr>
-    <tr><td>物理</td><td class="c">26.5%</td><td class="c">68.1%</td><td class="c">54.8%</td><td class="c">−28.3</td></tr>
-    <tr><td>政治</td><td class="c">31.3%</td><td class="c">59.9%</td><td class="c">50.8%</td><td class="c">−19.5</td></tr>
-    <tr><td>语文</td><td class="c">37.1%</td><td class="c">63.6%</td><td class="c">55.2%</td><td class="c">−18.1</td></tr>
-    <tr class="hl"><td>化学</td><td class="c">19.3%</td><td class="c">67.9%</td><td class="c">52.4%</td><td class="c">−33.1</td></tr>
-    <tr class="hl"><td>总分</td><td class="c">23.9%（均值 143.6）</td><td class="c">—</td><td class="c">46.8%（均值 280.7）</td><td class="c">−22.9</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：尾部 14 人指化学 ≤17 分者；其总分均分 143.6 分，14 人总分全部低于 240 分，14 人数学全部低于 30 分。</p>
-
-<p>这 14 人的数据里有三个"全部"：<strong>总分全部低于 240 分（14/14）、数学全部低于 30 分（14/14）、化学全部低于 18 分</strong>。他们的数学得分率只有 7.8%——120 分的卷子平均不到 10 分，这不是"不会做"，是"没做"。</p>
-
-<p class="warnline">结论必须说清楚：对这 14 人，化学补课是无效投入。他们的化学得分率 19.3% 与物理 26.5%、数学 7.8% 是同一件事——全科性的学习功能停摆。化学老师能做的只有两件：一是保证他们到课、带笔、写作业；二是把最基础的 20 分内容（化学式、方程式、常见物质颜色与用途）反复过手。真正的分数增量，取决于这 14 人是否恢复"到校—听课—作答"的基本链条，而这需要班主任、家长、年级三方合力，不是化学一科的责任。</p>
-
-<h2>2.6 化学六层分池</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>池</th><th class="c">分数区间</th><th class="c">人数</th><th class="c">池内化学均分</th><th class="c">池内总分均分</th><th class="c">定位</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>A 优秀组</td><td class="c">48—60</td><td class="c">9</td><td class="c">55.0</td><td class="c">463.7</td><td class="c">守成拔尖</td></tr>
-    <tr><td>B 冲优池</td><td class="c">42—47</td><td class="c">7</td><td class="c">45.1</td><td class="c">372.9</td><td class="c">冲优秀线</td></tr>
-    <tr><td>C 守格池</td><td class="c">36—41</td><td class="c">4</td><td class="c">38.2</td><td class="c">310.0</td><td class="c">稳固及格</td></tr>
-    <tr><td>D 冲格池</td><td class="c">30—35</td><td class="c">3</td><td class="c">31.7</td><td class="c">263.0</td><td class="c">冲及格线</td></tr>
-    <tr><td>E 提格池</td><td class="c">18—29</td><td class="c">7</td><td class="c">23.3</td><td class="c">218.3</td><td class="c">系统补救</td></tr>
-    <tr class="hl"><td>F 守护组</td><td class="c">0—17</td><td class="c">14</td><td class="c">11.6</td><td class="c">143.6</td><td class="c">功能恢复</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：分池依据为化学单科分数与两条关键线（及格 36 分、优秀 48 分）的距离，兼顾"提升可行性"。B、C、D、E 四池合计 21 人为化学学科意义上的临界生；F 组 14 人为底线管理对象。</p>
-
-<h1>三、临界生识别与培养思路</h1>
-
-<h2>3.1 什么叫临界生：三重筛选</h2>
-
-<p>"临界生"不是"差生"的委婉说法。它的准确定义是<strong>距离某条关键线最近、且通过干预最可能跨过去的那批人</strong>。定义一旦含糊，名单就会无限扩张，最后谁都抓不住。本次采用三重筛选：</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>筛</th><th class="c">筛选条件</th><th class="c">354 班命中</th><th class="c">作用</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>第一重：学科临界</td><td class="c">距学科及格线或优秀线 ≤6 分</td><td class="c">化学 B 池 7 人、D 池 3 人</td><td class="c">确定"谁来补"</td></tr>
-    <tr><td>第二重：总分临界</td><td class="c">距总分关键线（240 / 300 / 360 / 420）≤30 分</td><td class="c">11 人</td><td class="c">确定"补了值不值"</td></tr>
-    <tr><td>第三重：可行性</td><td class="c">在籍到课、有作业记录、非全科零作答</td><td class="c">排除 F 组 14 人中的多数</td><td class="c">确定"能不能补得动"</td></tr>
-  </tbody>
-</table>
-
-<p>三重筛下来，<strong>化学学科的真正临界生是 B、C、D 三池共 14 人</strong>，加上 E 池 7 人作为"次级临界"，构成 21 人的培养名单。F 组 14 人不列入临界生培养，单列底线管理。这个区分很重要：<strong>把 F 组放进临界生名单，会让真正能出成绩的人被稀释掉。</strong></p>
-
-<h2>3.2 化学临界生名册（21 人）</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>姓名</th><th class="c">化学</th><th class="c">池</th><th class="c">总分</th><th class="c">语文</th><th class="c">数学</th><th class="c">英语</th><th class="c">物理</th><th class="c">最紧缺口</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>张欣羽</td><td class="c">47</td><td class="c">B</td><td class="c">445</td><td class="c">88</td><td class="c">89</td><td class="c">76</td><td class="c">46</td><td class="c">英语</td></tr>
-    <tr><td>艾佳欣</td><td class="c">47</td><td class="c">B</td><td class="c">377</td><td class="c">78</td><td class="c">82</td><td class="c">55</td><td class="c">48</td><td class="c">英语</td></tr>
-    <tr><td>董堰楠</td><td class="c">46</td><td class="c">B</td><td class="c">399</td><td class="c">78</td><td class="c">88</td><td class="c">74</td><td class="c">49</td><td class="c">英语、历史</td></tr>
-    <tr><td>李鑫瑜</td><td class="c">45</td><td class="c">B</td><td class="c">275</td><td class="c">51</td><td class="c">52</td><td class="c">35</td><td class="c">40</td><td class="c">英语、语文</td></tr>
-    <tr><td>冯梓桐</td><td class="c">45</td><td class="c">B</td><td class="c">330</td><td class="c">84</td><td class="c">43</td><td class="c">49</td><td class="c">39</td><td class="c">数学、英语</td></tr>
-    <tr><td>郝泽承</td><td class="c">43</td><td class="c">B</td><td class="c">405</td><td class="c">72</td><td class="c">79</td><td class="c">95</td><td class="c">51</td><td class="c">历史、政治</td></tr>
-    <tr><td>李晴语</td><td class="c">43</td><td class="c">B</td><td class="c">379</td><td class="c">76</td><td class="c">77</td><td class="c">57</td><td class="c">49</td><td class="c">英语、历史</td></tr>
-    <tr><td>胡皓轩</td><td class="c">40</td><td class="c">C</td><td class="c">316</td><td class="c">77</td><td class="c">27</td><td class="c">63</td><td class="c">36</td><td class="c">数学</td></tr>
-    <tr><td>江可欣</td><td class="c">39</td><td class="c">C</td><td class="c">297</td><td class="c">79</td><td class="c">31</td><td class="c">42</td><td class="c">37</td><td class="c">数学、英语</td></tr>
-    <tr><td>徐烁晰</td><td class="c">38</td><td class="c">C</td><td class="c">307</td><td class="c">73</td><td class="c">48</td><td class="c">47</td><td class="c">33</td><td class="c">数学、英语</td></tr>
-    <tr><td>徐佳宇</td><td class="c">36</td><td class="c">C</td><td class="c">320</td><td class="c">64</td><td class="c">69</td><td class="c">44</td><td class="c">38</td><td class="c">英语</td></tr>
-    <tr><td>胡钰鑫</td><td class="c">33</td><td class="c">D</td><td class="c">239</td><td class="c">74</td><td class="c">9</td><td class="c">18</td><td class="c">41</td><td class="c">数学、英语</td></tr>
-    <tr><td>安慧颖</td><td class="c">32</td><td class="c">D</td><td class="c">309</td><td class="c">67</td><td class="c">62</td><td class="c">46</td><td class="c">39</td><td class="c">英语、历史</td></tr>
-    <tr><td>于圣博</td><td class="c">30</td><td class="c">D</td><td class="c">241</td><td class="c">68</td><td class="c">22</td><td class="c">23</td><td class="c">34</td><td class="c">数学、英语</td></tr>
-    <tr><td>史家泽</td><td class="c">29</td><td class="c">E</td><td class="c">270</td><td class="c">68</td><td class="c">18</td><td class="c">54</td><td class="c">28</td><td class="c">数学、物理</td></tr>
-    <tr><td>徐佳豪</td><td class="c">28</td><td class="c">E</td><td class="c">298</td><td class="c">75</td><td class="c">57</td><td class="c">44</td><td class="c">40</td><td class="c">英语、历史</td></tr>
-    <tr><td>李汶哲</td><td class="c">25</td><td class="c">E</td><td class="c">213</td><td class="c">75</td><td class="c">15</td><td class="c">19</td><td class="c">23</td><td class="c">数学、英语</td></tr>
-    <tr><td>刘佩铜</td><td class="c">19</td><td class="c">E</td><td class="c">208</td><td class="c">58</td><td class="c">12</td><td class="c">27</td><td class="c">27</td><td class="c">数学、英语</td></tr>
-    <tr><td>徐天怡</td><td class="c">21</td><td class="c">E</td><td class="c">193</td><td class="c">53</td><td class="c">12</td><td class="c">45</td><td class="c">17</td><td class="c">数学、物理</td></tr>
-    <tr><td>申钰铃</td><td class="c">22</td><td class="c">E</td><td class="c">191</td><td class="c">60</td><td class="c">18</td><td class="c">35</td><td class="c">17</td><td class="c">数学、物理</td></tr>
-    <tr><td>闫家鑫</td><td class="c">19</td><td class="c">E</td><td class="c">155</td><td class="c">50</td><td class="c">12</td><td class="c">27</td><td class="c">25</td><td class="c">数学、英语</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：按化学分数降序排列。"最紧缺口"指该生除化学外、相对本人水平最弱的一至两科（取低于本人七科平均得分率最多者）。</p>
-
-<h2>3.3 一个容易被忽略的事实：化学临界生的短板不在化学</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>科目</th><th class="c">21 名临界生得分率</th><th class="c">全班 44 人得分率</th><th class="c">差</th><th class="c">组内排序</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>物理</td><td class="c">65.8%</td><td class="c">54.8%</td><td class="c">+11.0</td><td class="c">1</td></tr>
-    <tr><td>化学</td><td class="c">63.3%</td><td class="c">52.4%</td><td class="c">+10.9</td><td class="c">2</td></tr>
-    <tr><td>语文</td><td class="c">61.1%</td><td class="c">55.2%</td><td class="c">+5.9</td><td class="c">3</td></tr>
-    <tr><td>政治</td><td class="c">58.5%</td><td class="c">50.8%</td><td class="c">+7.7</td><td class="c">4</td></tr>
-    <tr><td>历史</td><td class="c">53.9%</td><td class="c">45.7%</td><td class="c">+8.2</td><td class="c">5</td></tr>
-    <tr><td>数学</td><td class="c">42.5%</td><td class="c">35.2%</td><td class="c">+7.3</td><td class="c">6</td></tr>
-    <tr class="hl"><td>英语</td><td class="c">41.2%</td><td class="c">41.6%</td><td class="c">−0.4</td><td class="c">7（末位）</td></tr>
-  </tbody>
-</table>
-
-<p class="keyline">把这 21 人自己的七科放在一起比，化学排第 2（63.3%），英语排末位（41.2%），两科相差 22 个百分点。也就是说：对这批人而言，化学已经是他们的相对强项，真正拖住他们的是英语和数学。<strong>如果目标是提高他们的总分，补课顺序应该是英语 → 数学 → 化学；如果目标是化学学科的优秀率和及格率，才应该直接攻化学。</strong>两个目标不能混为一谈，否则会出现"化学老师很努力、班级总分纹丝不动"的结果。</p>
-
-<h2>3.4 提升测算：不同池子，产出完全不同的指标</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>干预方案</th><th class="c">班均</th><th class="c">Δ均分</th><th class="c">及格率</th><th class="c">优秀率</th><th class="c">主产出</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>基线（现状）</td><td class="c">31.45</td><td class="c">—</td><td class="c">45.5%</td><td class="c">20.5%</td><td class="c">—</td></tr>
-    <tr><td>只推 B 池（42—47 → 48）</td><td class="c">32.00</td><td class="c">+0.54</td><td class="c">45.5%</td><td class="c">31.8%</td><td class="c">优秀率 +11.4</td></tr>
-    <tr><td>只推 C 池（36—41 → 43）</td><td class="c">31.85</td><td class="c">+0.39</td><td class="c">45.5%</td><td class="c">20.5%</td><td class="c">防下滑</td></tr>
-    <tr><td>只推 D 池（30—35 → 37）</td><td class="c">31.75</td><td class="c">+0.29</td><td class="c">50.0%</td><td class="c">20.5%</td><td class="c">及格率 +4.5</td></tr>
-    <tr><td>只推 E 池（18—29 → 32）</td><td class="c">32.81</td><td class="c">+1.35</td><td class="c">50.0%</td><td class="c">20.5%</td><td class="c">均分 + 及格率</td></tr>
-    <tr><td>只推 F 组（≤17 → 22）</td><td class="c">34.95</td><td class="c">+3.50</td><td class="c">45.5%</td><td class="c">20.5%</td><td class="c">均分（大）</td></tr>
-    <tr class="hl"><td>B+C+D 上部齐推</td><td class="c">32.68</td><td class="c">+1.23</td><td class="c">50.0%</td><td class="c">31.8%</td><td class="c">优秀率 +11.4、及格率 +4.5</td></tr>
-    <tr class="hl"><td>E+F 下部兜底</td><td class="c">36.31</td><td class="c">+4.85</td><td class="c">50.0%</td><td class="c">20.5%</td><td class="c">均分 +4.85</td></tr>
-    <tr><td>六池全推（理想上限）</td><td class="c">37.53</td><td class="c">+6.08</td><td class="c">54.5%</td><td class="c">31.8%</td><td class="c">全部指标</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：测算方式为对各池化学分数施加增量后重算全班指标，单人上限 60 分。各池增量取该池到目标线的平均距离（B 池 +3.4、C 池 +4.3、D 池 +4.3、E 池 +8.5、F 组 +11.0）。</p>
-
-<p>这张表揭示了一个必须写进考核办法的事实：<strong>上部（B/C/D）和下部（E/F）产出的指标完全不同。</strong>上部 14 人全部推进，均分只涨 1.23 分，但优秀率涨 11.4 个百分点、及格率涨 4.5 个百分点；下部 21 人推进，均分能涨 4.85 分，但对优秀率毫无贡献。</p>
-
-<p class="warnline">由此得出培养思路的第一条原则：<strong>如果只用"班均分"考核化学，教师会理性地把全部精力投向 F 组，B 池会被放弃；如果只用"优秀率"考核，F 组会被彻底放弃。因此必须把两个池子的目标和考核分开写——上部考核优秀率与及格率，下部考核均分增量与低分人数减少。</strong></p>
-
-<h2>3.5 培养思路：三池一守，各走各的路</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>池</th><th class="c">人数</th><th class="c">学期目标</th><th class="c">核心抓手</th><th class="c">频率</th><th class="c">考核指标</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>A 优秀组</td><td class="c">9</td><td class="c">稳住 50 分+</td><td class="c">实验探究、流程题、压轴计算</td><td class="c">每周加餐</td><td class="c">满分人数</td></tr>
-    <tr class="hl"><td>B 冲优池</td><td class="c">7</td><td class="c">全部过 48</td><td class="c">中档题零失误、错题重做</td><td class="c">每周面批</td><td class="c">过线 7/7</td></tr>
-    <tr><td>C 守格池</td><td class="c">4</td><td class="c">提到 43 分</td><td class="c">基础题满分、方程式默写</td><td class="c">每两周面批</td><td class="c">0 人跌破 36</td></tr>
-    <tr><td>D 冲格池</td><td class="c">3</td><td class="c">全部过 36</td><td class="c">课上默写、周清 10 题</td><td class="c">每周面批</td><td class="c">过线 3/3</td></tr>
-    <tr><td>E 提格池</td><td class="c">7</td><td class="c">提到 32 分</td><td class="c">知识点过手、一对一补基</td><td class="c">每周 2 次</td><td class="c">均分 +8.5</td></tr>
-    <tr class="hl"><td>F 守护组</td><td class="c">14</td><td class="c">提到 22 分</td><td class="c">到校—带笔—作答；20 分基础包</td><td class="c">每日点名</td><td class="c">≤17 分 14→7</td></tr>
-  </tbody>
-</table>
-
-<p>第二条原则：<strong>同一节课里，六个池子的任务必须不同。</strong>具体做法是三套作业——A 套（压轴 + 实验探究，供 A、B 池）、B 套（中档 + 计算，供 C、D 池）、C 套（基础选择 + 填空 + 必背方程式，供 E、F 组）。批阅方式也不同：A、B 套全批全改并面批，C 套只批"写了没有、写对几条"，不追求全批全改。</p>
-
-<p>第三条原则：<strong>一生一档，档案跟着人走，不跟着考试走。</strong>每人一张卡，四个字段：目标分、本次失分点（按题型记，不按知识点记）、本周动作、下周验收。每周更新一次，一个月回头看是否跨线。没有档案的临界生培养，最后都会退化成"多找他谈几次话"。</p>
-
-<h1>四、下一阶段教学目标</h1>
-
-<h2>4.1 班级总体目标（到期中，约 8 周）</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>指标</th><th class="c">现状</th><th class="c">期中目标</th><th class="c">增量</th><th class="c">支撑措施</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="hl"><td>总分班均</td><td class="c">280.7</td><td class="c">292.0</td><td class="c">+11.3</td><td class="c">英语攻坚 + 化学分池</td></tr>
-    <tr><td>英语班均</td><td class="c">50.0</td><td class="c">55.5</td><td class="c">+5.5</td><td class="c">词汇 + 阅读理解双线</td></tr>
-    <tr><td>英语不及格人数</td><td class="c">34</td><td class="c">27</td><td class="c">−7</td><td class="c">30—71 分区间 24 人重点盯</td></tr>
-    <tr><td>总分及格率（≥360）</td><td class="c">29.5%（13 人）</td><td class="c">36.4%（16 人）</td><td class="c">+3 人</td><td class="c">420 分窗口 3 人 + 守线</td></tr>
-    <tr><td>总分优秀率（≥480）</td><td class="c">9.1%（4 人）</td><td class="c">11.4%（5 人）</td><td class="c">+1 人</td><td class="c">480 分窗口 3 人冲线</td></tr>
-    <tr><td>200 分以下人数</td><td class="c">16</td><td class="c">11</td><td class="c">−5</td><td class="c">底线清单 + 家长联动</td></tr>
-    <tr><td>六班位次</td><td class="c">4</td><td class="c">3</td><td class="c">+1</td><td class="c">—</td></tr>
-  </tbody>
-</table>
-
-<h2>4.2 化学学科目标（分层表述）</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>指标</th><th class="c">现状</th><th class="c">期中目标</th><th class="c">增量</th><th class="c">责任池</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>化学班均</td><td class="c">31.45</td><td class="c">35.2</td><td class="c">+3.75</td><td class="c">六池共同</td></tr>
-    <tr class="hl"><td>及格率（≥36）</td><td class="c">45.5%（20 人）</td><td class="c">54.5%（24 人）</td><td class="c">+4 人</td><td class="c">D 池 3 人 + E 池提升</td></tr>
-    <tr class="hl"><td>优秀率（≥48）</td><td class="c">20.5%（9 人）</td><td class="c">31.8%（14 人）</td><td class="c">+5 人</td><td class="c">B 池 7 人全部过线</td></tr>
-    <tr><td>≤17 分人数</td><td class="c">14</td><td class="c">7</td><td class="c">−7</td><td class="c">F 组功能恢复</td></tr>
-    <tr><td>50 分以上人数</td><td class="c">8</td><td class="c">10</td><td class="c">+2</td><td class="c">A 池拔尖</td></tr>
-    <tr><td>六班位次</td><td class="c">6</td><td class="c">4</td><td class="c">+2</td><td class="c">—</td></tr>
-  </tbody>
-</table>
-<p class="caption">注：50 分以上人数指化学单科 ≥50 分者，现为 8 人（60、57、56、56、55、55、54、53），全部来自 A 优秀组。</p>
-
-<h2>4.3 目标可达性测算</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>路径</th><th class="c">动作</th><th class="c">贡献</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>英语全员 +5.5 分</td><td class="c">词汇过关 + 阅读专项，30—71 分区间 24 人重点</td><td class="c">班级总均 +5.5</td></tr>
-    <tr><td>化学现实推进方案</td><td class="c">B/C/D 池全员推进；E 池推 4 人；F 组推 7 人</td><td class="c">班级总均 +3.7</td></tr>
-    <tr><td>其余五科保持</td><td class="c">数学、物理维持优势；语文、历史、政治小幅补</td><td class="c">+1.5 至 +2.0</td></tr>
-    <tr class="hl"><td>合计</td><td class="c">—</td><td class="c">班级总均 280.7 → 约 290—292</td></tr>
-  </tbody>
-</table>
-
-<p>化学的 35.2 分目标来自"现实推进方案"：B 池 7 人 ×+3.4、C 池 4 人 ×+4.3、D 池 3 人 ×+4.3、E 池取化学最高的 4 人 ×+8.5、F 组取化学最高的 7 人 ×+11.0，合计化学总分增加 164.9 分，摊到 44 人为 +3.75 分。这个方案<strong>不是全员推进，而是每一池只推一半到全部</strong>，属于跳一跳够得着的水平；若 F 组的"到校—作答"链条真能修复，还有 2—3 分的额外空间。</p>
-
-<h1>五、针对性提质措施</h1>
-
-<h2>5.1 第一优先：英语攻坚（班级层面）</h2>
-
-<p>英语是 354 班唯一贡献七成缺口的学科，必须作为班级层面的头号工程，而不是"英语老师的事"。</p>
-
-<p class="listnum">1. <strong>划三段，不做一锅烩。</strong>10 名已及格者（≥72）保上限；24 名 30—71 分区间者是主战场，目标全部提到 50 分以上；10 名 30 分以下者只抓词汇与书写，目标 40 分。三段三个标准，不互相牵扯。</p>
-<p class="listnum">2. <strong>每天 20 分钟词汇过关。</strong>早读或晚自习固定时段，按中考 1600 词表切分成 16 周，每周 100 词，周五默写验收，验收不过者周一补测。这件事不依赖教师水平，依赖执行强度。</p>
-<p class="listnum">3. <strong>阅读理解作为主要增分点。</strong>本次英语卷的客观题占比高，阅读是 30—71 分区间学生最容易拿分的模块。每周两篇精读 + 两篇限时训练，讲评只讲"定位—比对—排除"三步法。</p>
-<p class="listnum">4. <strong>把英语和化学临界生名单合并看。</strong>21 名化学临界生中，英语是末位短板的有 10 人以上（张欣羽、艾佳欣、董堰楠、李鑫瑜、冯梓桐、李晴语、江可欣、徐烁晰、徐佳宇、安慧颖）。这批人英语提 10 分，比化学提 5 分对总分的贡献大一倍。</p>
-
-<h2>5.2 第二优先：化学"三池一守"（学科层面）</h2>
-
-<p class="listnum">1. <strong>课上 5 分钟默写，雷打不动。</strong>内容限定为四类：化学方程式、化合价与化学式、常见物质颜色与状态、实验现象描述。这是 C、D、E 三池最直接的分，也是 F 组唯一能拿到的分。默写当堂批改、当堂订正，错一条抄三遍。</p>
-<p class="listnum">2. <strong>周清 10 题，周三固定 15 分钟。</strong>题目按双向细目表出，覆盖本周全部考点，难度分布 7 基础 + 2 中档 + 1 提升。周清不排名、不公布，只反馈"本周应会的 10 题你会几题"，用于调整下周分层。</p>
-<p class="listnum">3. <strong>三套作业，按池分发。</strong>A 套（压轴 + 实验探究）供 A、B 池；B 套（中档 + 计算）供 C、D 池；C 套（基础选择 + 填空 + 必背方程式）供 E、F 组。C 套允许"照抄课本"，只要写了就算完成，先建立交作业的行为习惯。</p>
-<p class="listnum">4. <strong>面批配额制。</strong>B 池每周 1 次、C/D 池每两周 1 次、E 池每周 2 次短谈。面批不做长篇讲解，只做三件事：看错题、问思路、定下周一条改进。</p>
-<p class="listnum">5. <strong>计算题专项单独开。</strong>化学计算本质是比例与方程，卡在数学上。21 名临界生数学得分率 42.5%，计算题是他们化学失分的隐形大头。用 4 课时做"相对原子质量—质量分数—方程式计算"的拆解训练，与数学老师共用一批例题。</p>
-<p class="listnum">6. <strong>F 组只管三件事。</strong>到校、带笔、把会做的写完。化学层面只给 20 分基础包：10 个必背化学式、10 个必背方程式、5 个实验现象、5 个物质用途。每天 5 道题，写完即表扬，不做额外要求。</p>
-
-<h2>5.3 第三优先：数学断层修补</h2>
-
-<p>数学均分 42.3 分排六班第 1，是优势学科，但内部结构是双峰：72 分以上 12 人，23 分以下 22 人，中间 24—71 分只有 10 人。对 354 班而言，数学的任务不是拔高，是<strong>把 22 个 23 分以下的人往上抬</strong>——这些人同时也是化学 E、F 池的成员。</p>
-
-<p class="listnum">1. 数学作业同样分两层：基础层只做选择前 8 题、填空前 4 题、解答第 1—2 题，做对即满分评价。</p>
-<p class="listnum">2. 化学计算题与数学的比例、方程内容打通排课，同一周内两边讲同一类题。</p>
-<p class="listnum">3. 数学与化学共用"后进生名单"，避免两个老师各补各的、学生疲于奔命。</p>
-
-<h2>5.4 第四优先：尾部底线管理</h2>
-
-<p>200 分以下 16 人、化学 ≤17 分 14 人，这两个名单高度重合，要作为一份清单管理。</p>
-
-<p class="listnum">1. <strong>底线清单三查。</strong>每天查到校、每周查作业、每次考试查白卷。这三条比任何补课都重要——14 人的数学得分率 7.8% 说明首要问题是不作答。</p>
-<p class="listnum">2. <strong>家长联动一次到位。</strong>月考后两周内完成 16 人家长沟通，明确告知"不是成绩问题，是到场问题"，请家长配合保证到校与作业。</p>
-<p class="listnum">3. <strong>目标定为"减少人数"而非"提高分数"。</strong>考核口径写"200 分以下人数 16 → 11""化学 ≤17 分人数 14 → 7"，不写均分。这批人的均分受个别极端值影响太大，不宜作为考核。</p>
-
-<h2>5.5 保障机制</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>机制</th><th class="c">做法</th><th class="c">频次</th><th class="c">产出</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>周清同卷</td><td class="c">六个班同一张周清卷，统一时间、统一阅卷</td><td class="c">每周三</td><td class="c">可比数据，排除试卷差异</td></tr>
-    <tr><td>命题双向细目表</td><td class="c">每章一张，标注考点、难度预估、分值</td><td class="c">每章</td><td class="c">区分"没教到"与"没学会"</td></tr>
-    <tr><td>一生一档</td><td class="c">目标分 / 失分题型 / 本周动作 / 下周验收</td><td class="c">每周更新</td><td class="c">21 名临界生逐人有据</td></tr>
-    <tr><td>增值评价</td><td class="c">看个人增量与跨线人数，不看班际排名</td><td class="c">每月</td><td class="c">避免为排名放弃底部</td></tr>
-    <tr><td>临界生月会</td><td class="c">科任教师碰头，对名单增删、调整分池</td><td class="c">每月</td><td class="c">名单动态，不固化</td></tr>
-  </tbody>
-</table>
-
-<h1>六、时间表与检验落点</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>时间</th><th class="c">动作</th><th class="c">检验落点</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>第 1 周</td><td class="c">分池名单上墙；英语三段划分；F 组家长沟通</td><td class="c">21 人档案建齐；16 人家长沟通完成</td></tr>
-    <tr><td>第 2—3 周</td><td class="c">5 分钟默写与周清启动；三套作业分发</td><td class="c">默写正确率首次统计；周清参与率 100%</td></tr>
-    <tr><td>第 4 周</td><td class="c">第一次月考式验收（单元测）</td><td class="c">B 池 ≥3 人过 48；D 池 ≥1 人过 36；F 组 ≤17 分人数下降</td></tr>
-    <tr><td>第 5—6 周</td><td class="c">计算题专项 4 课时；英语阅读专项启动</td><td class="c">化学计算题得分率提升 15 个百分点</td></tr>
-    <tr><td>第 7 周</td><td class="c">临界生名单动态调整（进池 / 出池）</td><td class="c">至少有 3 人成功升级到上一池</td></tr>
-    <tr><td>第 8 周</td><td class="c">期中考试</td><td class="c">对照 4.1、4.2 目标表逐项核账</td></tr>
-  </tbody>
-</table>
-
-<h1>七、两个必须先解决的前提</h1>
-
-<p><strong>前提一：试卷难度未知，归因要留余地。</strong>本次分析全部基于分数，无法区分"学生没学会"和"试卷偏难"。化学年级得分率 54.3%、物理 51.8%，七科中有五科不到 55%，存在整体偏难的可能。因此在第 1 周内必须拿到化学的双向细目表与难度预估，核对哪些分是"该拿到没拿到"。在此之前，所有归因都按"待验证"处理，不写进对学生的评价。</p>
-
-<p><strong>前提二：班际差异没有统计显著性。</strong>年级层面的检验显示，七科与总分的班际 F 检验全部不显著，班级只能解释总分差异的 0.3%，班均标准误 18.2 分，而第 1 名与第 6 名只差 18.1 分——恰好 1 个标准误。这意味着<strong>354 班"第 4"这个位置，本身就带有很大的偶然性</strong>。本文的所有结论，只有那些建立在班级内部结构（分池、分科、分段）上的才是稳健的；凡是建立在"比某班高／低几分"上的，都要打折看待。也因此，下一阶段的考核应全面转向增值与跨线人数，而不是位次。</p>
-
-<p class="keyline">最后说一句：354 班这次暴露的问题，不是"教得不好"，是"没分开教"。同一个班里，有一批能考 500 分的学生，也有一批数学不到 10 分的学生。用同一套作业、同一把尺子、同一个目标去要求他们，无论老师多努力，结果都是中间那批最有希望的人被牺牲掉。把账分开算，把人分开教，这笔账才有解。</p>
-
-</section>
+<header>
+  <div class="title-bar">
+    <h1>🔥 前20号元素消消乐 · 进阶版</h1>
+    <button class="btn btn-restart" onclick="game.initLevel()">🔄 重新开始</button>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-label">当前关卡</span>
+      <span class="stat-val" id="valLevel">第1关</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">得分</span>
+      <span class="stat-val" id="valScore">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">连击</span>
+      <span class="stat-val" id="valCombo">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">剩余时间</span>
+      <span class="stat-val" id="valTimer">01:10</span>
+    </div>
+  </div>
+</header>
+
+<div class="control-panel">
+  <div class="mode-selector">
+    <button class="mode-btn active" data-level="1" onclick="game.switchLevel(1)">① 1-10号</button>
+    <button class="mode-btn" data-level="2" onclick="game.switchLevel(2)">② 11-20号</button>
+    <button class="mode-btn" data-level="3" onclick="game.switchLevel(3)">③ 混合表征</button>
+    <button class="mode-btn" data-level="4" onclick="game.switchLevel(4)">④ 记忆翻牌</button>
+  </div>
+  <div class="legend-bar">
+    <div class="legend-item"><span class="legend-dot" style="background:var(--nonmetal)"></span>非金属</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--metal)"></span>金属</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--noble)"></span>稀有气体</div>
+  </div>
+</div>
+
+<main class="game-container">
+  <div class="timer-wrap"><div class="timer-bar" id="timerBar"></div></div>
+  <div id="comboPopup" class="combo-popup">COMBO x2!</div>
+  <div id="penaltyPopup" class="penalty-popup">-20分 / -3秒</div>
+  <div id="gridBoard" class="grid-board grid-4x5"></div>
+</main>
+
+<div class="knowledge-card">
+  <div class="know-title">💡 化学速记:</div>
+  <div class="know-content" id="knowContent">限时挑战！点击两张相互匹配的卡片即可消除，配错扣分并扣除 3 秒。</div>
+</div>
+
+<div class="modal-overlay" id="resultModal">
+  <div class="win-modal" id="resultCard">
+    <div class="win-icon" id="resIcon">🎉</div>
+    <div class="win-title" id="resTitle">挑战成功！</div>
+    <p style="color: var(--text-sub); font-size: 0.88rem; margin-bottom: 12px;" id="resDesc">你已完全掌握前 10 号元素！</p>
+    <div class="win-stats">
+      <div class="win-stat-item">
+        <span class="win-stat-label">最终得分</span>
+        <span class="win-stat-val" id="resScore">0</span>
+      </div>
+      <div class="win-stat-item">
+        <span class="win-stat-label">用时</span>
+        <span class="win-stat-val" id="resTime">00:00</span>
+      </div>
+      <div class="win-stat-item">
+        <span class="win-stat-label">最高连击</span>
+        <span class="win-stat-val" id="resCombo">0 连击</span>
+      </div>
+      <div class="win-stat-item">
+        <span class="win-stat-label">评价</span>
+        <span class="win-stat-val" id="resRank">化学新星 ✨</span>
+      </div>
+    </div>
+    <div class="modal-btns">
+      <button class="btn" id="resPrimaryBtn" onclick="game.modalPrimary()">下一关</button>
+      <button class="btn btn-restart" onclick="game.closeModal()">返回查看</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ 元素数据库（前20号元素） ============ */
+const ELEMENTS_DB = [
+  { z: 1, symbol: 'H', name: '氢', mass: 1.008, type: 'nonmetal', desc: '最轻的气体，常见化合价+1' },
+  { z: 2, symbol: 'He', name: '氦', mass: 4.003, type: 'noble', desc: '稀有气体，最外层2个电子稳定结构' },
+  { z: 3, symbol: 'Li', name: '锂', mass: 6.941, type: 'metal', desc: '密度最小的金属元素，很活泼' },
+  { z: 4, symbol: 'Be', name: '铍', mass: 9.012, type: 'metal', desc: '第二周期碱土金属' },
+  { z: 5, symbol: 'B', name: '硼', mass: 10.81, type: 'nonmetal', desc: '黑色或银灰色固体，可作半导体材料' },
+  { z: 6, symbol: 'C', name: '碳', mass: 12.01, type: 'nonmetal', desc: '构成有机物骨架，常见+2、+4价' },
+  { z: 7, symbol: 'N', name: '氮', mass: 14.01, type: 'nonmetal', desc: '空气中含量最高的气体（约78%）' },
+  { z: 8, symbol: 'O', name: '氧', mass: 16.00, type: 'nonmetal', desc: '地壳中含量最多的元素，支持呼吸' },
+  { z: 9, symbol: 'F', name: '氟', mass: 19.00, type: 'nonmetal', desc: '非金属性最强的元素' },
+  { z: 10, symbol: 'Ne', name: '氖', mass: 20.18, type: 'noble', desc: '通电发出红光，常做霓虹灯' },
+  { z: 11, symbol: 'Na', name: '钠', mass: 22.99, type: 'metal', desc: '金属活动性强，常保存在煤油中' },
+  { z: 12, symbol: 'Mg', name: '镁', mass: 24.31, type: 'metal', desc: '在空气中燃烧发出耀眼白光' },
+  { z: 13, symbol: 'Al', name: '铝', mass: 26.98, type: 'metal', desc: '地壳中含量最多的金属元素' },
+  { z: 14, symbol: 'Si', name: '硅', mass: 28.09, type: 'nonmetal', desc: '芯片关键材料，地壳含量居第二' },
+  { z: 15, symbol: 'P', name: '磷', mass: 30.97, type: 'nonmetal', desc: '有白磷、红磷等同素异形体' },
+  { z: 16, symbol: 'S', name: '硫', mass: 32.06, type: 'nonmetal', desc: '淡黄色固体，燃烧生成有刺激性气味的二氧化硫' },
+  { z: 17, symbol: 'Cl', name: '氯', mass: 35.45, type: 'nonmetal', desc: '黄绿色有毒气体，氧化性强' },
+  { z: 18, symbol: 'Ar', name: '氩', mass: 39.95, type: 'noble', desc: '空气中含量最多的稀有气体（约0.93%）' },
+  { z: 19, symbol: 'K', name: '钾', mass: 39.10, type: 'metal', desc: '极活泼的碱金属元素' },
+  { z: 20, symbol: 'Ca', name: '钙', mass: 40.08, type: 'metal', desc: '人体骨骼和牙齿的主要无机成分' }
+];
+
+/* ============ 关卡配置 ============ */
+const LEVEL_CONFIG = {
+  1: { name: '第1关', title: '1-10号元素',      limit: 70,  pool: 'first10',  reprMode: 'simple', memory: false },
+  2: { name: '第2关', title: '11-20号元素',     limit: 70,  pool: 'second10', reprMode: 'simple', memory: false },
+  3: { name: '第3关', title: '1-20号 混合表征', limit: 90,  pool: 'random12', reprMode: 'mixed',  memory: false },
+  4: { name: '第4关', title: '1-20号 记忆翻牌', limit: 120, pool: 'random12', reprMode: 'simple', memory: true }
+};
+
+/* ============ 音效（原生合成，零外链） ============ */
+class SoundFx {
+  constructor() { this.ctx = null; }
+  init() {
+    if (!this.ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) this.ctx = new AC();
+    }
+  }
+  play(freq, type, duration, gainVal) {
+    try {
+      this.init();
+      if (!this.ctx) return;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+      gain.gain.setValueAtTime(gainVal || 0.15, this.ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start();
+      osc.stop(this.ctx.currentTime + duration);
+    } catch (e) { /* 音效异常不影响主流程 */ }
+  }
+  click() { this.play(440, 'sine', 0.07, 0.08); }
+  flip()  { this.play(620, 'sine', 0.06, 0.07); }
+  match(combo) {
+    const step = Math.min(combo, 8);
+    this.play(523.25 * Math.pow(1.12, step), 'triangle', 0.24, 0.18);
+    setTimeout(() => this.play(523.25 * Math.pow(1.12, step + 2), 'sine', 0.22, 0.13), 60);
+  }
+  wrong() {
+    this.play(180, 'sawtooth', 0.22, 0.16);
+    setTimeout(() => this.play(140, 'sawtooth', 0.2, 0.16), 80);
+  }
+  win() {
+    [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
+      setTimeout(() => this.play(f, 'triangle', 0.32, 0.18), i * 100);
+    });
+  }
+  lose() {
+    [392, 330, 262, 196].forEach((f, i) => {
+      setTimeout(() => this.play(f, 'sawtooth', 0.32, 0.16), i * 130);
+    });
+  }
+}
+
+const sfx = new SoundFx();
+
+/* ============ 游戏主控 ============ */
+class ElementGame {
+  constructor() {
+    this.currentLevel = 1;
+    this.cards = [];
+    this.selectedCards = [];
+    this.score = 0;
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.matchedPairs = 0;
+    this.totalPairs = 0;
+    this.elapsed = 0;
+    this.remaining = 70;
+    this.timeLimit = 70;
+    this.timerInterval = null;
+    this.isLocked = false;
+    this.gameOver = false;
+    this.memoryMode = false;
+    this.modalNextLevel = 1;
+  }
+
+  /* ---------- 初始化关卡 ---------- */
+  initLevel(level) {
+    if (typeof level === 'number') this.currentLevel = level;
+    const cfg = LEVEL_CONFIG[this.currentLevel];
+
+    this.clearTimer();
+    this.gameOver = false;
+    this.isLocked = false;
+    this.selectedCards = [];
+    this.combo = 0;
+    this.maxCombo = 0;
+    this.matchedPairs = 0;
+    this.score = 0;
+    this.elapsed = 0;
+    this.memoryMode = cfg.memory;
+    this.timeLimit = cfg.limit;
+    this.remaining = cfg.limit;
+
+    document.getElementById('valLevel').textContent = cfg.name;
+    document.getElementById('knowContent').textContent = cfg.memory
+      ? '记忆翻牌：卡片背面朝上，翻开两张同一元素的卡片才能消除！'
+      : '限时挑战！点击两张相互匹配的卡片即可消除，配错扣 20 分并扣 3 秒。';
+
+    // 选取元素池
+    let pool;
+    if (cfg.pool === 'first10') {
+      pool = ELEMENTS_DB.slice(0, 10);
+    } else if (cfg.pool === 'second10') {
+      pool = ELEMENTS_DB.slice(10, 20);
+    } else {
+      pool = [...ELEMENTS_DB];
+      this.shuffle(pool);
+      pool = pool.slice(0, 12);
+    }
+
+    // 生成卡片
+    const cardsData = [];
+    pool.forEach((elem) => {
+      let types;
+      if (cfg.reprMode === 'mixed') {
+        const all = ['symbol', 'name', 'number'];
+        this.shuffle(all);
+        types = all.slice(0, 2);
+      } else {
+        types = ['symbol', 'name'];
+      }
+      types.forEach((t) => cardsData.push(this.buildCard(elem, t)));
+    });
+
+    this.totalPairs = pool.length;
+    this.shuffle(cardsData);
+    this.cards = cardsData;
+
+    this.renderBoard();
+    this.updateStats();
+    this.updateTimerUI();
+    this.startTimer();
+  }
+
+  /* ---------- 构造单张卡片 ---------- */
+  buildCard(elem, cardType) {
+    let displayMain = '', displaySub = '', tagName = '';
+    if (cardType === 'symbol') {
+      displayMain = elem.symbol;
+      displaySub = '元素符号';
+      tagName = '符号';
+    } else if (cardType === 'name') {
+      displayMain = elem.name;
+      displaySub = '元素名称';
+      tagName = '中文';
+    } else {
+      displayMain = String(elem.z);
+      displaySub = '原子序数';
+      tagName = '序数';
+    }
+    return {
+      elemZ: elem.z,
+      cardType: cardType,
+      displayMain: displayMain,
+      displaySub: displaySub,
+      tagName: tagName,
+      elemData: elem
+    };
+  }
+
+  /* ---------- 渲染棋盘 ---------- */
+  renderBoard() {
+    const board = document.getElementById('gridBoard');
+    board.innerHTML = '';
+    const n = this.cards.length;
+    board.className = 'grid-board ' + (n <= 20 ? 'grid-4x5' : 'grid-6x4');
+
+    this.cards.forEach((item, index) => {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'chem-card type-' + item.elemData.type + (this.memoryMode ? ' face-down' : '');
+      cardEl.dataset.index = index;
+
+      cardEl.innerHTML =
+        '<span class="card-type-tag">' + item.tagName + '</span>' +
+        '<span class="card-category-dot dot-' + item.elemData.type + '"></span>' +
+        '<div class="card-main-val">' + item.displayMain + '</div>' +
+        '<div class="card-sub-info">' + item.displaySub + '</div>';
+
+      cardEl.addEventListener('click', () => this.handleCardClick(index, cardEl));
+      board.appendChild(cardEl);
+    });
+  }
+
+  /* ---------- 点击卡片 ---------- */
+  handleCardClick(index, cardEl) {
+    if (this.isLocked || this.gameOver) return;
+    if (cardEl.classList.contains('matched')) return;
+    if (cardEl.classList.contains('selected')) return;
+
+    if (cardEl.classList.contains('face-down')) {
+      cardEl.classList.remove('face-down');
+      sfx.flip();
+    } else {
+      sfx.click();
+    }
+
+    cardEl.classList.add('selected');
+    const cardData = this.cards[index];
+    this.selectedCards.push({ index: index, el: cardEl, data: cardData });
+
+    // 知识点提示
+    const elem = cardData.elemData;
+    const typeCn = elem.type === 'nonmetal' ? '非金属元素' : (elem.type === 'metal' ? '金属元素' : '稀有气体');
+    document.getElementById('knowContent').innerHTML =
+      '<strong>' + elem.z + '号 ' + elem.name + '（' + elem.symbol + '）</strong>：' + typeCn + '，' + elem.desc;
+
+    if (this.selectedCards.length === 2) this.checkMatch();
+  }
+
+  /* ---------- 判定匹配 ---------- */
+  checkMatch() {
+    this.isLocked = true;
+    const c1 = this.selectedCards[0];
+    const c2 = this.selectedCards[1];
+
+    if (c1.data.elemZ === c2.data.elemZ && c1.index !== c2.index) {
+      /* --- 匹配成功 --- */
+      this.combo++;
+      if (this.combo > this.maxCombo) this.maxCombo = this.combo;
+
+      const bonus = this.currentLevel >= 4 ? 1.5 : (this.currentLevel === 3 ? 1.2 : 1);
+      this.score += Math.round((100 + (this.combo - 1) * 30) * bonus);
+      this.matchedPairs++;
+
+      sfx.match(this.combo);
+      if (this.combo >= 2) this.showPopup('comboPopup', 'COMBO x' + this.combo + '!');
+
+      setTimeout(() => {
+        c1.el.classList.remove('selected');
+        c2.el.classList.remove('selected');
+        c1.el.classList.add('matched');
+        c2.el.classList.add('matched');
+
+        this.selectedCards = [];
+        this.isLocked = false;
+        this.updateStats();
+
+        if (this.matchedPairs >= this.totalPairs) this.handleWin();
+      }, 320);
+
+    } else {
+      /* --- 匹配失败：扣分 + 扣时 --- */
+      this.combo = 0;
+      this.score = Math.max(0, this.score - 20);
+      this.remaining = Math.max(0, this.remaining - 3);
+      sfx.wrong();
+      this.showPopup('penaltyPopup', '-20分 / -3秒');
+      c1.el.classList.add('wrong');
+      c2.el.classList.add('wrong');
+      this.updateStats();
+      this.updateTimerUI();
+
+      const timeOut = this.remaining <= 0;
+
+      setTimeout(() => {
+        c1.el.classList.remove('selected', 'wrong');
+        c2.el.classList.remove('selected', 'wrong');
+        if (this.memoryMode) {
+          c1.el.classList.add('face-down');
+          c2.el.classList.add('face-down');
+        }
+        this.selectedCards = [];
+        this.isLocked = false;
+
+        if (timeOut) this.handleLose();
+      }, 700);
+    }
+  }
+
+  showPopup(id, text) {
+    const el = document.getElementById(id);
+    el.textContent = text;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 600);
+  }
+
+  /* ---------- 计分板 ---------- */
+  updateStats() {
+    document.getElementById('valScore').textContent = this.score;
+    document.getElementById('valCombo').textContent = this.combo;
+  }
+
+  /* ---------- 倒计时 ---------- */
+  startTimer() {
+    this.clearTimer();
+    this.timerInterval = setInterval(() => {
+      if (this.gameOver) return;
+      this.remaining--;
+      this.elapsed++;
+      this.updateTimerUI();
+      if (this.remaining <= 0) this.handleLose();
+    }, 1000);
+  }
+
+  clearTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+      this.timerInterval = null;
+    }
+  }
+
+  updateTimerUI() {
+    const r = Math.max(0, this.remaining);
+    const m = String(Math.floor(r / 60)).padStart(2, '0');
+    const s = String(r % 60).padStart(2, '0');
+    const timerEl = document.getElementById('valTimer');
+    timerEl.textContent = m + ':' + s;
+    timerEl.classList.toggle('time-warning', r <= 20 && r > 10);
+    timerEl.classList.toggle('time-danger', r <= 10);
+
+    const bar = document.getElementById('timerBar');
+    const pct = this.timeLimit > 0 ? Math.max(0, (r / this.timeLimit) * 100) : 0;
+    bar.style.width = pct + '%';
+    bar.classList.toggle('warning', pct <= 35 && pct > 15);
+    bar.classList.toggle('danger', pct <= 15);
+  }
+
+  /* ---------- 结算 ---------- */
+  handleWin() {
+    if (this.gameOver) return;
+    this.gameOver = true;
+    this.isLocked = true;
+    this.clearTimer();
+    sfx.win();
+
+    const cfg = LEVEL_CONFIG[this.currentLevel];
+    document.getElementById('resultCard').classList.remove('lose');
+    document.getElementById('resIcon').textContent = '🎉';
+    document.getElementById('resTitle').textContent = '挑战成功！';
+    document.getElementById('resDesc').textContent =
+      '你已通过「' + cfg.title + '」，剩余 ' + this.remaining + ' 秒。';
+
+    let rank = '化学新星 ✨';
+    if (this.score >= 2000) rank = '元素大师 👑';
+    else if (this.score >= 1400) rank = '化学学霸 🌟';
+    else if (this.score >= 900) rank = '化学能手 💪';
+    document.getElementById('resRank').textContent = rank;
+
+    this.modalNextLevel = this.currentLevel >= 4 ? 1 : this.currentLevel + 1;
+    document.getElementById('resPrimaryBtn').textContent =
+      this.currentLevel >= 4 ? '从头再来' : '下一关（更难）';
+
+    this.fillResultStats();
+    document.getElementById('resultModal').classList.add('active');
+  }
+
+  handleLose() {
+    if (this.gameOver) return;
+    this.gameOver = true;
+    this.isLocked = true;
+    this.clearTimer();
+    sfx.lose();
+
+    document.getElementById('resultCard').classList.add('lose');
+    document.getElementById('resIcon').textContent = '⏰';
+    document.getElementById('resTitle').textContent = '时间耗尽！';
+    document.getElementById('resDesc').textContent =
+      '还差 ' + (this.totalPairs - this.matchedPairs) + ' 对没消完，再挑战一次吧！';
+    document.getElementById('resRank').textContent = '再接再厉 🔥';
+
+    this.modalNextLevel = this.currentLevel;
+    document.getElementById('resPrimaryBtn').textContent = '再试一次';
+
+    this.fillResultStats();
+    document.getElementById('resultModal').classList.add('active');
+  }
+
+  fillResultStats() {
+    const m = String(Math.floor(this.elapsed / 60)).padStart(2, '0');
+    const s = String(this.elapsed % 60).padStart(2, '0');
+    document.getElementById('resScore').textContent = this.score;
+    document.getElementById('resTime').textContent = m + ':' + s;
+    document.getElementById('resCombo').textContent = this.maxCombo + ' 连击';
+  }
+
+  modalPrimary() {
+    this.closeModal();
+    this.switchLevel(this.modalNextLevel);
+  }
+
+  closeModal() {
+    document.getElementById('resultModal').classList.remove('active');
+  }
+
+  /* ---------- 关卡切换 ---------- */
+  switchLevel(lvl) {
+    document.querySelectorAll('.mode-btn').forEach((btn) => {
+      btn.classList.toggle('active', parseInt(btn.dataset.level, 10) === lvl);
+    });
+    this.initLevel(lvl);
+  }
+
+  /* ---------- 洗牌 ---------- */
+  shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = array[i];
+      array[i] = array[j];
+      array[j] = tmp;
+    }
+    return array;
+  }
+}
+
+const game = new ElementGame();
+window.addEventListener('DOMContentLoaded', () => {
+  game.initLevel(1);
+});
+</script>
+<!--aigc-badge--><div data-aigc="notice" style="position:fixed;left:0;right:0;bottom:8px;z-index:2147483647;pointer-events:none;text-align:center;font:12px/1.5 'PingFang SC','Microsoft YaHei',sans-serif"><span style="display:inline-block;padding:3px 10px;border-radius:10px;background:rgba(255,255,255,.88);color:#555;border:1px solid rgba(0,0,0,.14)">内容由 AI生成，请仔细甄别</span></div>
 </body>
 </html>
